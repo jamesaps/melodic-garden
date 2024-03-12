@@ -1,1 +1,1 @@
-const Jumbotron = () => {}
+const Jumbotron = () => { }
