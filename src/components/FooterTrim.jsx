@@ -3,7 +3,7 @@ import footerImage from "../assets/footer-image.png";
 export default function FooterTrim() {
   return (
     <div
-      className="w-full h-10 bg-top bg-cover fixed bottom-0"
+      className="fixed bottom-0 h-8 w-full bg-cover bg-top "
       style={{ backgroundImage: `url(${footerImage})` }}
     ></div>
   );
