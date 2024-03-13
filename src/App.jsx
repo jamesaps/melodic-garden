@@ -4,9 +4,11 @@ import Navigation from "./components/Navigation";
 import Home from "./components/pages/Home";
 import About from "./components/pages/About";
 import Categories from "./components/pages/Categories";
+import Jumbotron from "./components/jumbotron";
 
 function App() {
   return (
+    <>
     <Router>
       <Navigation />
       <Routes>
@@ -15,6 +17,8 @@ function App() {
         <Route path="categories" element={<Categories />}></Route>
       </Routes>
     </Router>
+    <Jumbotron></Jumbotron>
+    </>
   );
 }
 export default App;
