@@ -3,10 +3,10 @@ import { NavLink } from "react-router-dom";
 export default function Footer() {
   return (
     <footer className="container mx-auto pb-10">
-      <div className="flex justify-between">
-        <div>
-          <h2 className="font-bold">Quick Links</h2>
-          <ul>
+      <div className="flex flex-col items-center justify-between sm:flex-row">
+        <div className="flex flex-col items-center sm:items-start">
+          <h2 className="mb-2 font-bold">Quick Links</h2>
+          <ul className="flex flex-col items-center sm:items-start">
             <li>
               <NavLink to="about">About Us</NavLink>
             </li>
@@ -21,10 +21,10 @@ export default function Footer() {
           <p className="mt-2 font-bold">&copy; 2024 Melodic Garden Ltd</p>
         </div>
 
-        <div className="flex flex-col items-end">
-          <div>
-            <h2 className="font-bold">Terms</h2>
-            <ul>
+        <div className="mt-2 flex flex-col items-center sm:mt-0 sm:items-end">
+          <div className="flex flex-col items-center sm:items-start">
+            <h2 className="mb-2 font-bold">Terms</h2>
+            <ul className="flex flex-col items-center sm:items-start">
               <li>
                 <NavLink to="#">Terms of Service</NavLink>
               </li>
@@ -37,7 +37,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <ul className="flex gap-4">
+          <ul className="mt-2 flex gap-4">
             <li className="font-bold">Instagram</li>
             <li className="font-bold">Facebook</li>
             <li className="font-bold">TikTok</li>
