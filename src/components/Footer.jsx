@@ -8,7 +8,7 @@ export default function Footer() {
           <h2 className="font-bold">Quick Links</h2>
           <ul>
             <li>
-              <NavLink to="#">About Us</NavLink>
+              <NavLink to="about">About Us</NavLink>
             </li>
             <li>
               <NavLink to="#">Plant Care</NavLink>
