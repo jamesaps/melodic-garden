@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer>
+    <footer className="pb-10">
       Footer<></>
     </footer>
   );
