@@ -1,7 +1,7 @@
-import Jumbotron from '../Jumbotron.jsx';
+import Jumbotron from '../jumbotron.jsx';
 
 export default function Home() {
-  return <>Home</>;
-  <Jumbotron />
-
+  return (
+  <Jumbotron/>
+  )
 }
