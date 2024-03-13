@@ -1,3 +1,4 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import ProductDescription from "./components/productDescription";
 
@@ -9,5 +10,4 @@ function App() {
   </div>
   )
 }
-
 export default App;
