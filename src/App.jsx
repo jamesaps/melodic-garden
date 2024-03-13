@@ -7,6 +7,7 @@ import Categories from "./components/pages/Categories";
 
 function App() {
   return (
+    <>
     <Router>
       <Navigation />
       <Routes>
@@ -15,6 +16,7 @@ function App() {
         <Route path="categories" element={<Categories />}></Route>
       </Routes>
     </Router>
+    </>
   );
 }
 export default App;
