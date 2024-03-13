@@ -4,7 +4,7 @@ import Navigation from "./components/Navigation";
 import Home from "./components/pages/Home";
 import About from "./components/pages/About";
 import Categories from "./components/pages/Categories";
-import ProductCard from "./components/productCard";
+import CategoryCards from "./components/categoryCard";
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
       </Routes>
     </Router>
 
-    <ProductCard />
+    <CategoryCards />
     </>
   );
 }
