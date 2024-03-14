@@ -17,11 +17,11 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="about" element={<About />}></Route>
         <Route path="categories" element={<Categories />}></Route>
-        <Route path="OrderSummary" element={<OrderSummary />}></Route>
       </Routes>
     </Router>
-    <Jumbotron></Jumbotron>
-    <Divider></Divider>
+   <Jumbotron></Jumbotron>
+    <Divider></Divider>  
+   <OrderSummary products={[]}></OrderSummary>
     </>
   );
 }
