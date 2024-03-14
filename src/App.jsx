@@ -6,6 +6,7 @@ import About from "./components/pages/About";
 import Categories from "./components/pages/Categories";
 import Footer from "./components/Footer";
 import FooterTrim from "./components/FooterTrim";
+import Product from "./components/pages/Product"
 
 function App() {
   return (
@@ -20,9 +21,9 @@ function App() {
           <Route path="categories" element={<Categories />}></Route>
         </Routes>
       </main>
-      
-      <Footer />
-      <FooterTrim />
+
+      <Product/>
+     
     </Router>
     </>
 
