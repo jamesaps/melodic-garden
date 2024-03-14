@@ -6,6 +6,7 @@ import About from "./components/pages/About";
 import Categories from "./components/pages/Categories";
 import Footer from "./components/Footer";
 import FooterTrim from "./components/FooterTrim";
+import FeatureCard from "./components/FeatureCard"
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         </Routes>
       </main>
       
+      <FeatureCard></FeatureCard>
       <Footer />
       <FooterTrim />
     </Router>
