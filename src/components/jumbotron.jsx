@@ -5,6 +5,7 @@ import plant3 from "../assets/plant3.png"
 
 const Jumbotron = () => {
   return (
+    <div className="container mx-auto ">
     <div className="absolute top-0 left-0 w-full h-full ">
     <div className="flex items-stretch h-full">
 
@@ -18,7 +19,7 @@ const Jumbotron = () => {
 
       <div className="md:w-1/3 bg-green-900 p-6 flex flex-col justify-between " >
       <div className="mb-6 ">
-        <img src={plant3} alt="Image3" className="w-full rounded-lg " />
+        <img src={plant3} alt="Image3" className="w-md rounded-lg " />
         </div>
         <div className="z-10 mb-4 text-white">
           <h2 className="text-2xl font-bold mb-4 text-left">A Botanial Haven</h2>
@@ -26,6 +27,7 @@ const Jumbotron = () => {
           <button className=" w-full bg-white hover:bg-blue-600 text-green-950 text-sm shadow-md  py-2 px-4 rounded-full">View all House Plants</button>
         </div>
       </div>
+    </div>
     </div>
     </div>
   );
