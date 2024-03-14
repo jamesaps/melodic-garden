@@ -4,13 +4,15 @@ import Navigation from "./components/Navigation";
 import Home from "./components/pages/Home";
 import About from "./components/pages/About";
 import Categories from "./components/pages/Categories";
-import CategoryCards from "./components/categoryCard";
+import PlantJumbotron from "./components/PlantJumbotron";
 
 function App() {
   return (
     <>
     <Router>
+    
       <Navigation />
+      <PlantJumbotron />
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="about" element={<About />}></Route>
@@ -18,7 +20,7 @@ function App() {
       </Routes>
     </Router>
 
-    <CategoryCards />
+    
     </>
   );
 }
