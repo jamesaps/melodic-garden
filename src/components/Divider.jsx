@@ -3,8 +3,7 @@ import React from "react";
 const Divider = () => {
 
     return (
-
-      <div className="relative w-full">
+<div className="relative w-full">
         <div className="inset-0">
           <section
             className="relative w-full bg-cover bg-center py-40 text-white opacity-90 md:py-40"
