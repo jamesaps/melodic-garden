@@ -5,6 +5,7 @@ import Home from "./components/pages/Home";
 import About from "./components/pages/About";
 import Categories from "./components/pages/Categories";
 import Jumbotron from "./components/jumbotron";
+import Divider from "./components/Divider";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       </Routes>
     </Router>
     <Jumbotron></Jumbotron>
+    <Divider></Divider>
     </>
   );
 }
