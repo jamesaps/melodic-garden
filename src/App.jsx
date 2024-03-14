@@ -18,7 +18,7 @@ function App() {
         <Route path="categories" element={<Categories />}></Route>
       </Routes>
     </Router>
-    <Jumbotron></Jumbotron>
+    <Jumbotron></Jumbotron> 
     <Divider></Divider>
     </>
   );
