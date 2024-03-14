@@ -19,7 +19,7 @@ const OrderSummary = ({ products }) => {
             ))}
           </div>
           <div className="flex-1">
-            <p>Total Price: £{totalPrice.toFixed(2)}</p>
+            <p>£{totalPrice.toFixed(2)}</p>
           </div>
         </div>
         </div>
