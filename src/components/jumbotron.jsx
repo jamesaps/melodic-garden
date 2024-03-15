@@ -6,7 +6,6 @@ import plant3 from "../assets/plant3.png"
 const Jumbotron = () => {
   return (
 
-    <div className="container mx-auto">
     <div className="top-0 left-0 w-full h-full ">
     
     <div className="flex items-stretch h-full">
@@ -32,7 +31,7 @@ const Jumbotron = () => {
     </div>
     </div>
 
-    </div > 
+    
   ); 
 };
 
