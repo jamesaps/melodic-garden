@@ -15,12 +15,6 @@ function App() {
     <Router>
     
       <Navigation />
-      <PlantJumbotron />
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="about" element={<About />}></Route>
-        <Route path="categories" element={<Categories />}></Route>
-      </Routes>
 
       <main>
         <Routes>
