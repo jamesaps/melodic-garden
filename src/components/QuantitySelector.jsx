@@ -1,7 +1,11 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-const QuantitySelector = ({ initialValue, maxValue, onQuantityChange }) => {
+const QuantitySelector = ({ initialValue, maxValue, minValue, onQuantityChange }) => {
     const [quantity, setQuantity] = useState(initialValue);
+
+    useEffect(() => {
+        setQuantity(initialValue);
+    }, [initialValue]);
 
     const handleIncrement = () => {
         if (quantity < maxValue) {
@@ -13,10 +17,16 @@ const QuantitySelector = ({ initialValue, maxValue, onQuantityChange }) => {
     };
 
     const handleDecrement = () => {
-        if (quantity > 1) {
+        if (quantity > minValue) {
             setQuantity(quantity - 1);
             if (onQuantityChange) {
                 onQuantityChange(quantity - 1);
+            }
+        }
+        else {
+            setQuantity(minValue); 
+            if (onQuantityChange) {
+                onQuantityChange(minValue);
             }
         }
     };
@@ -35,6 +45,3 @@ const QuantitySelector = ({ initialValue, maxValue, onQuantityChange }) => {
 };
 
 export default QuantitySelector;
-
-
-
