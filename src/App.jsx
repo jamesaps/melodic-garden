@@ -7,6 +7,7 @@ import Categories from "./components/pages/Categories";
 import Jumbotron from "./components/jumbotron";
 import Divider from "./components/Divider";
 import OrderSummary from "./components/pages/OrderSummary";
+import OrderTotal from "./components/OrderTotal"
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
    <Jumbotron></Jumbotron>
     <Divider></Divider>  
    <OrderSummary products={[]}></OrderSummary>
+   <OrderTotal subTotal={subTotal} shipping={10} vat={0.20} />
     </>
   );
 }
