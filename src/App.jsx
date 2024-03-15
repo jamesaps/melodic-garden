@@ -9,6 +9,7 @@ import FooterTrim from "./components/FooterTrim";
 
 function App() {
   return (
+    <>
     <Router>
       <Navigation />
 
@@ -23,6 +24,7 @@ function App() {
       <Footer />
       <FooterTrim />
     </Router>
+    </>
   );
 }
 export default App;
