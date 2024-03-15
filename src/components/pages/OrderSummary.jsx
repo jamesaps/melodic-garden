@@ -1,6 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect }  from 'react';
 
-const OrderSummary = ({ products }) => {
+const OrderSummary = () => {
+    const [products, setProducts] = useState([]);
+        useEffect(() => {
+    
+    const fetchProducts = async () => {
+        try {
+            const response = await fetch('all-products');
+            const data = await response.json();
+
+            setProducts(data.products);
+        } catch (error) {
+          console.error('Unable to fetch products:', error);
+        }
+      };
+      fetchProducts();
+    }, []);
+
     const totalPrice = products.reduce((total, product) => total + (product.price * product.quantity), 0);
 
     return (
