@@ -14,7 +14,7 @@ const Jumbotron = () => {
       </div>
 
       <div className="w-1/3 hidden md:flex">
-        <img src={plant2} alt="Image 2" className="w-full h-full" />
+        <img src={plant2} alt="Image 2" className="w-full h-full" /> 
       </div>
 
       <div className="md:w-1/3 bg-green-900 p-6 flex flex-col justify-between " >
@@ -29,8 +29,8 @@ const Jumbotron = () => {
       </div>
     </div>
     </div>
-    </div>
-  );
+    </div > 
+  ); 
 };
 
 export default Jumbotron;
