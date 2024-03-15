@@ -4,8 +4,12 @@ import Navigation from "./components/Navigation";
 import Home from "./components/pages/Home";
 import About from "./components/pages/About";
 import Categories from "./components/pages/Categories";
+
+import Jumbotron from "./components/jumbotron";
+
 import Footer from "./components/Footer";
 import FooterTrim from "./components/FooterTrim";
+
 
 function App() {
   return (
