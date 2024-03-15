@@ -13,6 +13,7 @@ function App() {
   return (
     <>
     <Router>
+    
       <Navigation />
 
       <main>
@@ -26,6 +27,10 @@ function App() {
       <Footer />
       <FooterTrim />
     </Router>
+
+    
+    </>
+
   );
 }
 
