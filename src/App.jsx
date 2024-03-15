@@ -6,22 +6,32 @@ import About from "./components/pages/About";
 import Categories from "./components/pages/Categories";
 import CategoryCards from "./components/categoryCard";
 
+import Jumbotron from "./components/jumbotron";
+
+import Footer from "./components/Footer";
+import FooterTrim from "./components/FooterTrim";
+
+
 function App() {
   return (
     <>
     <Router>
       <Navigation />
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="about" element={<About />}></Route>
-        <Route path="categories" element={<Categories />}></Route>
-      </Routes>
+
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="about" element={<About />}></Route>
+          <Route path="categories" element={<Categories />}></Route>
+        </Routes>
+      </main>
+      
+      <Footer />
+      <FooterTrim />
     </Router>
 
-    <CategoryCards />
     </>
   );
 }
 export default App;
-
 

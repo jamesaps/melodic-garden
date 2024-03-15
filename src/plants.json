@@ -9,7 +9,8 @@
         "Description": "Blossoms in spring and summer, 5-6 new leaves per year. In summer, water 2-3 times a week. However, stagnant water in the pot is unacceptable. It is undesirable that large drops of water fall on the leaves. Use warm soft water. In winter, watering is limited to 1 time in 6-8 days, the soil must dry between two waterings.",
         "Price": "£25.00",
         "Lighting": "The light is moderate indirect, it is better to put it in 2 m from a window facing west. With excessive light, the leaves twist, their color fades.",
-        "Care": "Qalat leaves, like all members of the family marantaceae, are formed on the night – this is normal. In summer, the plant can be taken out to the garden or to the balcony, but it should be protected from the wind. The plant does not like drafts and gas combustion products. Completely dried leaves should be removed in a timely manner. Wipe the leaves with either a soft dry cloth or a brush, since they are easily damaged. Plants love the moist hot air of the bathroom especially at a time when someone is taking a shower. The plant is well-grown in a group with other plants to increase air humidity."
+        "Care": "Qalat leaves, like all members of the family marantaceae, are formed on the night – this is normal. In summer, the plant can be taken out to the garden or to the balcony, but it should be protected from the wind. The plant does not like drafts and gas combustion products. Completely dried leaves should be removed in a timely manner. Wipe the leaves with either a soft dry cloth or a brush, since they are easily damaged. Plants love the moist hot air of the bathroom especially at a time when someone is taking a shower. The plant is well-grown in a group with other plants to increase air humidity.",
+        "Stock": 2
     },
     {
         "Id": 2,
@@ -22,6 +23,7 @@
         "Price": "£45.00",
         "Lighting": "A bright diffused light, it is best to place the plant in a tub near the south-west or south-east window.",
         "Care": "In the summer it is desirable to take out on the street. Regular rubbing of leaves is required. Carefully, the tips of the leaves are very sharp Washington.",
+        "Stock": 2
     },
     {
         "Id": 3,
@@ -33,7 +35,8 @@
         "Description": "Blossom quite rarely in the summer flowers of cream color (some species are fragrant). Watering in summer is abundant 1-2 times a week, in winter 1 time in 8-12 days. The plant should not be poured, but the soil should not completely dry out either.",
         "Price": "£30.00",
         "Lighting": "Plants with bright leaves prefer bright diffuse light. The best place is 1-2 m from the south or south-west window. In a shady place, the color will be pale.",
-        "Care": "Strongly stretched plant is most expedient to cut, the top can be rooted. It is advisable to regularly wipe the leaves. The brown tips of the leaves should be cut off.Dracaena sander can be grown in water, wherein the dissolved minerals. The plant is quite shady, the shoots can stand in a vase with water in the back of the room."
+        "Care": "Strongly stretched plant is most expedient to cut, the top can be rooted. It is advisable to regularly wipe the leaves. The brown tips of the leaves should be cut off.Dracaena sander can be grown in water, wherein the dissolved minerals. The plant is quite shady, the shoots can stand in a vase with water in the back of the room.",
+        "Stock": 2
     },
     {
         "Id": 3,
@@ -42,10 +45,11 @@
         "Family": "Oleaceae",
         "Origin": "China",
         "Size": "Small",
-        "Decription": "Bloom from January to March, white fragrant flowers in racemose inflorescences. In winter, during the flowering plants watered 2 times a week, the substrate should dry out a bit between waterings. In summer, during growth, watered every day or every 2 days, the soil must remain moist.",
+        "Description": "Bloom from January to March, white fragrant flowers in racemose inflorescences. In winter, during the flowering plants watered 2 times a week, the substrate should dry out a bit between waterings. In summer, during growth, watered every day or every 2 days, the soil must remain moist.",
         "Price": "£17.50",
         "Lighting": "Bright light is required make shade from the hot midday rays. Suitable south-east or south-west window.",
         "Care": "The plant is desirable support, it can be made in the form of a flexible arch. The plant needs airing. After flowering, all long branches can be cut to 2/3.",
+        "Stock": 2
     },
     {
         "Id": 4,
@@ -58,6 +62,7 @@
         "Price": "£15.00",
         "Lighting": "A sunny place, a few hours of direct sunshine a day. With insufficient light, the rose will not bloom.",
         "Care": "For the summer it is good to take the plant in the garden. Requires regular pruning in spring and after flowering.",
+        "Stock": 2
     },
     {
         "Id": 5,
@@ -69,7 +74,8 @@
         "Description": "Blossoms in the summer, small yellow-green inflorescences, out of the sinuses leaflets. The plant grows along the riverbanks, it is highly hygrophilous, the lower part of the pot must be in the summer in the water, in the winter after watering the water is drained. If the soil in the pot dries up, the plant will turn yellow within the next 24 hours.",
         "Price": "£45.00",
         "Lighting": "Non-directional light or penumbra. Prefers northern or eastern windows. He loves the light, but you have to shade from the bright sun. Can be grown under artificial lighting for at least 16 hours a day.",
-        "Care": "If the leaves of the plant have massively turned yellow, they should be cut off at the root, and soon new ones will grow. Cyperus grows very well near the aquarium or pool."
+        "Care": "If the leaves of the plant have massively turned yellow, they should be cut off at the root, and soon new ones will grow. Cyperus grows very well near the aquarium or pool.",
+        "Stock": 2
     },
     {
         "Id": 6,
@@ -81,7 +87,8 @@
         "Description": "This plant forms white with a blue-violet tint paniculate inflorescences, which should be cut immediately after flowering. In spring and summer watered 2 times a day, the soil should not dry, but should not be allowed to have stagnating water. In winter, watered no more than 1 time per week. In winter, the soil between watering should slightly dry out.",
         "Price": "£20.00",
         "Lighting": "Prefers bright diffused light, especially variegated forms. However, they easily adapt to partial shade. In case of insufficient illumination, the stems can stretch and break easily, with excessive light, the old leaves turn yellow, and young ones get a violet color.",
-        "Care": "In the spring, it is necessary to carry out rejuvenating pruning at a height of 3-4 knots from the ground. The plant stalks break easily, so you should be careful with the plant."
+        "Care": "In the spring, it is necessary to carry out rejuvenating pruning at a height of 3-4 knots from the ground. The plant stalks break easily, so you should be careful with the plant.",
+        "Stock": 2
     },
     {
         "Id": 7,
@@ -93,7 +100,8 @@
         "Description": "The leaves usually have yellow-marble pattern. Young plants have waxy, heart-shaped green leaves, measuring up to 10 cm long and variegated with yellow to white. In spring and summer, water once in 4-5 days with warm water at room temperature, in winter – no more than once in 7-8 days. The soil between the watering should gently dry out from above.",
         "Price": "£30.00",
         "Lighting": "It prefers scattered light and adapts to penumbra, it is possible to grow at a distance of 0.5-2 m from a brightly lit window. However, under the conditions of shading, the color of the leaves becomes less variegated, and the size is smaller.",
-        "Care": "Scindapsus poorly tolerates the effects of gas combustion products and does not like drafts. Usually requires support, the moss-covered pole is best suited. The plant can be cut in spring. To form a bushy shape, shoots are cut in spring in half their length."
+        "Care": "Scindapsus poorly tolerates the effects of gas combustion products and does not like drafts. Usually requires support, the moss-covered pole is best suited. The plant can be cut in spring. To form a bushy shape, shoots are cut in spring in half their length.",
+        "Stock": 2
     },
     {
         "Id": 8,
@@ -106,6 +114,7 @@
         "Price": "£35.00",
         "Lighting": "Plants with variegated leaves prefer bright scattered light, only in bright light can abundant flowering. Sansevieriya can easily tolerate direct sun.",
         "Care": "It is advisable to regularly wipe the leaves.",
+        "Stock": 2
     },
     {
         "Id": 9,
@@ -117,7 +126,8 @@
         "Description": "This has large, 3 ½ to 12-inch-long, thick, glossy evergreen leaves, multiple trunks, and a spreading, irregular canopy. It is best to water your Rubber Tree every 1-2 weeks, allowing the soil to dry out between waterings",
         "Price": "£35.00",
         "Lighting": "It is best to give this species medium to bright light, preferably bright indirect. If your windows receive harsh direct sun, placing a sheer curtain over it can help diffuse the light.",
-        "Care": "Spray with a mister every few days, they like to keep their leaves moist."
+        "Care": "Spray with a mister every few days, they like to keep their leaves moist.",
+        "Stock": 2
     },
     {
         "Id": 10,
@@ -129,6 +139,7 @@
         "Description": "While it looks like a cactus, Euphorbia trigona is actually a succulent plant that has adapted to the hot dry weather by storing water in its stem and branches. Only water when the soil is completely dry. ",
         "Price": "£40.00",
         "Lighting": "This plant is best in full sun or light shade, this succulent is used to exposure and loves the light.",
-        "Care": "The leaves on these plants are short-lived and die off on a regular basis. This is natural and the plant will generate more from time-to-time."
+        "Care": "The leaves on these plants are short-lived and die off on a regular basis. This is natural and the plant will generate more from time-to-time.",
+        "Stock": 2
     }
 ]
