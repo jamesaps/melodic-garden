@@ -5,13 +5,6 @@ import Home from "./components/pages/Home";
 import About from "./components/pages/About";
 import Categories from "./components/pages/Categories";
 
-import CategoryCards from "./components/categoryCard";
-
-import ProductCard from "./components/productCard";
-
-
-import Jumbotron from "./components/jumbotron";
-
 import Footer from "./components/Footer";
 import FooterTrim from "./components/FooterTrim";
 
@@ -20,6 +13,7 @@ function App() {
   return (
     <>
     <Router>
+    
       <Navigation />
 
       <main>
@@ -33,8 +27,9 @@ function App() {
       <Footer />
       <FooterTrim />
     </Router>
-   </>
 
+    
+    </>
   );
 }
 export default App;
