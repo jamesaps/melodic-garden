@@ -1,10 +1,8 @@
-import ProductDescription from "../productDescription"
-import plantJumbotron from "../PlantJumbotron"
+import ProductDescription from "../ProductDescription"
 
 export default function About() {
     return (
         <>
-            <plantJumbotron/>
             <ProductDescription/>
         </>
     )

@@ -3,7 +3,7 @@ import QuantitySelector from './QuantitySelector';
 import products from '../plants.json';
 
 function ProductDescription() {
-    const [quantity, setQuantity] = useState(0);
+    const [quantity, setQuantity] = useState(1);
     const [stock, setStock] = useState(products[6].Stock)
 
     const handleQuantityChange = (newQuantity) => {
