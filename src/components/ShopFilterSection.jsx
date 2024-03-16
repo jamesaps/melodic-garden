@@ -8,11 +8,7 @@ export default function ShopFilterSection({
 }) {
   if (mobile) {
     return (
-      <Disclosure
-        as="div"
-        key={section.id}
-        className="border-t border-gray-200 px-4 py-6"
-      >
+      <Disclosure as="div" className="border-t border-gray-200 px-4 py-6">
         {({ open }) => (
           <>
             <h3 className="-mx-2 -my-3 flow-root">

@@ -1,4 +1,4 @@
-import { Dialog, Menu, Transition } from "@headlessui/react";
+import { Menu, Transition } from "@headlessui/react";
 import ShopFilter from "../ShopFilter";
 import { Fragment } from "react/jsx-runtime";
 import { useState } from "react";
@@ -6,17 +6,44 @@ import {
   ChevronDownIcon,
   FunnelIcon,
   Squares2X2Icon,
-  XMarkIcon,
 } from "@heroicons/react/20/solid";
-import ShopFilterSection from "../ShopFilterSection";
 
 import { ShopFilterContext } from "../../contexts/ShopFilterContext";
 import testFilterData from "./../../test-filters.json";
 import MobileShopFilterDialog from "../MobileShopFilterDialog";
 
+function classNames(...classes) {
+  return classes.filter(Boolean).join(" ");
+}
+
 export default function Shop() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const [filterSettings, setFilterSettings] = useState(testFilterData);
+  const [sortOptions, setSortOptions] = useState([
+    { name: "Most Popular", current: false },
+    { name: "Newest", current: false },
+    { name: "Price: Low to High", current: false },
+    { name: "Price: High to Low", current: false },
+  ]);
+
+  const resetFilters = () => {
+    setFilterSettings((previousFilterSettings) => {
+      const updatedFilterSettings = [...previousFilterSettings];
+
+      for (const filter of updatedFilterSettings) {
+        if (filter.type === "list") {
+          filter.options = filter.options.map((option) => ({
+            ...option,
+            checked: false,
+          }));
+        } else if (filter.type === "range") {
+          filter.value = filter.options.max;
+        }
+      }
+
+      return updatedFilterSettings;
+    });
+  };
 
   const toggleShopFilterSectionListCheckbox = ({ sectionId, item }) => {
     setFilterSettings((previousFilterSettings) => {
@@ -64,12 +91,31 @@ export default function Shop() {
     });
   };
 
+  const handleSortOptionChange = ({ option }) => {
+    setSortOptions((sortOptions) => {
+      const updatedSortOptions = [...sortOptions].map((sortOptionsDetails) => {
+        const updatedSortOptionsDetails = { ...sortOptionsDetails };
+
+        if (sortOptionsDetails.name === option) {
+          updatedSortOptionsDetails.current = true;
+        } else {
+          updatedSortOptionsDetails.current = false;
+        }
+
+        return updatedSortOptionsDetails;
+      });
+
+      return updatedSortOptions;
+    });
+  };
+
   return (
     <ShopFilterContext.Provider
       value={{
         filterSettings,
         toggleShopFilterSectionListCheckbox,
         setSliderValue,
+        resetFilters,
       }}
     >
       {/* Mobile filter dialog */}
@@ -79,11 +125,11 @@ export default function Shop() {
       />
 
       <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h1 className="pt-24 text-center text-xl font-bold text-gray-900">
+        <h1 className="mb-12 pt-24 text-center text-xl font-bold text-gray-900">
           SHOP ALL PLANTS
         </h1>
 
-        <div className="flex items-baseline justify-between border-b border-gray-200 pb-6 ">
+        <div className="flex items-baseline justify-end border-gray-200 pb-6 ">
           <div className="flex items-center">
             <Menu as="div" className="relative inline-block text-left">
               <div>
@@ -107,24 +153,26 @@ export default function Shop() {
               >
                 <Menu.Items className="absolute right-0 z-10 mt-2 w-40 origin-top-right rounded-md bg-white shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none">
                   <div className="py-1">
-                    {/* {sortOptions.map((option) => (
-                        <Menu.Item key={option.name}>
-                          {({ active }) => (
-                            <a
-                              href={option.href}
-                              className={classNames(
-                                option.current
-                                  ? "font-medium text-gray-900"
-                                  : "text-gray-500",
-                                active ? "bg-gray-100" : "",
-                                "block px-4 py-2 text-sm",
-                              )}
-                            >
-                              {option.name}
-                            </a>
-                          )}
-                        </Menu.Item>
-                      ))} */}
+                    {sortOptions.map((option) => (
+                      <Menu.Item key={option.name}>
+                        {({ active }) => (
+                          <p
+                            className={classNames(
+                              option.current
+                                ? "font-medium text-gray-900"
+                                : "text-gray-500",
+                              active ? "bg-gray-100" : "",
+                              "block cursor-pointer px-4 py-2 text-sm",
+                            )}
+                            onClick={() =>
+                              handleSortOptionChange({ option: option.name })
+                            }
+                          >
+                            {option.name}
+                          </p>
+                        )}
+                      </Menu.Item>
+                    ))}
                   </div>
                 </Menu.Items>
               </Transition>
@@ -157,7 +205,22 @@ export default function Shop() {
             <ShopFilter />
 
             {/* Product grid */}
-            <div className="lg:col-span-3">{/* Your content */}</div>
+            <div className="lg:col-span-3">
+              <ul>
+                <li>
+                  <h3 className="font-bold">Mobile Filters Open:</h3>
+                  {`${mobileFiltersOpen}`}
+                </li>
+                <li>
+                  <h3 className="font-bold">Filter settings:</h3>
+                  <code className="text-sm">{`${JSON.stringify(filterSettings)}`}</code>
+                </li>
+                <li>
+                  <h3 className="font-bold">Sort options:</h3>
+                  <code className="text-sm">{`${JSON.stringify(sortOptions)}`}</code>
+                </li>
+              </ul>
+            </div>
           </div>
         </section>
       </main>

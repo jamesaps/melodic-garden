@@ -11,10 +11,9 @@ export default function ShopFilterSectionList({
             <input
               id={`filter-mobile-${section.id}-${optionIdx}`}
               name={`${section.id}[]`}
-              defaultValue={option.value}
               type="checkbox"
-              defaultChecked={option.checked}
-              className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+              checked={option.checked}
+              className="text-mid-green focus:ring-mid-green h-4 w-4 rounded border-gray-300"
               onChange={() => {
                 toggleShopFilterSectionListCheckbox({
                   sectionId: section.id,
@@ -40,9 +39,8 @@ export default function ShopFilterSectionList({
             <input
               id={`filter-${section.id}-${optionIdx}`}
               name={`${section.id}[]`}
-              defaultValue={option.value}
               type="checkbox"
-              defaultChecked={option.checked}
+              checked={option.checked}
               className="checkbox text-mid-green focus:ring-mid-green h-4 w-4 rounded border-gray-300"
               onChange={() => {
                 toggleShopFilterSectionListCheckbox({

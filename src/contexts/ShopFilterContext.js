@@ -4,4 +4,5 @@ export const ShopFilterContext = createContext({
   filterSettings: [],
   toggleShopFilterSectionListCheckbox: () => {},
   setSliderValue: () => {},
+  resetFilters: () => {},
 });

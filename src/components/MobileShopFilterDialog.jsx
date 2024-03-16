@@ -15,6 +15,7 @@ export default function MobileShopFilterDialog({
     filterSettings,
     toggleShopFilterSectionListCheckbox,
     setSliderValue,
+    resetFilters,
   } = useContext(ShopFilterContext);
 
   return (
@@ -60,9 +61,9 @@ export default function MobileShopFilterDialog({
               </div>
 
               {/* Filters */}
-              <form className="mt-4 border-t border-gray-200">
+              <form className="mt-4">
                 <h3 className="sr-only">Categories</h3>
-                <ul role="list" className="px-2 py-3 font-medium text-gray-900">
+                <ul role="list" className="px-2font-medium text-gray-900">
                   {/* {subCategories.map((category) => (
                         <li key={category.name}>
                           <a href={category.href} className="block px-2 py-3">
@@ -72,40 +73,52 @@ export default function MobileShopFilterDialog({
                       ))} */}
                 </ul>
 
-                {filterSettings.map((section) => {
-                  if (section.type === "list") {
-                    return (
-                      <ShopFilterSection
-                        key={section.id}
-                        section={section}
-                        mobile={true}
-                      >
-                        <ShopFilterSectionList
+                <div className="flex justify-end pb-3 pe-3">
+                  <div
+                    className="cursor-pointer italic text-gray-500"
+                    onClick={() => {
+                      resetFilters();
+                    }}
+                  >
+                    Reset
+                  </div>
+                </div>
+                <div className="border-mid-green border-t">
+                  {filterSettings.map((section) => {
+                    if (section.type === "list") {
+                      return (
+                        <ShopFilterSection
                           key={section.id}
                           section={section}
-                          toggleShopFilterSectionListCheckbox={
-                            toggleShopFilterSectionListCheckbox
-                          }
                           mobile={true}
-                        />
-                      </ShopFilterSection>
-                    );
-                  } else if (section.type === "range") {
-                    return (
-                      <ShopFilterSection
-                        key={section.id}
-                        section={section}
-                        mobile={true}
-                      >
-                        <ShopFilterSectionRange
+                        >
+                          <ShopFilterSectionList
+                            key={section.id}
+                            section={section}
+                            toggleShopFilterSectionListCheckbox={
+                              toggleShopFilterSectionListCheckbox
+                            }
+                            mobile={true}
+                          />
+                        </ShopFilterSection>
+                      );
+                    } else if (section.type === "range") {
+                      return (
+                        <ShopFilterSection
+                          key={section.id}
                           section={section}
-                          setSliderValue={setSliderValue}
                           mobile={true}
-                        />
-                      </ShopFilterSection>
-                    );
-                  }
-                })}
+                        >
+                          <ShopFilterSectionRange
+                            section={section}
+                            setSliderValue={setSliderValue}
+                            mobile={true}
+                          />
+                        </ShopFilterSection>
+                      );
+                    }
+                  })}
+                </div>
               </form>
             </Dialog.Panel>
           </Transition.Child>
