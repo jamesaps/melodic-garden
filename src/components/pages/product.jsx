@@ -1,13 +1,11 @@
-import Footer from "../Footer"
-import FooterTrim from "../FooterTrim"
 import ProductDescription from "../productDescription"
+import plantJumbotron from "../PlantJumbotron"
 
 export default function About() {
     return (
         <>
+            <plantJumbotron/>
             <ProductDescription/>
-            <Footer />
-            <FooterTrim />
         </>
     )
   }
