@@ -4,13 +4,17 @@ import Navigation from "./components/Navigation";
 import Home from "./components/pages/Home";
 import About from "./components/pages/About";
 import Categories from "./components/pages/Categories";
+
 import Footer from "./components/Footer";
 import FooterTrim from "./components/FooterTrim";
 import Shop from "./components/pages/Shop";
 
+
 function App() {
   return (
+    <>
     <Router>
+    
       <Navigation />
 
       <main>
@@ -25,6 +29,13 @@ function App() {
       <Footer />
       <FooterTrim />
     </Router>
+
+    
+    </>
+
   );
 }
+
+
 export default App;
+
