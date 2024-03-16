@@ -1,57 +1,15 @@
-import { useState } from "react";
+import { useContext } from "react";
 import ShopFilterSectionList from "./ShopFilterSectionList";
 import ShopFilterSectionRange from "./ShopFilterSectionRange";
 import ShopFilterSection from "./ShopFilterSection";
-import testFilterData from "./../test-filters.json";
+import { ShopFilterContext } from "../contexts/ShopFilterContext";
 
 export default function ShopFilter() {
-  const [filterSettings, setFilterSettings] = useState(testFilterData);
-
-  const toggleShopFilterSectionListCheckbox = ({ sectionId, item }) => {
-    setFilterSettings((previousFilterSettings) => {
-      const updatedFilterSettings = [...previousFilterSettings];
-      const sectionFilterIndex = updatedFilterSettings.findIndex(
-        (filterSetting) => filterSetting.id === sectionId,
-      );
-
-      updatedFilterSettings[sectionFilterIndex] = {
-        ...updatedFilterSettings[sectionFilterIndex],
-        options: updatedFilterSettings[sectionFilterIndex].options.map(
-          (option) => {
-            if (option.value !== item) {
-              return { ...option };
-            }
-
-            return { ...option, checked: !option.checked };
-          },
-        ),
-      };
-
-      return updatedFilterSettings;
-    });
-  };
-
-  const setSliderValue = ({ sectionId, value }) => {
-    setFilterSettings((previousFilterSettings) => {
-      const updatedFilterSettings = [...previousFilterSettings];
-      const sectionFilterIndex = updatedFilterSettings.findIndex(
-        (filterSetting) => filterSetting.id === sectionId,
-      );
-
-      const min = filterSettings[sectionFilterIndex].options.min;
-      const max = filterSettings[sectionFilterIndex].options.max;
-
-      if (value > max) {
-        updatedFilterSettings[sectionFilterIndex].value = max;
-      } else if (value < min) {
-        updatedFilterSettings[sectionFilterIndex].value = min;
-      } else {
-        updatedFilterSettings[sectionFilterIndex].value = value;
-      }
-
-      return updatedFilterSettings;
-    });
-  };
+  const {
+    filterSettings,
+    toggleShopFilterSectionListCheckbox,
+    setSliderValue,
+  } = useContext(ShopFilterContext);
 
   return (
     <form className="hidden lg:block">

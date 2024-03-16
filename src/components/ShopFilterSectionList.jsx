@@ -1,33 +1,65 @@
 export default function ShopFilterSectionList({
   section,
   toggleShopFilterSectionListCheckbox,
+  mobile = false,
 }) {
-  return (
-    <>
-      {section.options.map((option, optionIdx) => (
-        <div key={option.value} className="flex items-center">
-          <input
-            id={`filter-${section.id}-${optionIdx}`}
-            name={`${section.id}[]`}
-            defaultValue={option.value}
-            type="checkbox"
-            defaultChecked={option.checked}
-            className="checkbox text-mid-green focus:ring-mid-green h-4 w-4 rounded border-gray-300"
-            onChange={() => {
-              toggleShopFilterSectionListCheckbox({
-                sectionId: section.id,
-                item: option.value,
-              });
-            }}
-          />
-          <label
-            htmlFor={`filter-${section.id}-${optionIdx}`}
-            className="ml-3 text-sm text-gray-600"
-          >
-            {option.label}
-          </label>
-        </div>
-      ))}
-    </>
-  );
+  if (mobile) {
+    return (
+      <>
+        {section.options.map((option, optionIdx) => (
+          <div key={option.value} className="flex items-center">
+            <input
+              id={`filter-mobile-${section.id}-${optionIdx}`}
+              name={`${section.id}[]`}
+              defaultValue={option.value}
+              type="checkbox"
+              defaultChecked={option.checked}
+              className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+              onChange={() => {
+                toggleShopFilterSectionListCheckbox({
+                  sectionId: section.id,
+                  item: option.value,
+                });
+              }}
+            />
+            <label
+              htmlFor={`filter-mobile-${section.id}-${optionIdx}`}
+              className="ml-3 min-w-0 flex-1 text-gray-500"
+            >
+              {option.label}
+            </label>
+          </div>
+        ))}
+      </>
+    );
+  } else {
+    return (
+      <>
+        {section.options.map((option, optionIdx) => (
+          <div key={option.value} className="flex items-center">
+            <input
+              id={`filter-${section.id}-${optionIdx}`}
+              name={`${section.id}[]`}
+              defaultValue={option.value}
+              type="checkbox"
+              defaultChecked={option.checked}
+              className="checkbox text-mid-green focus:ring-mid-green h-4 w-4 rounded border-gray-300"
+              onChange={() => {
+                toggleShopFilterSectionListCheckbox({
+                  sectionId: section.id,
+                  item: option.value,
+                });
+              }}
+            />
+            <label
+              htmlFor={`filter-${section.id}-${optionIdx}`}
+              className="ml-3 text-sm text-gray-600"
+            >
+              {option.label}
+            </label>
+          </div>
+        ))}
+      </>
+    );
+  }
 }
