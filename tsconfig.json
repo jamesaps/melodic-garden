@@ -1,8 +1,9 @@
 {
-    "compilerOptions": {
-        "allowJs": true,
-        "checkJs": true,
-        "jsx": "react-jsx"
-    },
-    "include": ["src"]
+  "compilerOptions": {
+    "allowJs": true,
+    "checkJs": true,
+    "jsx": "react-jsx",
+    "lib": ["ES2017", "DOM"]
+  },
+  "include": ["src"]
 }
