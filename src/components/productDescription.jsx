@@ -2,19 +2,22 @@ import { useState } from 'react';
 import QuantitySelector from './QuantitySelector';
 import products from '../plants.json';
 
-function ProductDescription() {
-    const [quantity, setQuantity] = useState(0);
-    const [stock, setStock] = useState(products[6].Stock)
-
-    const handleQuantityChange = (newQuantity) => {
-        setQuantity(newQuantity);
-    };
-
-    const addToCart = () => {
-        console.log(`Added ${quantity} ${products[1].Name} to cart.`);
-        setStock(stock - quantity);
-        setQuantity(1);
-    };
+   
+    function ProductDescription({ updateCart }) {
+        const [quantity, setQuantity] = useState(0);
+        const [stock, setStock] = useState(products[6].Stock);
+    
+        const handleQuantityChange = (newQuantity) => {
+            setQuantity(newQuantity);
+        };
+    
+        const addToCart = () => {
+            console.log(`Added ${quantity} ${products[1].Name} to cart.`);
+            setStock(stock - quantity);
+            setQuantity(1);
+            // Call the updateCart function to update the cart count
+            updateCart(quantity);
+        };
 
     return (
         <>
