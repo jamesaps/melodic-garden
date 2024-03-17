@@ -21,10 +21,10 @@ export default function Shop() {
   const [filterSettings, setFilterSettings] = useState(testFilterData);
   const [plants, setPlants] = useState([]);
   const [sortOptions, setSortOptions] = useState([
-    { name: "Most Popular", current: false },
-    { name: "Newest", current: false },
-    { name: "Price: Low to High", current: false },
-    { name: "Price: High to Low", current: false },
+    { name: "Most Popular", value: "popular", current: false },
+    { name: "Newest", value: "new", current: false },
+    { name: "Price: Low to High", value: "price-low", current: false },
+    { name: "Price: High to Low", value: "price-high", current: false },
   ]);
 
   useEffect(() => {
@@ -34,9 +34,10 @@ export default function Shop() {
       const plantsData = await fetchPlants();
 
       if (!ignore) {
-        const filteredAndSortedPlants = filterAndSortPlants(plantsData);
+        const filteredPlants = filterPlants(plantsData);
+        const sortedPlants = sortPlants(filteredPlants);
 
-        setPlants(filteredAndSortedPlants);
+        setPlants(sortedPlants);
       }
     }
 
@@ -47,7 +48,7 @@ export default function Shop() {
     };
   }, [filterSettings, sortOptions]);
 
-  const filterAndSortPlants = (plantsData) => {
+  const filterPlants = (plantsData) => {
     return filterSettings.reduce((filteredPlants, filter) => {
       if (filter.type === "list") {
         if (
@@ -78,6 +79,27 @@ export default function Shop() {
         return filteredPlants;
       }
     }, plantsData);
+  };
+
+  const sortPlants = (plantsData) => {
+    const sortOption = sortOptions.find((s) => s.current);
+
+    if (sortOption === undefined) {
+      return plantsData;
+    }
+
+    switch (sortOption.value) {
+      case "popular":
+        return plantsData;
+      case "new":
+        return plantsData;
+      case "price-low":
+        return plantsData.sort((p1, p2) => p1.Price - p2.Price);
+      case "price-high":
+        return plantsData.sort((p1, p2) => p2.Price - p1.Price);
+      default:
+        return plantsData;
+    }
   };
 
   const fetchPlants = async () => {
@@ -282,15 +304,15 @@ export default function Shop() {
                 </li>
                 <li>
                   <h3 className="font-bold">Filter settings:</h3>
-                  <code className="text-sm">{`${JSON.stringify(filterSettings)}`}</code>
+                  <code className="text-pretty break-words text-sm">{`${JSON.stringify(filterSettings)}`}</code>
                 </li>
                 <li>
                   <h3 className="font-bold">Sort options:</h3>
-                  <code className="text-sm">{`${JSON.stringify(sortOptions)}`}</code>
+                  <code className="text-pretty break-words text-sm">{`${JSON.stringify(sortOptions)}`}</code>
                 </li>
                 <li>
                   <h3 className="font-bold">Plants ({plants.length}):</h3>
-                  <code className="text-sm">{`${JSON.stringify(plants)}`}</code>
+                  <code className="text-pretty break-words text-sm">{`${JSON.stringify(plants)}`}</code>
                 </li>
               </ul>
             </div>
