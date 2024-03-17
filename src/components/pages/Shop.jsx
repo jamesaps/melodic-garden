@@ -1,7 +1,7 @@
 import { Menu, Transition } from "@headlessui/react";
 import ShopFilter from "../ShopFilter";
 import { Fragment } from "react/jsx-runtime";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   ChevronDownIcon,
   FunnelIcon,
@@ -19,12 +19,81 @@ function classNames(...classes) {
 export default function Shop() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const [filterSettings, setFilterSettings] = useState(testFilterData);
+  const [plants, setPlants] = useState([]);
   const [sortOptions, setSortOptions] = useState([
     { name: "Most Popular", current: false },
     { name: "Newest", current: false },
     { name: "Price: Low to High", current: false },
     { name: "Price: High to Low", current: false },
   ]);
+
+  useEffect(() => {
+    let ignore = false;
+
+    async function getProducts() {
+      const plantsData = await fetchPlants();
+
+      if (!ignore) {
+        const filteredAndSortedPlants = filterAndSortPlants(plantsData);
+
+        setPlants(filteredAndSortedPlants);
+      }
+    }
+
+    getProducts();
+
+    return () => {
+      ignore = true;
+    };
+  }, [filterSettings, sortOptions]);
+
+  const filterAndSortPlants = (plantsData) => {
+    return filterSettings.reduce((filteredPlants, filter) => {
+      if (filter.type === "list") {
+        if (
+          filter.options.every((option) => option.checked) ||
+          filter.options.every((option) => !option.checked)
+        ) {
+          return filteredPlants;
+        }
+
+        const checkedOptions = filter.options
+          .filter((f) => f.checked)
+          .map((f) => f.value.toLowerCase());
+
+        return filteredPlants.filter(
+          (plant) =>
+            plant[filter.name] === undefined ||
+            checkedOptions.includes(plant[filter.name].toLowerCase()),
+        );
+      } else if (filter.type === "range") {
+        return filteredPlants.filter((plant) => {
+          return (
+            plant[filter.name] === undefined ||
+            (plant[filter.name] >= filter.options.min &&
+              plant[filter.name] <= filter.value)
+          );
+        });
+      } else {
+        return filteredPlants;
+      }
+    }, plantsData);
+  };
+
+  const fetchPlants = async () => {
+    try {
+      const response = await fetch("/plants.json");
+      if (!response.ok) {
+        throw new Error("Failed to fetch plants");
+      }
+
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error(error);
+      return [];
+    }
+  };
 
   const resetFilters = () => {
     setFilterSettings((previousFilterSettings) => {
@@ -218,6 +287,10 @@ export default function Shop() {
                 <li>
                   <h3 className="font-bold">Sort options:</h3>
                   <code className="text-sm">{`${JSON.stringify(sortOptions)}`}</code>
+                </li>
+                <li>
+                  <h3 className="font-bold">Plants ({plants.length}):</h3>
+                  <code className="text-sm">{`${JSON.stringify(plants)}`}</code>
                 </li>
               </ul>
             </div>
