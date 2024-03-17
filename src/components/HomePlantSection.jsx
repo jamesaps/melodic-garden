@@ -7,8 +7,8 @@ import products from '../plants.json';
 function HomePlantSection() {
 
     const getRandomProducts = (arr, n) => {
-        const shuffled = arr.sort(() => 0.5 - Math.random());
-        return shuffled.slice(0, n);
+        const random = arr.sort(() => 0.5 - Math.random());
+        return random.slice(0, n);
     };
 
     const randomProducts = getRandomProducts(products, 6);
