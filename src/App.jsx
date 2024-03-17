@@ -7,33 +7,28 @@ import Categories from "./components/pages/Categories";
 
 import Footer from "./components/Footer";
 import FooterTrim from "./components/FooterTrim";
-
+import Shop from "./components/pages/Shop";
 
 function App() {
   return (
     <>
-    <Router>
-    
-      <Navigation />
+      <Router>
+        <Navigation />
 
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="about" element={<About />}></Route>
-          <Route path="categories" element={<Categories />}></Route>
-        </Routes>
-      </main>
-      
-      <Footer />
-      <FooterTrim />
-    </Router>
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="about" element={<About />}></Route>
+            <Route path="categories" element={<Categories />}></Route>
+            <Route path="shop" element={<Shop />}></Route>
+          </Routes>
+        </main>
 
-    
+        <Footer />
+        <FooterTrim />
+      </Router>
     </>
-
   );
 }
 
-
 export default App;
-
