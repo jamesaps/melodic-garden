@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { NavLink } from 'react-router-dom';
 import { useCart } from '../contexts/CartContext'
 import image from '../images/logo.png';
