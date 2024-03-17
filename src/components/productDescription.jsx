@@ -1,17 +1,18 @@
 import { useState } from 'react';
 import QuantitySelector from './QuantitySelector';
+import { useCart } from '../contexts/CartContext';
 
 const ProductDescription = ({mainProduct}) => {
     const [quantity, setQuantity] = useState(1);
-    const [stock, setStock] = useState(mainProduct ? mainProduct.Stock : 0)
+    const { addProductToCart } = useCart();
 
     const handleQuantityChange = (newQuantity) => {
         setQuantity(newQuantity);
     };
 
     const addToCart = () => {
-        console.log(`Added ${quantity} ${mainProduct.Name} to cart.`);
-        setStock(stock - quantity);
+        console.log(`Added ${quantity} ${mainProduct.Name}(s) with ID ${mainProduct.Id} to cart.`);
+        addProductToCart(mainProduct.Id, quantity); 
         setQuantity(1);
     };
 
