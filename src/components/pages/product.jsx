@@ -1,7 +1,5 @@
-import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ProductDescription from '../ProductDescription';
-import Navigation from '../Navigation';
 import RecommendedProducts from '../RecommendedProducts';
 import plants from '../../plants.json';
 
