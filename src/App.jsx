@@ -12,7 +12,6 @@ import Categories from "./components/pages/Categories";
 
 import Jumbotron from "./components/Jumbotron";
 import Divider from "./components/Divider";
-import OrderSummary from "./components/pages/OrderSummary";
 import OrderTotal from "./components/OrderTotal"
 import Product from "./components/pages/Product";
 import Footer from "./components/Footer";
