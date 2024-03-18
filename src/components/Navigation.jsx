@@ -58,7 +58,7 @@ export default function Navigation() {
 
             <NavLink to="/cart" className="flex items-center">
               <div className="relative">
-                <div className="absolute left-3">
+                <div className="to absolute -top-3 left-3">
                   <p className="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-3 text-xs text-white">
                     {getNumberOfItemsInCart()}
                   </p>
@@ -69,7 +69,7 @@ export default function Navigation() {
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="mt-4 h-6 w-6"
+                  className="h-6 w-6"
                 >
                   <path
                     strokeLinecap="round"
