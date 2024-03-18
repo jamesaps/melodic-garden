@@ -13,7 +13,7 @@ export default function ShopFilterSectionList({
               name={`${section.id}[]`}
               type="checkbox"
               checked={option.checked}
-              className="text-mid-green focus:ring-mid-green h-4 w-4 rounded border-gray-300"
+              className="h-4 w-4 rounded border-gray-300 text-mid-green focus:ring-mid-green"
               onChange={() => {
                 toggleShopFilterSectionListCheckbox({
                   sectionId: section.id,
@@ -41,7 +41,7 @@ export default function ShopFilterSectionList({
               name={`${section.id}[]`}
               type="checkbox"
               checked={option.checked}
-              className="checkbox text-mid-green focus:ring-mid-green h-4 w-4 rounded border-gray-300"
+              className="checkbox h-4 w-4 rounded border-gray-300 text-mid-green focus:ring-mid-green"
               onChange={() => {
                 toggleShopFilterSectionListCheckbox({
                   sectionId: section.id,
