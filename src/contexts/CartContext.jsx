@@ -10,7 +10,7 @@ export const useCart = () => {
 
 // Get cart items from local storage
 const cartItemsFromLocalStorage = JSON.parse(
-  localStorage.getItem("cart") || [],
+  localStorage.getItem("cart") || "[]",
 );
 
 //Create a provider component to manage cart state
