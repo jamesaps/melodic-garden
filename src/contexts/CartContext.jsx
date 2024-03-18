@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState } from "react";
 
 //Create a context to manage cart state
 const CartContext = createContext();
@@ -15,7 +15,9 @@ export const CartProvider = ({ children }) => {
 
   //Function to add an item to the cart
   const addProductToCart = (productId, quantity) => {
-    const existingProductIndex = cartItems.findIndex(item => item.productId === productId);
+    const existingProductIndex = cartItems.findIndex(
+      (item) => item.productId === productId,
+    );
     if (existingProductIndex !== -1) {
       const updatedCartItems = [...cartItems];
       updatedCartItems[existingProductIndex].quantity += quantity;

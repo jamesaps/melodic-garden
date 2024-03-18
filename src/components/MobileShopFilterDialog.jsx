@@ -83,7 +83,7 @@ export default function MobileShopFilterDialog({
                     Reset
                   </div>
                 </div>
-                <div className="border-mid-green border-t">
+                <div className="border-t border-mid-green">
                   {filterSettings.map((section) => {
                     if (section.type === "list") {
                       return (

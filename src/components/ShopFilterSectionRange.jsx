@@ -18,7 +18,7 @@ export default function ShopFilterSectionRange({
           max={section.options.max}
           value={section.value}
           onChange={handleChange}
-          className="accent-mid-green w-full"
+          className="w-full accent-mid-green"
         />
 
         <p className="text-right text-sm italic">Up to £{section.value}</p>
@@ -33,7 +33,7 @@ export default function ShopFilterSectionRange({
           max={section.options.max}
           value={section.value}
           onChange={handleChange}
-          className="accent-mid-green w-full"
+          className="w-full accent-mid-green"
         />
 
         <p className="text-right text-sm italic">Up to £{section.value}</p>
