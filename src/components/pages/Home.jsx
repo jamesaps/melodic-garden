@@ -1,6 +1,5 @@
-import Jumbotron from '../jumbotron.jsx';
-import Divider from '../Divider.jsx';
-
+import Jumbotron from "../Jumbotron.jsx";
+import Divider from "../Divider.jsx";
 
 export default function Home() {
   return (
