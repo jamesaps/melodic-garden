@@ -5,8 +5,7 @@ import plant3 from "../assets/plant3.png";
 
 const Jumbotron = () => {
   return (
-    <div className="container mx-auto">
-      <div className="left-0 top-0 h-full w-full ">
+      <div className="h-full w-full">
         <div className="flex h-full items-stretch">
           <div className="hidden w-1/3 md:flex ">
             <img src={plant1} alt="Image 1" className="h-full w-full" />
@@ -35,7 +34,7 @@ const Jumbotron = () => {
           </div>
         </div>
       </div>
-    </div>
+
   );
 };
 
