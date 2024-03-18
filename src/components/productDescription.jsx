@@ -4,7 +4,11 @@ import { useCart } from "../contexts/CartContext";
 
 const ProductDescription = ({ mainProduct }) => {
   const [quantity, setQuantity] = useState(1);
-  const { addProductToCart, getQuantityOfItemByIdInCart } = useCart();
+  const {
+    addProductToCart,
+    getQuantityOfItemByIdInCart,
+    updateProductQuantityInCart,
+  } = useCart();
 
   const handleQuantityChange = (newQuantity) => {
     setQuantity(newQuantity);
@@ -17,6 +21,14 @@ const ProductDescription = ({ mainProduct }) => {
     addProductToCart(mainProduct.Id, quantity);
     // setQuantity(1);
   };
+
+  const removeFromCart = () => {
+    updateProductQuantityInCart(mainProduct.Id, 0);
+  };
+
+  const stock = mainProduct.Stock;
+  const quantityInCart = getQuantityOfItemByIdInCart(mainProduct.Id);
+  const quantityLeftInStock = stock - quantityInCart;
 
   return (
     <>
@@ -53,8 +65,8 @@ const ProductDescription = ({ mainProduct }) => {
             <div className="mt-4 flex items-center">
               <QuantitySelector
                 initialValue={quantity}
-                quantityInStock={mainProduct.Stock}
-                quantityInCart={getQuantityOfItemByIdInCart(mainProduct.Id)}
+                quantityInStock={stock}
+                quantityInCart={quantityInCart}
                 // maxValue={mainProduct.Stock}
                 // minValue={1}
                 onQuantityChange={handleQuantityChange}
@@ -65,7 +77,22 @@ const ProductDescription = ({ mainProduct }) => {
               >
                 Add to Cart
               </button>
+              {quantityInCart >= 1 ? (
+                <button
+                  onClick={removeFromCart}
+                  className="ml-3 rounded bg-pink-600 px-4 py-2 font-bold text-white hover:bg-pink-700"
+                >
+                  Remove from Cart
+                </button>
+              ) : null}
             </div>
+            {quantityLeftInStock === 0 ? (
+              <span className="mt-3">No more left in stock</span>
+            ) : quantityLeftInStock < 10 ? (
+              <span className="mt-3">
+                Only {quantityLeftInStock} left in stock
+              </span>
+            ) : null}
           </div>
         </div>
       </div>

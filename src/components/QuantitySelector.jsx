@@ -17,10 +17,12 @@ const QuantitySelector = ({
   useEffect(() => {
     if (quantity > maxValue) {
       setQuantity(maxValue);
+    } else if (quantity < minValue) {
+      setQuantity(minValue);
     }
 
     onQuantityChange(quantity);
-  }, [maxValue, quantity]);
+  }, [maxValue, minValue, quantity]);
 
   const handleIncrement = () => {
     if (quantity < maxValue) {

@@ -8,7 +8,7 @@ export const useCart = () => {
   return useContext(CartContext);
 };
 
-// Get
+// Get cart items from local storage
 const cartItemsFromLocalStorage = JSON.parse(
   localStorage.getItem("cart") || [],
 );
@@ -84,6 +84,7 @@ export const CartProvider = ({ children }) => {
         addProductToCart,
         getNumberOfItemsInCart,
         getQuantityOfItemByIdInCart,
+        updateProductQuantityInCart,
       }}
     >
       {children}
