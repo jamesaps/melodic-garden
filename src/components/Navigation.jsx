@@ -3,8 +3,11 @@ import { useCart } from "../contexts/CartContext";
 import image from "../images/logo.png";
 
 export default function Navigation() {
-  const { cartItems } = useCart();
-  console.log("Cart value in Navigation:", JSON.stringify(cartItems));
+  const { getNumberOfItemsInCart } = useCart();
+  console.log(
+    "Cart value in Navigation:",
+    JSON.stringify(getNumberOfItemsInCart()),
+  );
 
   return (
     <nav className="border-lime fixed left-0 right-0 top-0 mx-auto w-full max-w-6xl rounded-full border bg-white">
@@ -57,7 +60,7 @@ export default function Navigation() {
               <div className="relative">
                 <div className="absolute left-3">
                   <p className="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-3 text-xs text-white">
-                    {cartItems.length}
+                    {getNumberOfItemsInCart()}
                   </p>
                 </div>
                 <svg
