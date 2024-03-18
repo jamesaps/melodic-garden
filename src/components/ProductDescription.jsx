@@ -38,10 +38,10 @@ const ProductDescription = ({ mainProduct }) => {
             <img
               src={mainProduct.Image}
               alt={mainProduct.Name}
-              className="w-full md:rounded-3xl"
+              className="w-full sm:rounded-3xl"
             />
           </div>
-          <div className="col-span-1 mx-8 flex flex-col items-center justify-start sm:col-span-2 md:items-start lg:col-span-2">
+          <div className="col-span-1 mx-8 flex flex-col items-center justify-start md:col-span-2 md:items-start lg:col-span-2">
             <h2 className="text-left font-bold text-gray-800 sm:text-2xl md:text-3xl lg:text-4xl">
               {mainProduct.Name}
             </h2>
