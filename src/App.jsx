@@ -24,7 +24,7 @@ function App() {
         <ProductsProvider>
           <Navigation />
 
-          <main>
+          <main className="flex">
             <Routes>
               <Route path="/" element={<Home />}></Route>
               <Route path="about" element={<About />}></Route>
