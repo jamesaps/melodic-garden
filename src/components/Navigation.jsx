@@ -13,8 +13,8 @@ export default function Navigation() {
     <nav className="border-lime fixed left-0 right-0 top-0 mx-auto w-full max-w-6xl rounded-full border bg-white">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
-          <div className="flex flex-shrink-0 items-center justify-center">
-            <img className="h-8 w-auto" src={image} alt="Your Company" />
+          <div className="flex h-16 flex-shrink-0 items-center justify-center">
+            <img className="w-16" src={image} alt="Melodic Garden" />
           </div>
           <div className="hidden flex-grow sm:flex sm:items-center sm:justify-center">
             <div className="flex items-center justify-center space-x-8">
