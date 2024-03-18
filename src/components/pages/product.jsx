@@ -1,12 +1,14 @@
 import { useParams } from "react-router-dom";
 import ProductDescription from "../ProductDescription";
 import RecommendedProducts from "../RecommendedProducts";
-import plants from "../../plants.json";
+import { useProducts } from "../../hooks/useProducts";
 
 const Product = () => {
   const { id } = useParams();
-  const mainProduct = plants.find((plant) => plant.Id === parseInt(id));
-  const otherPlants = plants
+  const { products } = useProducts();
+
+  const mainProduct = products.find((plant) => plant.Id === parseInt(id)) || {};
+  const otherPlants = products
     .filter(
       (plant) => plant.Size === mainProduct.Size && plant.Id !== parseInt(id),
     )
