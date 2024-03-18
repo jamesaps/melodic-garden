@@ -22,7 +22,7 @@
         "Description": "In the home culture blooms extremely rarely, in the summer. Abundant in summer, 1-2 times a week. In winter, less often – every 10-14 days, the soil in winter should be hardly damp.",
         "Price": "£45.00",
         "Lighting": "A bright diffused light, it is best to place the plant in a tub near the south-west or south-east window.",
-        "Care": "In the summer it is desirable to take out on the street. Regular rubbing of leaves is required. Carefully, the tips of the leaves are very sharp Washington.",
+        "Care": "In the summer it is desirable to take out on the street. Regular rubbing of leaves is required. Carefully, the tips of the leaves are very sharp Washington.",
         "Stock": 2
     },
     {
@@ -100,12 +100,8 @@
         "Description": "The leaves usually have yellow-marble pattern. Young plants have waxy, heart-shaped green leaves, measuring up to 10 cm long and variegated with yellow to white. In spring and summer, water once in 4-5 days with warm water at room temperature, in winter – no more than once in 7-8 days. The soil between the watering should gently dry out from above.",
         "Price": "£30.00",
         "Lighting": "It prefers scattered light and adapts to penumbra, it is possible to grow at a distance of 0.5-2 m from a brightly lit window. However, under the conditions of shading, the color of the leaves becomes less variegated, and the size is smaller.",
-<<<<<<< HEAD
-        "Care": "Scindapsus poorly tolerates the effects of gas combustion products and does not like drafts. Usually requires support, the moss-covered pole is best suited. The plant can be cut in spring. To form a bushy shape, shoots are cut in spring in half their length."
-=======
         "Care": "Scindapsus poorly tolerates the effects of gas combustion products and does not like drafts. Usually requires support, the moss-covered pole is best suited. The plant can be cut in spring. To form a bushy shape, shoots are cut in spring in half their length.",
         "Stock": 2
->>>>>>> 0d510d112af17821ceda5ac972cae48a8e488f5b
     },
     {
         "Id": 8,

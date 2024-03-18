@@ -3,7 +3,8 @@
     "allowJs": true,
     "checkJs": true,
     "jsx": "react-jsx",
-    "lib": ["ES2017", "DOM"]
+    "lib": ["ES2017", "DOM"],
+    "forceConsistentCasingInFileNames": true
   },
   "include": ["src"]
 }
