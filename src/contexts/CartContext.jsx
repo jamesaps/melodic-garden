@@ -27,15 +27,54 @@ export const CartProvider = ({ children }) => {
     }
   };
 
+  // Update product quantity in cart
+  const updateProductQuantityInCart = (productId, quantity) => {
+    const itemInCart = cartItems.find((item) => item.productId === productId);
+
+    if (itemInCart === undefined) {
+      return;
+    }
+
+    if (quantity === 0) {
+      const updatedCartItems = [...cartItems].filter(
+        (item) => item.productId !== productId,
+      );
+
+      setCartItems(updatedCartItems);
+    } else if (quantity > 0) {
+      const updatedCartItems = [...cartItems].map((item) =>
+        item.productId === productId ? { ...item, quantity } : item,
+      );
+
+      setCartItems(updatedCartItems);
+    }
+  };
+
   // Get total number of items in cart
   const getNumberOfItemsInCart = () => {
     return cartItems.reduce((total, item) => (total += item.quantity), 0);
   };
 
+  // Get total number of item specified by Id in cart
+  const getQuantityOfItemByIdInCart = (productId) => {
+    const itemInCart = cartItems.find((item) => item.productId === productId);
+
+    if (itemInCart !== undefined) {
+      return itemInCart.quantity;
+    }
+
+    return 0;
+  };
+
   return (
     // Providing the cart items and add function as the context value
     <CartContext.Provider
-      value={{ cartItems, addProductToCart, getNumberOfItemsInCart }}
+      value={{
+        cartItems,
+        addProductToCart,
+        getNumberOfItemsInCart,
+        getQuantityOfItemByIdInCart,
+      }}
     >
       {children}
     </CartContext.Provider>

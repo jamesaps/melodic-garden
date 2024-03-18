@@ -5,7 +5,7 @@ const RecommendedProducts = ({ otherPlants }) => {
     <>
       <div className="mt-10 flex justify-center space-x-4">
         {otherPlants.slice(0, 3).map((plant) => (
-          <Link to={`/product/${plant.Id}`} key={plant.Id}>
+          <Link to={`/products/${plant.Id}`} key={plant.Id}>
             <img
               src={plant.Image}
               alt={plant.Name}

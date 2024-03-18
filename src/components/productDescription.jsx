@@ -4,7 +4,7 @@ import { useCart } from "../contexts/CartContext";
 
 const ProductDescription = ({ mainProduct }) => {
   const [quantity, setQuantity] = useState(1);
-  const { addProductToCart } = useCart();
+  const { addProductToCart, getQuantityOfItemByIdInCart } = useCart();
 
   const handleQuantityChange = (newQuantity) => {
     setQuantity(newQuantity);
@@ -15,7 +15,7 @@ const ProductDescription = ({ mainProduct }) => {
       `Added ${quantity} ${mainProduct.Name}(s) with ID ${mainProduct.Id} to cart.`,
     );
     addProductToCart(mainProduct.Id, quantity);
-    setQuantity(1);
+    // setQuantity(1);
   };
 
   return (
@@ -53,8 +53,10 @@ const ProductDescription = ({ mainProduct }) => {
             <div className="mt-4 flex items-center">
               <QuantitySelector
                 initialValue={quantity}
-                maxValue={mainProduct.Stock}
-                minValue={1}
+                quantityInStock={mainProduct.Stock}
+                quantityInCart={getQuantityOfItemByIdInCart(mainProduct.Id)}
+                // maxValue={mainProduct.Stock}
+                // minValue={1}
                 onQuantityChange={handleQuantityChange}
               />
               <button
