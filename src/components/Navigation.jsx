@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import { useCart } from "../contexts/CartContext";
 import image from "../images/logo-dark.png";
 import AudioPlayer from "./AudioPlayer";
-import Audio from '../audio/audio1.mp3';
+import Audio from "../audio/audio1.mp3";
 
 export default function Navigation() {
   const { getNumberOfItemsInCart } = useCart();
@@ -15,9 +15,12 @@ export default function Navigation() {
     <nav className="border-lime fixed left-0 right-0 top-0 mx-auto w-full max-w-6xl rounded-full border bg-white">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
-          <NavLink to="/" > <div className="flex h-16 flex-shrink-0 items-center justify-center">
-            <img className="w-16" src={image} alt="Melodic Garden" />
-          </div>     </NavLink>
+          <NavLink to="/">
+            {" "}
+            <div className="flex h-16 flex-shrink-0 items-center justify-center">
+              <img className="w-16" src={image} alt="Melodic Garden" />
+            </div>{" "}
+          </NavLink>
           <div className="hidden flex-grow sm:flex sm:items-center sm:justify-center">
             <div className="flex items-center justify-center space-x-8">
               <NavLink
@@ -36,15 +39,13 @@ export default function Navigation() {
                 to="/aboutus"
                 className="rounded-md px-3 py-2 text-base font-medium text-black hover:bg-gray-700 hover:text-white"
               >
-                About Us 
+                About Us
               </NavLink>
             </div>
           </div>
 
           <div className="flex items-center space-x-2">
-            <button type="button">
-        <AudioPlayer audioSrc={Audio} />
-            </button>
+            <AudioPlayer audioSrc={Audio} />
 
             <NavLink to="/cart" className="flex items-center">
               <div className="relative">
