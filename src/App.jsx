@@ -4,7 +4,7 @@ import Navigation from "./components/Navigation";
 import Home from "./components/pages/Home";
 import About from "./components/pages/About";
 import Categories from "./components/pages/Categories";
-import Product from "./components/pages/product"
+import Product from "./components/pages/Product"
 import Footer from "./components/Footer";
 import FooterTrim from "./components/FooterTrim";
 import Shop from "./components/pages/Shop";

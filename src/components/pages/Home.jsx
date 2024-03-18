@@ -1,4 +1,4 @@
-import Jumbotron from '../jumbotron.jsx';
+import Jumbotron from '../Jumbotron.jsx';
 import Divider from '../Divider.jsx';
 
 
