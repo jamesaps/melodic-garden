@@ -9,6 +9,9 @@ import Navigation from "./components/Navigation";
 import Home from "./components/pages/Home";
 import About from "./components/pages/About";
 import Categories from "./components/pages/Categories";
+import Jumbotron from "./components/Jumbotron";
+import Divider from "./components/Divider";
+import OrderTotal from "./components/OrderTotal"
 import Product from "./components/pages/Product";
 import Footer from "./components/Footer";
 import FooterTrim from "./components/FooterTrim";
