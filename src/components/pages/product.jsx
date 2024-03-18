@@ -6,7 +6,13 @@ import plants from '../../plants.json';
 const Product = () => {
   const { id } = useParams(); 
   const mainProduct = plants.find(plant => plant.Id === parseInt(id));
-  const otherPlants = plants.filter(plant => plant.Size === mainProduct.Size && plant.Id !== parseInt(id)).slice(0, 3); 
+  console.log(`mainProduct: ${mainProduct.Size}`)
+  const otherPlants = plants.filter(plant => plant.Size === mainProduct.Size && plant.Id !== parseInt(id)); 
+  console.log(`otherproducts size:`)
+  otherPlants.forEach(otherPlant => {
+    console.log(`otherplantid: ${otherPlant.Id} Size: ${otherPlant.Size}`);
+  });
+  
   
   return (
     <>

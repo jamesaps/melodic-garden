@@ -20,7 +20,8 @@ export const CartProvider = ({ children }) => {
       const updatedCartItems = [...cartItems];
       updatedCartItems[existingProductIndex].quantity += quantity;
       setCartItems(updatedCartItems);
-    } else {
+    } 
+    else {
       setCartItems([...cartItems, { productId, quantity }]);
     }
   };

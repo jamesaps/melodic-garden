@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { useCart } from '../contexts/CartContext'
 import image from '../images/logo.png';
+import CartDropdownComponent from './CartDropdownComponent'
 
 export default function Navigation() {
 
@@ -54,6 +55,8 @@ export default function Navigation() {
                 </svg>
               </div>
             </NavLink>
+            {/* Cart Dropdown */}
+            {cartItems.length > 0 && <CartDropdownComponent cartItems={cartItems} />}
           </div>
         </div>
       </div>
