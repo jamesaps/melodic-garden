@@ -1,14 +1,19 @@
-import Footer from "../Footer"
-import FooterTrim from "../FooterTrim"
-import ProductDescription from "../productDescription"
+import { useParams } from 'react-router-dom';
+import ProductDescription from '../productDescription';
+import RecommendedProducts from '../RecommendedProducts';
+import plants from '../../plants.json';
 
-export default function About() {
-    return (
-        <>
-            <ProductDescription/>
-            <Footer />
-            <FooterTrim />
-        </>
-    )
-  }
+const Product = () => {
+  const { id } = useParams(); 
+  const mainProduct = plants.find(plant => plant.Id === parseInt(id));
+  const otherPlants = plants.filter(plant => plant.Size === mainProduct.Size && plant.Id !== parseInt(id)).slice(0, 3); 
   
+  return (
+    <>
+      <ProductDescription mainProduct={mainProduct} />
+      <RecommendedProducts otherPlants={otherPlants} />
+    </>
+  );
+};
+
+export default Product;
