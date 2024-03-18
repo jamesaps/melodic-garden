@@ -7,10 +7,11 @@ import {
   FunnelIcon,
   Squares2X2Icon,
 } from "@heroicons/react/20/solid";
-
+import ProductCard from "../ProductCard";
 import { ShopFilterContext } from "../../contexts/ShopFilterContext";
 import testFilterData from "./../../test-filters.json";
 import MobileShopFilterDialog from "../MobileShopFilterDialog";
+import { NavLink } from "react-router-dom";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -296,25 +297,12 @@ export default function Shop() {
             <ShopFilter />
 
             {/* Product grid */}
-            <div className="lg:col-span-3">
-              <ul>
-                <li>
-                  <h3 className="font-bold">Mobile Filters Open:</h3>
-                  {`${mobileFiltersOpen}`}
-                </li>
-                <li>
-                  <h3 className="font-bold">Filter settings:</h3>
-                  <code className="text-pretty break-words text-sm">{`${JSON.stringify(filterSettings)}`}</code>
-                </li>
-                <li>
-                  <h3 className="font-bold">Sort options:</h3>
-                  <code className="text-pretty break-words text-sm">{`${JSON.stringify(sortOptions)}`}</code>
-                </li>
-                <li>
-                  <h3 className="font-bold">Plants ({plants.length}):</h3>
-                  <code className="text-pretty break-words text-sm">{`${JSON.stringify(plants)}`}</code>
-                </li>
-              </ul>
+            <div className="grid gap-4 lg:col-span-3 lg:grid-cols-3">
+              {plants.map((plant) => (
+                <NavLink to={`/products/${plant.Id}`} key={plant.Id}>
+                  <ProductCard product={plant} />
+                </NavLink>
+              ))}
             </div>
           </div>
         </section>

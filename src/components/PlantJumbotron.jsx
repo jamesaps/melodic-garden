@@ -1,7 +1,7 @@
 // import React from 'react';
 import image from "../images/5.png";
 
-function plantJumbotron() {
+function PlantJumbotron() {
   return (
     <div
       style={{
@@ -20,4 +20,4 @@ function plantJumbotron() {
   );
 }
 
-export default plantJumbotron;
+export default PlantJumbotron;

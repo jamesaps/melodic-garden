@@ -1,6 +1,6 @@
 // import React from 'react';
 
-function categoryCard() {
+function CategoryCard() {
   return (
     <div className="p-a relative max-w-sm rounded-lg bg-white">
       <img
@@ -24,4 +24,4 @@ function categoryCard() {
   );
 }
 
-export default categoryCard;
+export default CategoryCard;
