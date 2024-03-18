@@ -1,5 +1,4 @@
 import { useRef, useState, useEffect } from "react";
-import "./AudioPlayer.css";
 import { SlVolume2 } from "react-icons/sl";
 import { SlVolumeOff } from "react-icons/sl";
 
