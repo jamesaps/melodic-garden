@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useCart } from "../contexts/CartContext";
-import image from "../images/logo.png";
+import image from "../images/logo-dark.png";
 
 export default function Navigation() {
   const { getNumberOfItemsInCart } = useCart();
