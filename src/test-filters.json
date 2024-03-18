@@ -1,0 +1,41 @@
+[
+  {
+    "id": "type",
+    "name": "Type",
+    "type": "list",
+    "options": [
+      { "value": "indoors", "label": "Indoors", "checked": false },
+      { "value": "outdoors", "label": "Outdoors", "checked": false }
+    ],
+    "open": false
+  },
+  {
+    "id": "price",
+    "name": "Price",
+    "type": "range",
+    "options": { "min": 0, "max": 80 },
+    "value": 80,
+    "open": false
+  },
+  {
+    "id": "height",
+    "name": "Height",
+    "type": "list",
+    "options": [
+      { "value": "short", "label": "Short", "checked": false },
+      { "value": "tall", "label": "Tall", "checked": false }
+    ],
+    "open": false
+  },
+  {
+    "id": "size",
+    "name": "Size",
+    "type": "list",
+    "options": [
+      { "value": "small", "label": "Small", "checked": false },
+      { "value": "medium", "label": "Medium", "checked": false },
+      { "value": "large", "label": "Large", "checked": false }
+    ],
+    "open": false
+  }
+]
