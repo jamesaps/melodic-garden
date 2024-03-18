@@ -3,7 +3,7 @@ import ProductDescription from "../ProductDescription";
 import RecommendedProducts from "../RecommendedProducts";
 import { useProducts } from "../../hooks/useProducts";
 
-const Product = () => {
+export default function Product() {
   const { id } = useParams();
   const { products } = useProducts();
 
@@ -20,6 +20,4 @@ const Product = () => {
       <RecommendedProducts otherPlants={otherPlants} />
     </>
   );
-};
-
-export default Product;
+}
