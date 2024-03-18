@@ -15,7 +15,7 @@ const Product = () => {
     .slice(0, 3);
 
   return (
-    <div className="mt-0 flex max-w-6xl flex-col gap-4 lg:gap-12 md:mt-48 mb-12">
+    <div className="mb-12 mt-0 flex max-w-6xl flex-col gap-4 md:mt-48 md:gap-8 lg:gap-12">
       <ProductDescription mainProduct={mainProduct} />
       <RecommendedProducts
         mainProduct={mainProduct}

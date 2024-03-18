@@ -34,7 +34,6 @@ const ProductDescription = ({ mainProduct }) => {
     <>
       <div className="mx-0 flex justify-center bg-white sm:mx-8">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4 lg:grid-cols-3">
-          {/* <div className="flex w-full items-center justify-center"> */}
           <div className="col-span-1 md:col-span-2 lg:col-span-1">
             <img
               src={mainProduct.Image}
@@ -42,7 +41,7 @@ const ProductDescription = ({ mainProduct }) => {
               className="w-full md:rounded-3xl"
             />
           </div>
-          <div className="col-span-1 mx-8 flex flex-col items-center justify-center sm:col-span-2 sm:items-start lg:col-span-2">
+          <div className="col-span-1 mx-8 flex flex-col items-center justify-start sm:col-span-2 md:items-start lg:col-span-2">
             <h2 className="text-left font-bold text-gray-800 sm:text-2xl md:text-3xl lg:text-4xl">
               {mainProduct.Name}
             </h2>
