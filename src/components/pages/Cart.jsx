@@ -4,14 +4,12 @@ import { useProducts } from "../../hooks/useProducts";
 import { ProductsProvider } from "../../contexts/ProductsContext";
 
 const Cart = () => {
-  const {
-    cartItems,
-    addProductToCart,
-    getQuantityOfItemByIdInCart,
-    updateProductQuantityInCart,
-  } = useCart();
+  const { cartItems, updateProductQuantityInCart, getNumberOfItemsInCart } =
+    useCart();
 
   const { products } = useProducts();
+
+  const numberOfItemsInCart = getNumberOfItemsInCart();
 
   const totalPrice = cartItems.reduce((total, cartItem) => {
     const product = products.find((product) => {
@@ -27,13 +25,13 @@ const Cart = () => {
 
   if (cartItems.length === 0) {
     return (
-      <div className="mt-16 flex flex-1 items-center justify-center">
+      <div className="m-16 flex flex-1 items-center justify-center">
         <p className="">Your cart is empty.</p>
       </div>
     );
   } else {
     return (
-      <div className="container mx-auto mt-28">
+      <div className="container mx-auto mb-16 mt-28">
         <div className="text-end">Price</div>
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-4">
@@ -86,7 +84,7 @@ const Cart = () => {
           <div className="flex justify-end">
             <p>
               Subtotal{" "}
-              {`(${cartItems.length} item${cartItems.length !== 1 ? "s" : ""}):`}{" "}
+              {`(${numberOfItemsInCart} item${numberOfItemsInCart !== 1 ? "s" : ""}):`}{" "}
               <span className="text-3xl font-bold">
                 £{totalPrice.toFixed(2)}
               </span>
