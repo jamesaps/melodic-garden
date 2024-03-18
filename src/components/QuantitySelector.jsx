@@ -22,7 +22,7 @@ const QuantitySelector = ({
     }
 
     onQuantityChange(quantity);
-  }, [maxValue, minValue, quantity]);
+  }, [maxValue, minValue, quantity, onQuantityChange]);
 
   const handleIncrement = () => {
     if (quantity < maxValue) {
