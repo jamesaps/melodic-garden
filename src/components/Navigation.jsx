@@ -25,7 +25,7 @@ export default function Navigation() {
                 Home
               </NavLink>
               <NavLink
-                to="/shop"
+                to="/products"
                 className="rounded-md px-3 py-2 text-base font-medium text-black hover:bg-gray-700 hover:text-white"
               >
                 Products
