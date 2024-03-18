@@ -6,13 +6,9 @@ import { SlVolumeOff } from "react-icons/sl";
 const AudioPlayer = ({audioSrc}) => {
 
     const [isPlaying, setIsPlaying] = useState(false);
+
     const audioRef = useRef(null);
 
-    useEffect(() => {
-        
-        handlePlay();
-        
-    }, []);
 
     const handlePlay = () => {
         audioRef.current.play();
@@ -23,7 +19,7 @@ const AudioPlayer = ({audioSrc}) => {
         audioRef.current.pause();
         setIsPlaying(false);
     };
-
+    
     const handlePlayPause = () => {
         if (isPlaying) {
             handlePause();
@@ -41,5 +37,4 @@ const AudioPlayer = ({audioSrc}) => {
         </button>
     );
 }
-
 export default AudioPlayer;
