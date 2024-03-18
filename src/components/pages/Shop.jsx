@@ -11,7 +11,6 @@ import ProductCard from "../ProductCard";
 import { ShopFilterContext } from "../../contexts/ShopFilterContext";
 import testFilterData from "./../../test-filters.json";
 import MobileShopFilterDialog from "../MobileShopFilterDialog";
-import { NavLink } from "react-router-dom";
 import { useProducts } from "../../hooks/useProducts";
 
 function classNames(...classes) {
@@ -280,10 +279,8 @@ export default function Shop() {
 
             {/* Product grid */}
             <div className="grid gap-4 lg:col-span-3 lg:grid-cols-3">
-              {filteredProducts.map((plant) => (
-                <NavLink to={`/products/${plant.Id}`} key={plant.Id}>
-                  <ProductCard product={plant} />
-                </NavLink>
+              {filteredProducts.map((product) => (
+                <ProductCard product={product} key={product.Id} />
               ))}
             </div>
           </div>

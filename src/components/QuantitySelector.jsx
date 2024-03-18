@@ -52,11 +52,12 @@ const QuantitySelector = ({
       <button
         className={`mr-1 border border-lime-900 bg-white px-3 py-1 text-gray-600 ${quantity === minValue ? "cursor-not-allowed opacity-50" : ""}`}
         onClick={handleDecrement}
+        disabled={quantity === minValue}
       >
         -
       </button>
       <span
-        className={`border border-lime-900 bg-white px-8 py-1 ${quantity === 0 ? "cursor-not-allowed opacity-50" : ""}`}
+        className={`border border-lime-900 bg-white px-8 py-1 text-center ${quantity === 0 ? "cursor-not-allowed opacity-50" : ""}`}
       >
         {quantity === 0 ? "-" : quantity}
       </span>

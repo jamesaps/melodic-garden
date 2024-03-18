@@ -42,6 +42,8 @@ export const CartProvider = ({ children }) => {
     const itemInCart = cartItems.find((item) => item.productId === productId);
 
     if (itemInCart === undefined) {
+      addProductToCart(productId, quantity);
+
       return;
     }
 
@@ -49,7 +51,7 @@ export const CartProvider = ({ children }) => {
       const updatedCartItems = [...cartItems].filter(
         (item) => item.productId !== productId,
       );
-
+      console.log(updatedCartItems);
       setCartItems(updatedCartItems);
     } else if (quantity > 0) {
       const updatedCartItems = [...cartItems].map((item) =>
