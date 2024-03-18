@@ -37,7 +37,7 @@ const Jumbotron = () => {
           </div>
         </div>
       </div>
-    </div>
+
   );
 };
 
