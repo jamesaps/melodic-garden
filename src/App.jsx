@@ -14,25 +14,30 @@ import Footer from "./components/Footer";
 import FooterTrim from "./components/FooterTrim";
 import Shop from "./components/pages/Shop";
 import { CartProvider } from "./contexts/CartContext";
+import Cart from "./components/pages/Cart";
+import { ProductsProvider } from "./contexts/ProductsContext";
 
 function App() {
   return (
     <Router>
       <CartProvider>
-        <Navigation />
+        <ProductsProvider>
+          <Navigation />
 
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="about" element={<About />}></Route>
-            <Route path="categories" element={<Categories />}></Route>
-            <Route path="products" element={<Shop />}></Route>
-            <Route path="products/:id" element={<Product />}></Route>
-          </Routes>
-        </main>
+          <main>
+            <Routes>
+              <Route path="/" element={<Home />}></Route>
+              <Route path="about" element={<About />}></Route>
+              <Route path="categories" element={<Categories />}></Route>
+              <Route path="products" element={<Shop />}></Route>
+              <Route path="products/:id" element={<Product />}></Route>
+              <Route path="cart" element={<Cart />}></Route>
+            </Routes>
+          </main>
 
-        <Footer />
-        <FooterTrim />
+          <Footer />
+          <FooterTrim />
+        </ProductsProvider>
       </CartProvider>
     </Router>
   );

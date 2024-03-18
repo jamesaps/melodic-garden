@@ -56,7 +56,7 @@ export default function Navigation() {
               </svg>
             </button>
 
-            <NavLink to="/orderSummary" className="flex items-center">
+            <NavLink to="/cart" className="flex items-center">
               <div className="relative">
                 <div className="absolute left-3">
                   <p className="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-3 text-xs text-white">

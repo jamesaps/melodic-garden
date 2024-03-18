@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
 //Create a context to manage cart state
-const CartContext = createContext();
+const CartContext = createContext([]);
 
 //Create and export a hook which allows for the context to be used
 export const useCart = () => {

@@ -1,7 +1,7 @@
 import { Menu, Transition } from "@headlessui/react";
 import ShopFilter from "../ShopFilter";
 import { Fragment } from "react/jsx-runtime";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import {
   ChevronDownIcon,
   FunnelIcon,
@@ -12,6 +12,7 @@ import { ShopFilterContext } from "../../contexts/ShopFilterContext";
 import testFilterData from "./../../test-filters.json";
 import MobileShopFilterDialog from "../MobileShopFilterDialog";
 import { NavLink } from "react-router-dom";
+import { useProducts } from "../../hooks/useProducts";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -20,7 +21,7 @@ function classNames(...classes) {
 export default function Shop() {
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const [filterSettings, setFilterSettings] = useState(testFilterData);
-  const [plants, setPlants] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
   const [sortOptions, setSortOptions] = useState([
     { name: "Most Popular", value: "popular", current: false },
     { name: "Newest", value: "new", current: false },
@@ -28,95 +29,76 @@ export default function Shop() {
     { name: "Price: High to Low", value: "price-high", current: false },
   ]);
 
-  useEffect(() => {
-    let ignore = false;
+  const { products } = useProducts();
 
-    async function getProducts() {
-      const plantsData = await fetchPlants();
+  const filterPlants = useCallback(
+    (plantsData) => {
+      return filterSettings.reduce((filteredPlants, filter) => {
+        if (filter.type === "list") {
+          if (
+            filter.options.every((option) => option.checked) ||
+            filter.options.every((option) => !option.checked)
+          ) {
+            return filteredPlants;
+          }
 
-      if (!ignore) {
-        const filteredPlants = filterPlants(plantsData);
-        const sortedPlants = sortPlants(filteredPlants);
+          const checkedOptions = filter.options
+            .filter((f) => f.checked)
+            .map((f) => f.value.toLowerCase());
 
-        setPlants(sortedPlants);
-      }
-    }
-
-    getProducts();
-
-    return () => {
-      ignore = true;
-    };
-  }, [filterSettings, sortOptions]);
-
-  const filterPlants = (plantsData) => {
-    return filterSettings.reduce((filteredPlants, filter) => {
-      if (filter.type === "list") {
-        if (
-          filter.options.every((option) => option.checked) ||
-          filter.options.every((option) => !option.checked)
-        ) {
+          return filteredPlants.filter(
+            (plant) =>
+              plant[filter.name] === undefined ||
+              checkedOptions.includes(plant[filter.name].toLowerCase()),
+          );
+        } else if (filter.type === "range") {
+          return filteredPlants.filter((plant) => {
+            return (
+              plant[filter.name] === undefined ||
+              (plant[filter.name] >= filter.options.min &&
+                plant[filter.name] <= filter.value)
+            );
+          });
+        } else {
           return filteredPlants;
         }
+      }, plantsData);
+    },
+    [filterSettings],
+  );
 
-        const checkedOptions = filter.options
-          .filter((f) => f.checked)
-          .map((f) => f.value.toLowerCase());
+  const sortPlants = useCallback(
+    (plantsData) => {
+      const sortOption = sortOptions.find((s) => s.current);
 
-        return filteredPlants.filter(
-          (plant) =>
-            plant[filter.name] === undefined ||
-            checkedOptions.includes(plant[filter.name].toLowerCase()),
-        );
-      } else if (filter.type === "range") {
-        return filteredPlants.filter((plant) => {
-          return (
-            plant[filter.name] === undefined ||
-            (plant[filter.name] >= filter.options.min &&
-              plant[filter.name] <= filter.value)
-          );
-        });
-      } else {
-        return filteredPlants;
-      }
-    }, plantsData);
-  };
-
-  const sortPlants = (plantsData) => {
-    const sortOption = sortOptions.find((s) => s.current);
-
-    if (sortOption === undefined) {
-      return plantsData;
-    }
-
-    switch (sortOption.value) {
-      case "popular":
+      if (sortOption === undefined) {
         return plantsData;
-      case "new":
-        return plantsData;
-      case "price-low":
-        return plantsData.sort((p1, p2) => p1.Price - p2.Price);
-      case "price-high":
-        return plantsData.sort((p1, p2) => p2.Price - p1.Price);
-      default:
-        return plantsData;
-    }
-  };
-
-  const fetchPlants = async () => {
-    try {
-      const response = await fetch("/plants.json");
-      if (!response.ok) {
-        throw new Error("Failed to fetch plants");
       }
 
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      console.error(error);
-      return [];
-    }
-  };
+      switch (sortOption.value) {
+        case "popular":
+          return plantsData;
+        case "new":
+          return plantsData;
+        case "price-low":
+          return plantsData.sort((p1, p2) => p1.Price - p2.Price);
+        case "price-high":
+          return plantsData.sort((p1, p2) => p2.Price - p1.Price);
+        default:
+          return plantsData;
+      }
+    },
+    [sortOptions],
+  );
+
+  useEffect(() => {
+    const updatedProducts = [...products].map((product) => ({ ...product }));
+    const updatedProductsFilteredAndSorted = sortPlants(
+      filterPlants(updatedProducts),
+    );
+
+    setFilteredProducts(updatedProductsFilteredAndSorted);
+  }, [products, filterPlants, sortPlants]);
 
   const resetFilters = () => {
     setFilterSettings((previousFilterSettings) => {
@@ -298,7 +280,7 @@ export default function Shop() {
 
             {/* Product grid */}
             <div className="grid gap-4 lg:col-span-3 lg:grid-cols-3">
-              {plants.map((plant) => (
+              {filteredProducts.map((plant) => (
                 <NavLink to={`/products/${plant.Id}`} key={plant.Id}>
                   <ProductCard product={plant} />
                 </NavLink>
