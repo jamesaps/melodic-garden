@@ -9,7 +9,7 @@ const Divider = () => {
           style={{
             backgroundImage:
               "url('https://images.pexels.com/photos/5570227/pexels-photo-5570227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2')",
-            backgroundSize: "100% auto",
+            backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
           }}
