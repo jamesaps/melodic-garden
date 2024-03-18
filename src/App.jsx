@@ -24,7 +24,7 @@ function App() {
         <ProductsProvider>
           <Navigation />
 
-          <main className="flex">
+          <main className="flex justify-center">
             <Routes>
               <Route path="/" element={<Home />}></Route>
               <Route path="about" element={<About />}></Route>

@@ -15,10 +15,13 @@ const Product = () => {
     .slice(0, 3);
 
   return (
-    <>
+    <div className="mt-0 flex max-w-6xl flex-col gap-4 lg:gap-12 md:mt-48 mb-12">
       <ProductDescription mainProduct={mainProduct} />
-      <RecommendedProducts otherPlants={otherPlants} />
-    </>
+      <RecommendedProducts
+        mainProduct={mainProduct}
+        otherPlants={otherPlants}
+      />
+    </div>
   );
 };
 
