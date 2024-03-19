@@ -26,7 +26,7 @@ const AboutUs = () => {
 
          <h2 className="text-3xl font-semibold mb-4 text-center">Our Team</h2>
 
-      <div className="flex content-center columns-5 gap-4 mb-20">
+      <div className="flex flex-col md:flex-row content-center  grid-cols-5 gap-4 mb-20">
       <div className="bg-white rounded-lg overflow-hidden ">
       <img src={image1} alt="sophie" className="pb-5 object-cover w-full max-h-80"  />
        <button className="border-black border rounded-full text-black px-4 py-2 w-full">Sophie</button>
