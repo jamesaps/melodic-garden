@@ -13,8 +13,6 @@ const Cart = () => {
 
   const { products } = useProducts();
 
-  console.log(cartItems);
-
   const totalPrice = cartItems.reduce((total, cartItem) => {
     const product = products.find((product) => {
       return product.Id === cartItem.productId;
