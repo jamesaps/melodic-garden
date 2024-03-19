@@ -9,11 +9,11 @@ function CategoryCard() {
         alt=""
       />
       <div className="absolute bottom-10 left-5 p-4">
-        <h2 className="text-black-900 mb-8 text-6xl font-bold">
+        <h2 className="text-black-900 mb-8 text-6xl font-bold md:text-3xl">
           Featured Plants
         </h2>
         <p
-          className="text-1xl text-black-900 mb-7 mr-16"
+          className="text-1xl text-black-900 mb-7 mr-16 hidden lg:block"
           style={{ maxWidth: "14rem", textAlign: "justify" }}
         >
           A curated collection of lush greenery, carefully chosen to bring
