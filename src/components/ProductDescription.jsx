@@ -32,16 +32,16 @@ const ProductDescription = ({ mainProduct }) => {
 
   return (
     <>
-      <div className="flex min-h-screen items-center justify-center bg-white">
-        <div className="flex w-full flex-col items-center justify-center md:w-5/6 md:flex-row lg:w-4/5 xl:w-3/4">
-          <div className="md:pr-8">
+      <div className="mx-0 flex justify-center bg-white sm:mx-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-4 lg:grid-cols-3">
+          <div className="col-span-1 md:col-span-2 lg:col-span-1">
             <img
               src={mainProduct.Image}
               alt={mainProduct.Name}
-              className="h-auto w-full object-cover sm:aspect-[1/1] md:aspect-[5/6] md:rounded-3xl"
+              className="w-full sm:rounded-3xl"
             />
           </div>
-          <div className="flex flex-col items-center justify-center md:items-start">
+          <div className="col-span-1 mx-8 flex flex-col items-center justify-start md:col-span-2 md:items-start lg:col-span-2">
             <h2 className="text-left font-bold text-gray-800 sm:text-2xl md:text-3xl lg:text-4xl">
               {mainProduct.Name}
             </h2>
@@ -62,7 +62,7 @@ const ProductDescription = ({ mainProduct }) => {
             <p className="mt-2 text-center text-gray-700 md:text-left">
               {mainProduct.Description}
             </p>
-            <div className="mt-4 flex items-center">
+            <div className="mt-4 flex flex-row justify-start gap-3 md:flex-col lg:flex-row lg:justify-start">
               <QuantitySelector
                 initialValue={quantity}
                 quantityInStock={stock}
@@ -71,20 +71,22 @@ const ProductDescription = ({ mainProduct }) => {
                 // minValue={1}
                 onQuantityChange={handleQuantityChange}
               />
-              <button
-                onClick={addToCart}
-                className="ml-3 rounded bg-lime-600 px-4 py-2 font-bold text-white hover:bg-lime-700"
-              >
-                Add to Cart
-              </button>
-              {quantityInCart >= 1 ? (
+              <div className="flex gap-3">
                 <button
-                  onClick={removeFromCart}
-                  className="ml-3 rounded bg-pink-600 px-4 py-2 font-bold text-white hover:bg-pink-700"
+                  onClick={addToCart}
+                  className="rounded bg-lime-600 px-4 py-2 font-bold text-white hover:bg-lime-700"
                 >
-                  Remove from Cart
+                  Add to Cart
                 </button>
-              ) : null}
+                {quantityInCart >= 1 ? (
+                  <button
+                    onClick={removeFromCart}
+                    className="rounded bg-pink-600 px-4 py-2 font-bold text-white hover:bg-pink-700"
+                  >
+                    Remove from Cart
+                  </button>
+                ) : null}
+              </div>
             </div>
             {quantityLeftInStock === 0 ? (
               <span className="mt-3">No more left in stock</span>
@@ -95,11 +97,6 @@ const ProductDescription = ({ mainProduct }) => {
             ) : null}
           </div>
         </div>
-      </div>
-      <div>
-        <h2 className="text-center font-bold text-gray-800 sm:text-2xl md:text-3xl lg:text-4xl ">
-          Other {mainProduct.Size} Plants
-        </h2>
       </div>
     </>
   );

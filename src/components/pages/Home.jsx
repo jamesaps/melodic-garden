@@ -3,9 +3,9 @@ import Divider from "../Divider.jsx";
 
 export default function Home() {
   return (
-    <>
+    <div>
       <Jumbotron />
       <Divider />
-    </>
+    </div>
   );
 }

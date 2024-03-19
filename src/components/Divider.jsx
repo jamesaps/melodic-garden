@@ -3,7 +3,8 @@ import React from "react";
 const Divider = () => {
   return (
     <>
-      <div className="w-full">
+
+      <div className="w-full items-center">
         <section
           className="bg-center py-20 backdrop-opacity-5"
           style={{
