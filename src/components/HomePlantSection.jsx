@@ -2,7 +2,7 @@
 // import React from 'react';
 import FeatureCard from "./FeatureCard";
 import ProductCard from "./ProductCard";
-import products from '../plants.json';
+import products from '../plants-archived.json';
 
 function HomePlantSection() {
 
