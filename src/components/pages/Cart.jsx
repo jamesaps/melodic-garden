@@ -9,6 +9,7 @@ const Cart = () => {
 
   const { products } = useProducts();
 
+
   const numberOfItemsInCart = getNumberOfItemsInCart();
 
   const totalPrice = cartItems.reduce((total, cartItem) => {
