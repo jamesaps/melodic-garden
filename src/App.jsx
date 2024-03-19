@@ -31,7 +31,6 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />}></Route>
               <Route path="about" element={<About />}></Route>
-              <Route path="aboutus" element={<Categories />}></Route>
               <Route path="products" element={<Shop />}></Route>
               <Route path="products/:id" element={<Product />}></Route>
               <Route path="cart" element={<Cart />}></Route>
