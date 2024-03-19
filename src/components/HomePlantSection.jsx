@@ -1,7 +1,7 @@
 
 // import React from 'react';
 import FeatureCard from "./FeatureCard";
-import ProductCard from "./productCard";
+import ProductCard from "./ProductCard";
 import products from '../plants.json';
 
 function HomePlantSection() {
