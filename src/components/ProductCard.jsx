@@ -31,7 +31,7 @@ function ProductCard({ product }) {
 
       <div className="my-4 flex items-center justify-between">
         <span className="truncate text-xl">{product.Name}</span>
-        <span className="text-3xl font-bold">£{product.Price.toFixed(2)}</span>
+        <span className="text-3xl font-bold">£{product.Price}</span>
       </div>
 
       <ProductCardQuantitySelector
