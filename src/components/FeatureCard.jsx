@@ -2,9 +2,9 @@
 
 function CategoryCard() {
   return (
-    <div className="p-a relative max-w-sm rounded-lg bg-white">
+    <div className="p-a relative max-w-sm rounded-lg bg-white h-full">
       <img
-        className="mb-4 h-auto w-full rounded-3xl drop-shadow-xl"
+        className="mb-4 w-full h-full object-cover rounded-3xl drop-shadow-xl"
         src="https://img.freepik.com/free-vector/aesthetic-phone-wallpaper-background-vector-leaf-shadow-with-natural-light_53876-140790.jpg?t=st=1710443985~exp=1710447585~hmac=08b260a1492168b5c9fa6e3a57b7de5cf7b68f46c8393efa320db3db5cdfbabb&w=740"
         alt=""
       />
