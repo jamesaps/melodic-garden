@@ -36,7 +36,7 @@ export default function Navigation() {
                 Products
               </NavLink>
               <NavLink
-                to="/aboutus"
+                to="/about"
                 className="rounded-md px-3 py-2 text-base font-medium text-black hover:bg-gray-700 hover:text-white"
               >
                 About Us
