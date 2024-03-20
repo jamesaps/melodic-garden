@@ -18,15 +18,15 @@ export default function Navigation() {
   };
 
   useEffect(() => {
-    function handleClickOutside(event) {
+    function clickOut(event) {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setShowMenu(false);
       }
     }
 
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("mousedown", clickOut);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("mousedown", clickOut);
     };
   }, [dropdownRef]);
 
@@ -80,21 +80,21 @@ export default function Navigation() {
           <div ref={dropdownRef} className="sm:hidden absolute top-0 left-0 w-full bg-white border-t rounded-md border-gray-200">
             <NavLink
               to="/"
-              className="block py-2 px-4 text-black hover:bg-green-900 hover:text-white"
+              className="block py-2 px-4 text-black font-medium hover:bg-green-900 hover:text-white"
               onClick={() => setShowMenu(false)}
             >
               Home
             </NavLink>
             <NavLink
               to="/products"
-              className="block py-2 px-4 text-black hover:bg-green-900 hover:text-white"
+              className="block py-2 px-4 text-black font-medium hover:bg-green-900 hover:text-white"
               onClick={() => setShowMenu(false)}
             >
               Products
             </NavLink>
             <NavLink
-              to="/aboutus"
-              className="block py-2 px-4 text-black hover:bg-green-900 hover:text-white"
+              to="/about"
+              className="block py-2 px-4 font-medium text-base text-black hover:bg-green-900 hover:text-white"
               onClick={() => setShowMenu(false)}
             >
               About Us
@@ -106,19 +106,19 @@ export default function Navigation() {
         <div className="hidden sm:flex sm:items-center space-x-8">
           <NavLink
             to="/"
-            className="rounded-md px-3 py-2 text-base font-medium text-black hover:bg-gray-700 hover:text-white"
+            className="rounded-md px-3 py-2 text-base font-medium text-black hover:bg-green-900 hover:text-white"
           >
             Home
           </NavLink>
           <NavLink
             to="/products"
-            className="rounded-md px-3 py-2 text-base font-medium text-black hover:bg-gray-700 hover:text-white"
+            className="rounded-md px-3 py-2 text-base font-medium text-black hover:bg-green-900 hover:text-white"
           >
             Products
           </NavLink>
           <NavLink
-            to="/aboutus"
-            className="rounded-md px-3 py-2 text-base font-medium text-black hover:bg-gray-700 hover:text-white"
+            to="/about"
+            className="rounded-md px-3 py-2 text-base font-medium text-black hover:bg-green-900 hover:text-white"
           >
             About Us
           </NavLink>
@@ -126,7 +126,7 @@ export default function Navigation() {
 
    
         {!showMenu && (
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-2 mr-4">
             <AudioPlayer audioSrc={Audio} />
 
             <div className="flex items-center">
