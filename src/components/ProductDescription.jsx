@@ -1,6 +1,7 @@
 import { useState } from "react";
 import QuantitySelector from "./QuantitySelector";
 import { useCart } from "../contexts/CartContext";
+import { useCartDropdown } from "../contexts/CartDropdownContext";
 
 const ProductDescription = ({ mainProduct }) => {
   const [quantity, setQuantity] = useState(1);
@@ -10,25 +11,30 @@ const ProductDescription = ({ mainProduct }) => {
     updateProductQuantityInCart,
   } = useCart();
 
+  const { openDropdown, isMobile} = useCartDropdown();
+
   const handleQuantityChange = (newQuantity) => {
     setQuantity(newQuantity);
   };
+
 
   const addToCart = () => {
     console.log(
       `Added ${quantity} ${mainProduct.Name}(s) with ID ${mainProduct.Id} to cart.`,
     );
     addProductToCart(mainProduct.Id, quantity);
-    // setQuantity(1);
-  };
-
-  const removeFromCart = () => {
-    updateProductQuantityInCart(mainProduct.Id, 0);
+    if(!isMobile){
+      openDropdown('addtocart');
+    }
+    else {
+      return;
+    }
   };
 
   const stock = mainProduct.Stock;
   const quantityInCart = getQuantityOfItemByIdInCart(mainProduct.Id);
   const quantityLeftInStock = stock - quantityInCart;
+
 
   return (
     <>
@@ -71,22 +77,12 @@ const ProductDescription = ({ mainProduct }) => {
                 // minValue={1}
                 onQuantityChange={handleQuantityChange}
               />
-              <div className="flex gap-3">
-                <button
-                  onClick={addToCart}
-                  className="rounded bg-lime-600 px-4 py-2 font-bold text-white hover:bg-lime-700"
-                >
-                  Add to Cart
-                </button>
-                {quantityInCart >= 1 ? (
-                  <button
-                    onClick={removeFromCart}
-                    className="rounded bg-pink-600 px-4 py-2 font-bold text-white hover:bg-pink-700"
-                  >
-                    Remove from Cart
-                  </button>
-                ) : null}
-              </div>
+              <button
+                onClick={addToCart}
+                className="ml-3 rounded bg-lime-600 px-4 py-2 font-bold text-white hover:bg-lime-700"
+              >
+                Add to Cart
+              </button>
             </div>
             {quantityLeftInStock === 0 ? (
               <span className="mt-3">No more left in stock</span>
