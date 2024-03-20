@@ -1,16 +1,34 @@
-import { useState, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useCart } from "../contexts/CartContext";
 import CartDropdown from "./CartDropdown";
 import { useCartDropdown } from "../contexts/CartDropdownContext";
 import image from "../images/logo-dark.png";
+import AudioPlayer from "./AudioPlayer";
+import Audio from "../audio/audio1.mp3";
 
 export default function Navigation() {
   const { getNumberOfItemsInCart } = useCart();
-  console.log(
-    "Cart value in Navigation:",
-    JSON.stringify(getNumberOfItemsInCart())
-  );
+  
+  const [showMenu, setShowMenu] = useState(false);
+  const dropdownRef = useRef(null);
+
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+  };
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setShowMenu(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [dropdownRef]);
 
   const { isOpen: dropdownIsOpen, openDropdown, closeDropdown } = useCartDropdown();
   const navigate = useNavigate();
@@ -21,7 +39,7 @@ export default function Navigation() {
       navigate("/cart");
     } else {
       if (!dropdownIsOpen) {
-        openDropdown("other");
+        openDropdown("navigation");
       } else {
         closeDropdown();
       }
@@ -39,52 +57,87 @@ export default function Navigation() {
   }, []);
 
   return (
-    <nav className="border-lime fixed left-0 right-0 top-0 mx-auto w-full max-w-6xl rounded-full border bg-white">
-      <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-        <div className="relative flex h-16 items-center justify-between">
-          <div className="flex h-16 flex-shrink-0 items-center justify-center">
-            <img className="w-16" src={image} alt="Melodic Garden" />
-          </div>
-          <div className="hidden flex-grow sm:flex sm:items-center sm:justify-center">
-            <div className="flex items-center justify-center space-x-8">
-              <NavLink
-                to="/"
-                className="rounded-md px-3 py-2 text-base font-medium text-black hover:bg-gray-700 hover:text-white"
-              >
-                Home
-              </NavLink>
-              <NavLink
-                to="/products"
-                className="rounded-md px-3 py-2 text-base font-medium text-black hover:bg-gray-700 hover:text-white"
-              >
-                Products
-              </NavLink>
-              <NavLink
-                to="/categories"
-                className="rounded-md px-3 py-2 text-base font-medium text-black hover:bg-gray-700 hover:text-white"
-              >
-                Categories
-              </NavLink>
-            </div>
-          </div>
+    <nav className="border-lime fixed left-0 right-0 top-0 z-10 mx-auto w-full max-w-6xl rounded-full border bg-white">
+      <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 flex items-center justify-between">
+  
+        <button
+          className="sm:hidden inline-block px-4 py-2 text-black"
+          onClick={toggleMenu}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            className="h-6 w-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d={showMenu ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
+            />
+          </svg>
+        </button>
 
+       
+        <NavLink to="/" className="flex h-16 flex-shrink-0 items-center justify-center">
+          <img className="w-16" src={image} alt="Melodic Garden" />
+        </NavLink>
+
+     
+        {showMenu && (
+          <div ref={dropdownRef} className="sm:hidden absolute top-0 left-0 w-full bg-white border-t rounded-md border-gray-200">
+            <NavLink
+              to="/"
+              className="block py-2 px-4 text-black hover:bg-green-900 hover:text-white"
+              onClick={() => setShowMenu(false)}
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to="/products"
+              className="block py-2 px-4 text-black hover:bg-green-900 hover:text-white"
+              onClick={() => setShowMenu(false)}
+            >
+              Products
+            </NavLink>
+            <NavLink
+              to="/aboutus"
+              className="block py-2 px-4 text-black hover:bg-green-900 hover:text-white"
+              onClick={() => setShowMenu(false)}
+            >
+              About Us
+            </NavLink>
+          </div>
+        )}
+
+  
+        <div className="hidden sm:flex sm:items-center space-x-8">
+          <NavLink
+            to="/"
+            className="rounded-md px-3 py-2 text-base font-medium text-black hover:bg-gray-700 hover:text-white"
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/products"
+            className="rounded-md px-3 py-2 text-base font-medium text-black hover:bg-gray-700 hover:text-white"
+          >
+            Products
+          </NavLink>
+          <NavLink
+            to="/aboutus"
+            className="rounded-md px-3 py-2 text-base font-medium text-black hover:bg-gray-700 hover:text-white"
+          >
+            About Us
+          </NavLink>
+        </div>
+
+   
+        {!showMenu && (
           <div className="flex items-center space-x-2">
-            <button type="button">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                className="h-6 w-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M19.114 5.636a9 9 0 0 1 0 12.728M16.463 8.288a5.25 5.25 0 0 1 0 7.424M6.75 8.25l4.72-4.72a.75.75 0 0 1 1.28.53v15.88a.75.75 0 0 1-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.009 9.009 0 0 1 2.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75Z"
-                />
-              </svg>
-            </button>
-
+            <AudioPlayer audioSrc={Audio} />
             <div className="flex items-center">
               <div className="relative cursor-pointer" onClick={handleCartClick}>
                 <div className="to absolute -top-3 left-3">
@@ -109,7 +162,7 @@ export default function Navigation() {
               </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
       {dropdownIsOpen && <CartDropdown />}
     </nav>

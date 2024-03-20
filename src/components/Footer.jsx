@@ -2,9 +2,9 @@ import { NavLink } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="container mx-auto pb-10">
-      <div className="flex flex-col items-center justify-between sm:flex-row">
-        <div className="flex flex-col items-center sm:items-start">
+    <footer className="flex justify-center pb-10 md:mx-8 lg:px-0">
+      <div className="flex w-full max-w-6xl flex-col items-center justify-between sm:flex-row ">
+        <div className=" flex flex-col items-center sm:items-start">
           <h2 className="mb-2 font-bold">Quick Links</h2>
           <ul className="flex flex-col items-center sm:items-start">
             <li>

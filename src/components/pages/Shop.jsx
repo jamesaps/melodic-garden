@@ -198,11 +198,11 @@ export default function Shop() {
       />
 
       <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h1 className="mb-12 pt-24 text-center text-xl font-bold text-gray-900">
+        <h1 className="mt-32 text-center text-xl font-bold text-gray-900">
           SHOP ALL PLANTS
         </h1>
 
-        <div className="flex items-baseline justify-end border-gray-200 pb-6 ">
+        <div className="my-6 flex items-baseline justify-end border-gray-200">
           <div className="flex items-center">
             <Menu as="div" className="relative inline-block text-left">
               <div>
@@ -269,7 +269,7 @@ export default function Shop() {
           </div>
         </div>
 
-        <section aria-labelledby="products-heading" className="pb-24 pt-6">
+        <section aria-labelledby="products-heading" className="pb-24">
           <h2 id="products-heading" className="sr-only">
             Products
           </h2>
@@ -280,7 +280,9 @@ export default function Shop() {
             {/* Product grid */}
             <div className="grid gap-4 lg:col-span-3 lg:grid-cols-3">
               {filteredProducts.map((product) => (
-                <ProductCard product={product} key={product.Id} />
+                <div className="lg:col-span-1" key={product.Id}>
+                  <ProductCard product={product} />
+                </div>
               ))}
             </div>
           </div>

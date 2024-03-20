@@ -9,6 +9,9 @@ import Navigation from "./components/Navigation";
 import Home from "./components/pages/Home";
 import About from "./components/pages/About";
 import Categories from "./components/pages/Categories";
+import Jumbotron from "./components/Jumbotron";
+import Divider from "./components/Divider";
+import OrderTotal from "./components/OrderTotal"
 import Product from "./components/pages/Product";
 import Footer from "./components/Footer";
 import FooterTrim from "./components/FooterTrim";
@@ -24,11 +27,10 @@ function App() {
         <ProductsProvider>
           <Navigation />
 
-          <main>
+          <main className="flex justify-center">
             <Routes>
               <Route path="/" element={<Home />}></Route>
               <Route path="about" element={<About />}></Route>
-              <Route path="categories" element={<Categories />}></Route>
               <Route path="products" element={<Shop />}></Route>
               <Route path="products/:id" element={<Product />}></Route>
               <Route path="cart" element={<Cart />}></Route>
