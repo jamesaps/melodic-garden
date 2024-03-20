@@ -11,10 +11,8 @@ const ProductDescription = ({ mainProduct }) => {
     updateProductQuantityInCart,
   } = useCart();
 
-  const { openDropdown } = useCartDropdown();
+  const { openDropdown, isMobile} = useCartDropdown();
 
-
-  
   const handleQuantityChange = (newQuantity) => {
     setQuantity(newQuantity);
   };
@@ -25,11 +23,12 @@ const ProductDescription = ({ mainProduct }) => {
       `Added ${quantity} ${mainProduct.Name}(s) with ID ${mainProduct.Id} to cart.`,
     );
     addProductToCart(mainProduct.Id, quantity);
-    openDropdown('addtocart');
-  };
-
-  const removeFromCart = () => {
-    updateProductQuantityInCart(mainProduct.Id, 0);
+    if(!isMobile){
+      openDropdown('addtocart');
+    }
+    else {
+      return;
+    }
   };
 
   const stock = mainProduct.Stock;

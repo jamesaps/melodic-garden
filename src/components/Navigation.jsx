@@ -30,9 +30,8 @@ export default function Navigation() {
     };
   }, [dropdownRef]);
 
-  const { isOpen: dropdownIsOpen, openDropdown, closeDropdown } = useCartDropdown();
+  const { isOpen: dropdownIsOpen, openDropdown, closeDropdown, isMobile } = useCartDropdown();
   const navigate = useNavigate();
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   const handleCartClick = () => {
     if (isMobile) {
@@ -45,16 +44,6 @@ export default function Navigation() {
       }
     }
   };
-
-  const handleResize = () => {
-    setIsMobile(window.innerWidth <= 768);
-  };
-
-  useEffect(() => {
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   return (
     <nav className="border-lime fixed left-0 right-0 top-0 z-10 mx-auto w-full max-w-6xl rounded-full border bg-white">

@@ -23,6 +23,10 @@ const CartDropdown = () => {
       return;
     }
 
+    if (isOpen && cartItems.length === 0 && trigger === 'addtocart') {
+      closeDropdown();
+    }
+    
     if (isOpen && trigger === 'addtocart') {
       timeoutRef.current = setTimeout(() => {
         closeDropdown();
@@ -33,7 +37,7 @@ const CartDropdown = () => {
       clearTimeout(timeoutRef.current);
     };
 
-  }, [isOpen, trigger, closeDropdown]);
+  }, [isOpen, trigger, closeDropdown, cartItems]);
 
   const handleMouseEnter = () => {
     clearTimeout(timeoutRef.current);
