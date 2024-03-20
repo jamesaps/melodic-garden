@@ -13,7 +13,7 @@ const AboutUs = () => {
         </section>
       </div>
 
-    <div className="my-8 p-10">
+    <div className="my-8 mx-auto container p-10">
       <h2 className="text-3xl font-semibold mb-4 text-center">About Us</h2>
       <p className="text-m mb-20">We are a team of 5 front-end developers driven by our shared passion for crafting functional and inspirational designs. With roots deeply embedded in creativity and innovation, we set out to cultivate an online space where plant enthusiasts can immerse themselves in a world of greenery.
       <br />
