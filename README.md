@@ -47,7 +47,7 @@ Thank you to all collaborators on this Project
 | **Components & Functionality**            | **Contributors**                       |
 |--------------------------|----------------------------------------|
 | **Wireframe + Branding**   | Haydawn | 
-| **React Router/ React**   | James |            
+| **Netlify/ React**   | James |            
 | **Navbar + Music Functionality** | Jack / Sophie| 
 | **Jumbotron + Page Divider** | Haydawn |
 | **Featured Plants Section + Shop Category** | Sophie |
