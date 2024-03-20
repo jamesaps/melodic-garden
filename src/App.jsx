@@ -15,17 +15,15 @@ import Shop from "./components/pages/Shop";
 import { CartProvider } from "./contexts/CartContext";
 import Cart from "./components/pages/Cart";
 import { ProductsProvider } from "./contexts/ProductsContext";
-import { CartDropdownProvider } from "./contexts/CartDropdownContext"
+import { CartDropdownProvider } from "./contexts/CartDropdownContext";
 
 function App() {
   return (
     <Router>
-      <CartProvider>
-        <ProductsProvider>
+      <ProductsProvider>
+        <CartProvider>
           <CartDropdownProvider>
-         
             <Navigation />
-          
 
             <main className="flex justify-center">
               <Routes>
@@ -37,12 +35,11 @@ function App() {
               </Routes>
             </main>
 
-
             <Footer />
             <FooterTrim />
           </CartDropdownProvider>
-        </ProductsProvider>
-      </CartProvider>
+        </CartProvider>
+      </ProductsProvider>
     </Router>
   );
 }
