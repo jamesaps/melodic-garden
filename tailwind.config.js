@@ -7,6 +7,7 @@ export default {
     extend: {
       colors: {
         "mid-green": "#7a9b55",
+        "product-card-background": "#edeee4" 
       },
     },
   },
