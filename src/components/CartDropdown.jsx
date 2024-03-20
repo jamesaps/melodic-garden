@@ -4,7 +4,7 @@ import { useProducts } from "../hooks/useProducts";
 import { Link } from "react-router-dom";
 import { useCartDropdown } from "../contexts/CartDropdownContext";
 
-const CartDropdown = () => {
+const CartDropdown = ({ checkoutIcon }) => {
   const { cartItems, updateProductQuantityInCart, totalPrice } = useCart();
   const { products } = useProducts();
   const { isOpen, closeDropdown, dropdownRef, trigger } = useCartDropdown();
@@ -20,7 +20,12 @@ const CartDropdown = () => {
 
   useEffect(() => {
     function handleClickOutside(event) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target) &&
+        checkoutIcon.current &&
+        !checkoutIcon.current.contains(event.target)
+      ) {
         closeDropdown();
       }
     }

@@ -20,7 +20,7 @@ export default function Navigation() {
 
   useEffect(() => {
     function clickOut(event) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target) && checkoutIcon.current && !dropdownRef.current.contains(event.target)) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setShowMenu(false);
       }
     }
@@ -168,7 +168,7 @@ export default function Navigation() {
           </div>
         )}
       </div>
-      {dropdownIsOpen && <CartDropdown />}
+      {dropdownIsOpen && <CartDropdown checkoutIcon={checkoutIcon} />}
     </nav>
   );
 }
