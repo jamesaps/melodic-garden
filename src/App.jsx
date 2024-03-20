@@ -16,6 +16,7 @@ import { CartProvider } from "./contexts/CartContext";
 import Cart from "./components/pages/Cart";
 import { ProductsProvider } from "./contexts/ProductsContext";
 import { CartDropdownProvider } from "./contexts/CartDropdownContext";
+import Checkout from "./components/pages/Checkout";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
                 <Route path="products" element={<Shop />}></Route>
                 <Route path="products/:id" element={<Product />}></Route>
                 <Route path="cart" element={<Cart />}></Route>
+                <Route path="checkout" element={<Checkout />}></Route>
               </Routes>
             </main>
 
