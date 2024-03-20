@@ -25,14 +25,14 @@ A quick view of your shopping cart as products are added
 ![Cart Modal](src/assets/Cartmodal.png)
 
 ### Cart Page:
-![Cart Page]()
+![Cart Page](src/assets/Cartpage.png)
 
 ### About Page:  
 ![About Us Page](src/assets/Aboutus.png)
 
 
 ### Enjoy soothing background music while browsing
-To Listen Click [HERE](https://pixabay.com/music/meditationspiritual-peaceful-garden-healing-light-piano-for-meditation-zen-landscapes-112199/)
+To Listen Click [HERE](https://pixabay.com/music/meditationspiritual-peaceful-garden-healing-light-piano-for-meditation-zen-landscapes-112199/) ![Music](src/assets/music.png)
 
 
 ## Support
@@ -80,6 +80,6 @@ Thank you to all collaborators on this Project
 
 ## License
 
-This project is licensed under the MIT License
+This project is licensed under the MIT License.
 
 ©2023. Group-2-p2. All Rights Reserved.
