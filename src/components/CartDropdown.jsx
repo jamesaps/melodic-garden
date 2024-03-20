@@ -19,6 +19,24 @@ const CartDropdown = () => {
   };
 
   useEffect(() => {
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        closeDropdown();
+      }
+    }
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen, closeDropdown, dropdownRef]);
+
+  useEffect(() => {
     if (isOpen && trigger !== 'addtocart') {
       return;
     }

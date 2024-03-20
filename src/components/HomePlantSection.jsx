@@ -2,10 +2,10 @@
 // import React from 'react';
 import FeatureCard from "./FeatureCard";
 import ProductCard from "./ProductCard";
-import products from '../plants-archived.json';
+import { useProducts } from "../hooks/useProducts";
 
 function HomePlantSection() {
-
+    const { products } = useProducts();
     const getRandomProducts = (arr, n) => {
         const random = arr.sort(() => 0.5 - Math.random());
         return random.slice(0, n);

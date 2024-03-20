@@ -25,7 +25,7 @@ function CategoryCard() {
 
               <div className="bg-white rounded-lg p-4 mx-2 my-4 items-center w-full">
                   <a href="#">
-                      <img className="rounded-3xl mb-4 w-full h-80 hover:opacity-80" src="https://img.freepik.com/free-photo/close-up-various-fresh-potted-plants_23-2147929418.jpg?t=st=1710364525~exp=1710368125~hmac=2b064f3ad902d370e6da9e4a8ea221fe459a96ba4e148e054dc025fe5f3a9fb9&w=826" alt="" />
+                      <img className="rounded-3xl mb-4 w-full h-80 hover:opacity-80" src="https://images.pexels.com/photos/3076899/pexels-photo-3076899.jpeg" alt="" />
 
                       <div className="flex items-center justify-between mt-6">
                           <button type="submit" className="w-full text-white bg-green-700 hover:bg-green-800 font-large font-bold rounded-lg text-sm px-5 py-3 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">LARGE PLANTS</button>
