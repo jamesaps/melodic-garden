@@ -45,6 +45,7 @@ export default function Navigation() {
     }
   };
 
+
   return (
     <nav className="border-lime fixed left-0 right-0 top-0 z-10 mx-auto w-full max-w-6xl rounded-full border bg-white">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -127,6 +128,7 @@ export default function Navigation() {
         {!showMenu && (
           <div className="flex items-center space-x-2">
             <AudioPlayer audioSrc={Audio} />
+
             <div className="flex items-center">
               <div className="relative cursor-pointer" onClick={handleCartClick}>
                 <div className="to absolute -top-3 left-3">

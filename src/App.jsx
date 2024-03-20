@@ -37,6 +37,7 @@ function App() {
               </Routes>
             </main>
 
+
             <Footer />
             <FooterTrim />
           </CartDropdownProvider>

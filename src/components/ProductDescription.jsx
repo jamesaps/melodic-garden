@@ -77,7 +77,6 @@ const ProductDescription = ({ mainProduct }) => {
                 // minValue={1}
                 onQuantityChange={handleQuantityChange}
               />
-
               <button
                 onClick={addToCart}
                 className="ml-3 rounded bg-lime-600 px-4 py-2 font-bold text-white hover:bg-lime-700"
