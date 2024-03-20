@@ -4,25 +4,16 @@ import { useProducts } from "../../hooks/useProducts";
 import { ProductsProvider } from "../../contexts/ProductsContext";
 
 const Cart = () => {
-  const { cartItems, updateProductQuantityInCart, getNumberOfItemsInCart } =
-    useCart();
+  const {
+    cartItems,
+    updateProductQuantityInCart,
+    getNumberOfItemsInCart,
+    totalPrice,
+  } = useCart();
 
   const { products } = useProducts();
 
-
   const numberOfItemsInCart = getNumberOfItemsInCart();
-
-  const totalPrice = cartItems.reduce((total, cartItem) => {
-    const product = products.find((product) => {
-      return product.Id === cartItem.productId;
-    });
-
-    if (product === undefined) {
-      return total;
-    }
-
-    return total + product.Price * cartItem.quantity;
-  }, 0);
 
   if (cartItems.length === 0) {
     return (

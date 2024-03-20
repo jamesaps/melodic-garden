@@ -13,6 +13,7 @@ export default function ShopFilter() {
     setSliderValue,
     resetFilters,
   } = useContext(ShopFilterContext);
+
   const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
