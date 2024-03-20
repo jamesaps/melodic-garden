@@ -15,7 +15,7 @@
   {
     "Id": 2,
     "Name": "Areca Palm",
-    "Image": "https://img.freepik.com/free-photo/palm-tree-house-plant-pot_53876-125837.jpg?t=st=1710950658~exp=1710954258~hmac=7238eaea38bd4974a5bfa3883668d32c5df5b450e7085d4fd7500b4204b07eec&w=740",
+    "Image": "/ArecaPalm.jpeg",
     "Family": "Aracaceae",
     "Origin": "USA (Arizona, California), Mexico",
     "Size": "Large",
@@ -54,7 +54,7 @@
   {
     "Id": 5,
     "Name": "Rose",
-    "Image": "https://img.freepik.com/free-photo/bouquet-roses-white-vase_23-2148822244.jpg?t=st=1710951366~exp=1710954966~hmac=0303927c89a321e9bba963afd096c5774412f654c98dd18cc23e366aef359071&w=740",
+    "Image": "/Rose.jpeg",
     "Family": "Rosaceae",
     "Origin": "Central Asia",
     "Size": "Small",
@@ -67,7 +67,7 @@
   {
     "Id": 6,
     "Name": "Cyperus",
-    "Image": "https://img.freepik.com/free-photo/interior-design-with-green-plant_23-2149551388.jpg?t=st=1710951513~exp=1710955113~hmac=4a511bf3435e8953ff9697d6409ab19715ffb60cca19a095f82679493fc2ed40&w=740",
+    "Image": "/Cyperus.jpeg",
     "Family": "Cyperaceae",
     "Origin": "Africa, Madagascar, the Mediterranean, Central America",
     "Size": "Large",
@@ -80,7 +80,7 @@
   {
     "Id": 7,
     "Name": "Tradescantia",
-    "Image": "https://img.freepik.com/free-photo/pink-plant-white-pot_53876-134280.jpg?t=st=1710951616~exp=1710955216~hmac=f53b84bf2dd48ab5226fd4cf37d7104e3f100f0a9270f104f87dddef24c678a8&w=826",
+    "Image": "https://img.freepik.com/free-photo/calathea-plant-gray-pot_53876-133131.jpg?t=st=1710953794~exp=1710957394~hmac=4912f874d58a92e17b1d31df42432ac5e7bf37a830c39ba92afb93b7b84f2ea9&w=826",
     "Family": "Commelinaceae",
     "Origin": "Mexico and Brazil",
     "Size": "Small",
@@ -93,7 +93,7 @@
   {
     "Id": 8,
     "Name": "Epipremnum",
-    "Image": "https://img.freepik.com/free-photo/alocasia-polly-plant-white-pot_53876-133138.jpg?t=st=1710950482~exp=1710954082~hmac=4f6e90363d662d9bd0960cf8f17454e9cc495745effa2dd9e008e39d07f90b08&w=740",
+    "Image": "/Epipremnum.jpeg",
     "Family": "Araceae",
     "Origin": "Tropical regions of Southeast Asia, Solomon Islands, Malay Archipelago, Indonesia",
     "Size": "Medium",
@@ -106,7 +106,7 @@
   {
     "Id": 9,
     "Name": "Snake Plant",
-    "Image": "https://img.freepik.com/free-photo/alocasia-polly-plant-white-pot_53876-133138.jpg?t=st=1710950482~exp=1710954082~hmac=4f6e90363d662d9bd0960cf8f17454e9cc495745effa2dd9e008e39d07f90b08&w=740",
+    "Image": "/Snake.jpeg",
     "Family": "Agavaceae",
     "Origin": "Kenya, Madagascar, Namibia, Angola",
     "Size": "Medium",
@@ -119,7 +119,7 @@
   {
     "Id": 10,
     "Name": "Rubber Plant",
-    "Image": "https://img.freepik.com/free-photo/rubber-plant-black-pot_53876-110271.jpg?t=st=1710950741~exp=1710954341~hmac=5eede207b8b2fccf6c80504c0b6f2ab1a73cd080df30c63f3a63162b9d43d687&w=740",
+    "Image": "/Rubber.jpeg",
     "Family": "Mulberry",
     "Origin": "Brazil, Columbia and Peru",
     "Size": "Medium",
@@ -131,12 +131,12 @@
   },
   {
     "Id": 11,
-    "Name": "African Milk Tree",
+    "Name": "Monstera",
     "Image": "https://img.freepik.com/free-photo/cereus-cactus-pot_53876-133152.jpg?t=st=1710278539~exp=1710282139~hmac=b5062d61407b78c702b3fa98c96e52bb0d37b7e6a925098bfc2f1eda7278009c&w=740",
     "Family": "Spurges",
-    "Origin": "Central Africa",
+    "Origin": "Southern Mexico",
     "Size": "Medium",
-    "Description": "While it looks like a cactus, Euphorbia trigona is actually a succulent plant that has adapted to the hot dry weather by storing water in its stem and branches. Only water when the soil is completely dry.",
+    "Description": "One of the most recognisable houseplants is the Swiss Cheese Plant, its unique leaves often seen in prints. This plant enjoys warm and humid conditions and it is best to keep the soil moist. Leaves can grow exceptionally large.",
     "Price": 40,
     "Lighting": "This plant is best in full sun or light shade, this succulent is used to exposure and loves the light.",
     "Care": "The leaves on these plants are short-lived and die off on a regular basis. This is natural and the plant will generate more from time-to-time.",
