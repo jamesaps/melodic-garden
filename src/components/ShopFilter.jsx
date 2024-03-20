@@ -1,4 +1,4 @@
-import { useCallback, useContext, useEffect } from "react";
+import { useCallback, useContext, useEffect, useTransition } from "react";
 import ShopFilterSectionList from "./ShopFilterSectionList";
 import ShopFilterSectionRange from "./ShopFilterSectionRange";
 import ShopFilterSection from "./ShopFilterSection";
@@ -16,8 +16,36 @@ export default function ShopFilter() {
   const [searchParams, setSearchParams] = useSearchParams();
 
   useEffect(() => {
+    const params = {};
+    filterSettings
+      .filter((f) => {
+        if (f.type === "list") {
+          // check that at least one checkbox is ticked
+          return f.options.some((o) => o.checked);
+        } else if (f.type === "range") {
+          // check if value does not equal max
+          return f.value !== f.options.max;
+        }
+
+        return false;
+      })
+      .forEach((f) => {
+        if (f.type === "list") {
+          params[f.id] = f.options
+            .filter((o) => o.checked)
+            .map((o) => o.value)
+            .join(",");
+        } else if (f.type === "range") {
+          params[f.id] = f.value;
+        }
+      });
+
+    setSearchParams(params);
+  }, [filterSettings, setSearchParams]);
+
+  useEffect(() => {
     setFilterSettings((oldFilterSettings) => {
-      let b = [...oldFilterSettings].map((setting) => {
+      return [...oldFilterSettings].map((setting) => {
         if (!searchParams.has(setting.id)) {
           return setting;
         }
@@ -69,8 +97,6 @@ export default function ShopFilter() {
 
         return newSetting;
       });
-      console.log(b);
-      return b;
     });
   }, [searchParams, setFilterSettings]);
 
