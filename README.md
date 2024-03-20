@@ -31,9 +31,11 @@ A quick view of your shopping cart as products are added
 ![About Us Page](src/assets/Aboutus.png)
 
 ### Mobile Responsive:  
-![Mobile]()
-![Mobile]()
-![Mobile]()
+<div align="center">
+  <img src="image1.png" width="30%">
+  <img src="image2.png" width="30%">
+  <img src="image3.png" width="30%">
+</div>
 
 
 ### Enjoy soothing background music while browsing
@@ -52,7 +54,7 @@ Thank you to all collaborators on this Project
 | **Components & Functionality**            | **Contributors**                       |
 |--------------------------|----------------------------------------|
 | **Wireframe + Branding**   | Haydawn | 
-| **Netlify/ React**   | James |            
+| **React / Netlify**   | James |            
 | **Navbar + Music Functionality** | Jack / Sophie| 
 | **Jumbotron + Page Divider** | Haydawn |
 | **Featured Plants Section + Shop Category** | Sophie |
