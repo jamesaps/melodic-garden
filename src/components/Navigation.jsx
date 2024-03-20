@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useCart } from "../contexts/CartContext";
+import CartDropdown from "./CartDropdown";
+import { useCartDropdown } from "../contexts/CartDropdownContext";
 import image from "../images/logo-dark.png";
 import AudioPlayer from "./AudioPlayer";
 import Audio from "../audio/audio1.mp3";
@@ -27,6 +29,22 @@ export default function Navigation() {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [dropdownRef]);
+
+  const { isOpen: dropdownIsOpen, openDropdown, closeDropdown, isMobile } = useCartDropdown();
+  const navigate = useNavigate();
+
+  const handleCartClick = () => {
+    if (isMobile) {
+      navigate("/cart");
+    } else {
+      if (!dropdownIsOpen) {
+        openDropdown("navigation");
+      } else {
+        closeDropdown();
+      }
+    }
+  };
+
 
   return (
     <nav className="border-lime fixed left-0 right-0 top-0 z-10 mx-auto w-full max-w-6xl rounded-full border bg-white">
@@ -110,10 +128,11 @@ export default function Navigation() {
         {!showMenu && (
           <div className="flex items-center space-x-2">
             <AudioPlayer audioSrc={Audio} />
-            <NavLink to="/cart" className="flex items-center">
-              <div className="relative pr-3">
+
+            <div className="flex items-center">
+              <div className="relative cursor-pointer" onClick={handleCartClick}>
                 <div className="to absolute -top-3 left-3">
-                  <p className="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-3 text-xs text-white">
+                  <p className="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-3 text-xs text-white" style={{ userSelect: 'none' }}>
                     {getNumberOfItemsInCart()}
                   </p>
                 </div>
@@ -132,10 +151,11 @@ export default function Navigation() {
                   />
                 </svg>
               </div>
-            </NavLink>
+            </div>
           </div>
         )}
       </div>
+      {dropdownIsOpen && <CartDropdown />}
     </nav>
-  );
+  )
 }
