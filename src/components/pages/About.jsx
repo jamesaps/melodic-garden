@@ -19,8 +19,6 @@ const AboutUs = () => {
       <br />
        Each member of our team brings a unique blend of skills and perspectives. Our journey began with a simple idea: to create an immersive online experience for plant lovers.
       <br />
-      Join us as we cultivate a community of plant lovers, rooted in a shared passion for nature and fueled by the boundless possibilities of the digital space.
-      <br />
       Welcome to our botanical haven - we're thrilled to have you here.
       </p>
 
