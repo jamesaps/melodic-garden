@@ -7,7 +7,7 @@ import { useCartDropdown } from '../contexts/CartDropdownContext';
 const CartDropdown = () => {
   const { cartItems, updateProductQuantityInCart } = useCart();
   const { products } = useProducts();
-  const { isOpen, closeDropdown, dropdownRef } = useCartDropdown();
+  const { isOpen, closeDropdown, dropdownRef, trigger } = useCartDropdown();
   const timeoutRef = useRef(null);
 
   const getProductById = (productId) => {
@@ -19,7 +19,11 @@ const CartDropdown = () => {
   };
 
   useEffect(() => {
-    if (isOpen) {
+    if (isOpen && trigger !== 'addtocart') {
+      return;
+    }
+
+    if (isOpen && trigger === 'addtocart') {
       timeoutRef.current = setTimeout(() => {
         closeDropdown();
       }, 2000);
@@ -28,18 +32,19 @@ const CartDropdown = () => {
     return () => {
       clearTimeout(timeoutRef.current);
     };
-  }, [isOpen, closeDropdown]);
+
+  }, [isOpen, trigger, closeDropdown]);
 
   const handleMouseEnter = () => {
     clearTimeout(timeoutRef.current);
   };
 
   const handleMouseLeave = () => {
-    if (isOpen) {
-        timeoutRef.current = setTimeout(() => {
-          closeDropdown();
-        }, 500);
-      }
+    if (isOpen && trigger === 'addtocart') {
+      timeoutRef.current = setTimeout(() => {
+        closeDropdown();
+      }, 500);
+    }
   };
 
 
@@ -83,9 +88,9 @@ const CartDropdown = () => {
       <div className="p-4 border-t border-gray-200">
         <p className="text-sm text-gray-500">Total Price: £{cartItems.reduce((total, item) => total + (getProductById(item.productId).Price * item.quantity), 0).toFixed(2)}</p>
       </div>
-      <div className="flex mt-4">
-        <Link to="/cart" className="px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300">Go to Cart</Link>
-        <Link to="/checkout" className="px-4 py-2 bg-lime-600 text-white rounded-md hover:bg-lime-700">Checkout</Link>
+      <div className="flex justify-between py-3">
+        <Link to="/cart" className="ml-4 px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300">Go to Cart</Link>
+        <Link to="/checkout" className="mr-4 px-4 py-2 bg-lime-600 text-white rounded-md hover:bg-lime-700">Checkout</Link>
       </div>
     </div>
   );

@@ -86,9 +86,9 @@ export default function Navigation() {
             </button>
 
             <div className="flex items-center">
-              <div className="relative" onClick={handleCartClick}>
+              <div className="relative cursor-pointer" onClick={handleCartClick}>
                 <div className="to absolute -top-3 left-3">
-                  <p className="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-3 text-xs text-white">
+                  <p className="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-3 text-xs text-white" style={{ userSelect: 'none' }}>
                     {getNumberOfItemsInCart()}
                   </p>
                 </div>

@@ -84,14 +84,6 @@ const ProductDescription = ({ mainProduct }) => {
               >
                 Add to Cart
               </button>
-              {quantityInCart >= 1 ? (
-                <button
-                  onClick={removeFromCart}
-                  className="ml-3 rounded bg-pink-600 px-4 py-2 font-bold text-white hover:bg-pink-700"
-                >
-                  Remove from Cart
-                </button>
-              ) : null}
             </div>
             {quantityLeftInStock === 0 ? (
               <span className="mt-3">No more left in stock</span>
