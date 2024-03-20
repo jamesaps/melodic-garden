@@ -1,36 +1,38 @@
+import { NavLink } from "react-router-dom";
+
 function CategoryCard() {
   return (
       <>
           <div className="col-span-full text-center text-3xl font-bold mb-6 tracking-wide mt-10 mb-6">SHOP BY CATEGORY</div>
           <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4 mb-10">
               <div className="bg-white rounded-lg p-4 mx-2 my-4 flex flex-col justify-center items-center w-full">
-                  <a href="#">
-                      <img className="rounded-3xl mb-4 w-full h-80 hover:opacity-80 align-center" src="https://img.freepik.com/free-photo/popular-potted-houseplants-white-background_53876-127000.jpg?w=1380&t=st=1710365315~exp=1710365915~hmac=f3055e21728a0253c7d4b9d2b9097b0466521cc5e912cb0c8ed55f4d168810f2" alt="" />
+                  <div>
+                      <img className="rounded-3xl mb-4 w-full h-80 align-center" src="https://img.freepik.com/free-photo/potted-houseplants-table-white-background_53876-129993.jpg?t=st=1710971033~exp=1710974633~hmac=db19ded0d1dbb4d45cb5f81d4e9f5e575d5da852d8ec77030d96950109ee5932&w=1380" alt="" />
 
                       <div className="flex items-center justify-between mt-6">
-                          <button type="submit" className="w-full text-white bg-green-700 hover:bg-green-800 font-large font-bold rounded-lg text-sm px-5 py-3 text-center dark:bg-green-600 dark:hover:bg-green-700 ">SMALL PLANTS</button>
+                          <NavLink to ={`/products?size=small`} type="submit" className="w-full text-white bg-green-700 hover:bg-green-800 font-large font-bold rounded-lg text-sm px-5 py-3 text-center dark:bg-green-600 dark:hover:bg-green-700">SMALL PLANTS</NavLink>
                       </div>
-                  </a>
+                  </div>
               </div>
 
               <div className="bg-white rounded-lg p-4 mx-2 my-4 align-center items-center w-full">
-                  <a href="#">
-                      <img className="rounded-3xl mb-4 w-full h-80 hover:opacity-80" src="https://img.freepik.com/free-photo/indoor-plants-studio_23-2151022051.jpg?t=st=1710365164~exp=1710368764~hmac=43ec1454928d5de199b7fa705246e484543b0afa77a9477c3b1855158027fb4c&w=1380" alt="" />
+                  <div>
+                      <img className="rounded-3xl mb-4 w-full h-80 " src="https://img.freepik.com/free-photo/indoor-plants-studio_23-2151022051.jpg?t=st=1710970970~exp=1710974570~hmac=9813cc8340803c0a854ac20376860ff1b14fb9615787fee86bda22edcaccc15c&w=1380" alt="" />
 
                       <div className="flex items-center justify-between mt-6">
-                          <button type="submit" className="w-full text-white bg-green-700 hover:bg-green-800 font-large font-bold rounded-lg text-sm px-5 py-3 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">MEDIUM PLANTS</button>
+                      <NavLink to ={`/products?size=medium`} type="submit" className="w-full text-white bg-green-700 hover:bg-green-800 font-large font-bold rounded-lg text-sm px-5 py-3 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">MEDIUM PLANTS</NavLink>
                       </div>
-                  </a>
+                  </div>
               </div>
 
               <div className="bg-white rounded-lg p-4 mx-2 my-4 items-center w-full">
-                  <a href="#">
-                      <img className="rounded-3xl mb-4 w-full h-80 hover:opacity-80" src="https://images.pexels.com/photos/3076899/pexels-photo-3076899.jpeg" alt="" />
+                  <div>
+                      <img className="rounded-3xl mb-4 w-full h-80 " src="https://images.pexels.com/photos/3076899/pexels-photo-3076899.jpeg" alt="" />
 
                       <div className="flex items-center justify-between mt-6">
-                          <button type="submit" className="w-full text-white bg-green-700 hover:bg-green-800 font-large font-bold rounded-lg text-sm px-5 py-3 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">LARGE PLANTS</button>
+                      <NavLink to ={`/products?size=large`} type="submit" className="w-full text-white bg-green-700 hover:bg-green-800 font-large font-bold rounded-lg text-sm px-5 py-3 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">LARGE PLANTS</NavLink>
                       </div>
-                  </a>
+                  </div>
               </div>
           </div>
       </>

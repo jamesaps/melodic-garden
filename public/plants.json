@@ -15,7 +15,7 @@
   {
     "Id": 2,
     "Name": "Areca Palm",
-    "Image": "https://img.freepik.com/free-photo/palm-tree-house-plant-pot_53876-125837.jpg?t=st=1710277325~exp=1710280925~hmac=432a35b7008383909f72042b43caede355ddab880ef61b5ce88c68628702b0dc&w=740",
+    "Image": "/test.png",
     "Family": "Aracaceae",
     "Origin": "USA (Arizona, California), Mexico",
     "Size": "Large",
@@ -28,7 +28,7 @@
   {
     "Id": 3,
     "Name": "Dracaena",
-    "Image": "https://img.freepik.com/free-photo/snake-plant-pot_53876-110349.jpg?t=st=1710277404~exp=1710281004~hmac=19e5a3fb049929818bee6a569e0eb0a05d7f934c1c72f3c3d0940736fa6aac69&w=740",
+    "Image": "https://img.freepik.com/free-photo/snake-plant-beige-pot-by-wall_53876-133185.jpg?t=st=1710950846~exp=1710954446~hmac=27ae878ee755cf014557cf306a6006bf54666a50632fbc6731a2fb5997428f34&w=740",
     "Family": "Agavaceae",
     "Origin": "Asia, Australia, Africa",
     "Size": "Medium",
@@ -41,7 +41,7 @@
   {
     "Id": 4,
     "Name": "Jasminum",
-    "Image": "https://img.freepik.com/free-photo/vase-with-beautiful-floral-arrangement_23-2148029168.jpg?t=st=1710277766~exp=1710281366~hmac=c7c9acd19ce7d7171dc0c37cf35e5d1963eabe957166830c12e0257dba8741f1&w=996",
+    "Image": "https://img.freepik.com/free-photo/vase-with-beautiful-floral-arrangement_23-2148029168.jpg?t=st=1710951124~exp=1710954724~hmac=7540fda236ff4cdf50b5da36ee7d8e0ca0f3350daf1faf70f27ef6c312aa31f4&w=996",
     "Family": "Oleaceae",
     "Origin": "China",
     "Size": "Small",
@@ -54,7 +54,7 @@
   {
     "Id": 5,
     "Name": "Rose",
-    "Image": "https://img.freepik.com/free-photo/vase-with-decorative-flowers_1203-1640.jpg?t=st=1710278098~exp=1710281698~hmac=47934339e5928934b7d8a69b202b13c4562fd0b676b4ed1ddd72c9cf0b4f9d8e&w=1380",
+    "Image": "/Rose.jpeg",
     "Family": "Rosaceae",
     "Origin": "Central Asia",
     "Size": "Small",
@@ -67,7 +67,7 @@
   {
     "Id": 6,
     "Name": "Cyperus",
-    "Image": "https://img.freepik.com/free-photo/interior-design-with-green-plant_23-2149551388.jpg?t=st=1710278150~exp=1710281750~hmac=ca5a7a727b41b2a9c29eca47e67c3c09e9491b99e44367cca4f2ed7ff893ed0e&w=740",
+    "Image": "/Cyperus.jpeg",
     "Family": "Cyperaceae",
     "Origin": "Africa, Madagascar, the Mediterranean, Central America",
     "Size": "Large",
@@ -80,7 +80,7 @@
   {
     "Id": 7,
     "Name": "Tradescantia",
-    "Image": "https://img.freepik.com/free-photo/pink-plant-white-pot_53876-134280.jpg?t=st=1710278200~exp=1710281800~hmac=26def2a827f864866e9ab6bdefbac6d9b5bce9ae1d3e18f3b56f3ebb62bc3151&w=826",
+    "Image": "https://img.freepik.com/free-photo/calathea-plant-gray-pot_53876-133131.jpg?t=st=1710953794~exp=1710957394~hmac=4912f874d58a92e17b1d31df42432ac5e7bf37a830c39ba92afb93b7b84f2ea9&w=826",
     "Family": "Commelinaceae",
     "Origin": "Mexico and Brazil",
     "Size": "Small",
@@ -93,7 +93,7 @@
   {
     "Id": 8,
     "Name": "Epipremnum",
-    "Image": "https://img.freepik.com/free-photo/african-mask-plant-pot_53876-142815.jpg?t=st=1710278248~exp=1710281848~hmac=9c73bfbc3da6d985c1d3d2d47e5abfe903feada4c293a26ea9fcebf83cbb7ae6&w=740",
+    "Image": "/Epipremnum.jpeg",
     "Family": "Araceae",
     "Origin": "Tropical regions of Southeast Asia, Solomon Islands, Malay Archipelago, Indonesia",
     "Size": "Medium",
@@ -106,7 +106,7 @@
   {
     "Id": 9,
     "Name": "Snake Plant",
-    "Image": "https://img.freepik.com/free-photo/snake-plant-gray-plant-pot-wooden-floor_53876-105821.jpg?w=740",
+    "Image": "/Snake.jpeg",
     "Family": "Agavaceae",
     "Origin": "Kenya, Madagascar, Namibia, Angola",
     "Size": "Medium",
@@ -119,7 +119,7 @@
   {
     "Id": 10,
     "Name": "Rubber Plant",
-    "Image": "https://img.freepik.com/free-photo/rubber-plant-black-pot_53876-110271.jpg?t=st=1710278391~exp=1710281991~hmac=fd721f703c0f62e386e9c18235960d9b7b10f79dd914aa9a5b007cb158991206&w=740",
+    "Image": "/Rubber.jpeg",
     "Family": "Mulberry",
     "Origin": "Brazil, Columbia and Peru",
     "Size": "Medium",
@@ -131,12 +131,12 @@
   },
   {
     "Id": 11,
-    "Name": "African Milk Tree",
+    "Name": "Monstera",
     "Image": "https://img.freepik.com/free-photo/cereus-cactus-pot_53876-133152.jpg?t=st=1710278539~exp=1710282139~hmac=b5062d61407b78c702b3fa98c96e52bb0d37b7e6a925098bfc2f1eda7278009c&w=740",
     "Family": "Spurges",
-    "Origin": "Central Africa",
+    "Origin": "Southern Mexico",
     "Size": "Medium",
-    "Description": "While it looks like a cactus, Euphorbia trigona is actually a succulent plant that has adapted to the hot dry weather by storing water in its stem and branches. Only water when the soil is completely dry.",
+    "Description": "One of the most recognisable houseplants is the Swiss Cheese Plant, its unique leaves often seen in prints. This plant enjoys warm and humid conditions and it is best to keep the soil moist. Leaves can grow exceptionally large.",
     "Price": 40,
     "Lighting": "This plant is best in full sun or light shade, this succulent is used to exposure and loves the light.",
     "Care": "The leaves on these plants are short-lived and die off on a regular basis. This is natural and the plant will generate more from time-to-time.",
