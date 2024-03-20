@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 import plant1 from "../assets/plant1.png";
 import plant2 from "../assets/plant2.png";
 import plant3 from "../assets/plant3.png";
@@ -31,9 +32,11 @@ const Jumbotron = () => {
               A curated collection of lush greenery, carefully chosen to bring
               vitality and style to your space.
             </p>
+            <NavLink to = "/products">
             <button className=" text-m w-full rounded-full bg-white px-4 py-2 text-green-950 drop-shadow-lg hover:bg-emerald-600 hover:text-white ">
               View all House Plants
             </button>
+            </NavLink>
           </div>
         </div>
       </div>
