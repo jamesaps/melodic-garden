@@ -1,14 +1,42 @@
-import { NavLink } from 'react-router-dom';
-import { useCart } from '../contexts/CartContext'
-import image from '../images/logo.png';
-import CartDropdownComponent from './CartDropdownComponent'
+import { useState, useEffect } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useCart } from "../contexts/CartContext";
+import CartDropdown from "./CartDropdown";
+import { useCartDropdown } from "../contexts/CartDropdownContext";
+import image from "../images/logo-dark.png";
 
 export default function Navigation() {
   const { getNumberOfItemsInCart } = useCart();
   console.log(
     "Cart value in Navigation:",
-    JSON.stringify(getNumberOfItemsInCart()),
+    JSON.stringify(getNumberOfItemsInCart())
   );
+
+  const { isOpen: dropdownIsOpen, openDropdown, closeDropdown } = useCartDropdown();
+  const navigate = useNavigate();
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  const handleCartClick = () => {
+    if (isMobile) {
+      navigate("/cart");
+    } else {
+      if (!dropdownIsOpen) {
+        openDropdown("other");
+      } else {
+        closeDropdown();
+      }
+    }
+  };
+
+  const handleResize = () => {
+    setIsMobile(window.innerWidth <= 768);
+  };
+
+  useEffect(() => {
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <nav className="border-lime fixed left-0 right-0 top-0 mx-auto w-full max-w-6xl rounded-full border bg-white">
@@ -57,8 +85,8 @@ export default function Navigation() {
               </svg>
             </button>
 
-            <NavLink to="/cart" className="flex items-center">
-              <div className="relative">
+            <div className="flex items-center">
+              <div className="relative" onClick={handleCartClick}>
                 <div className="to absolute -top-3 left-3">
                   <p className="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-3 text-xs text-white">
                     {getNumberOfItemsInCart()}
@@ -79,12 +107,11 @@ export default function Navigation() {
                   />
                 </svg>
               </div>
-            </NavLink>
-            {/* Cart Dropdown */}
-            {cartItems.length > 0 && <CartDropdownComponent cartItems={cartItems} />}
+            </div>
           </div>
         </div>
       </div>
+      {dropdownIsOpen && <CartDropdown />}
     </nav>
-  );
+  )
 }

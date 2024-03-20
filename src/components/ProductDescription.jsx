@@ -1,6 +1,7 @@
 import { useState } from "react";
 import QuantitySelector from "./QuantitySelector";
 import { useCart } from "../contexts/CartContext";
+import { useCartDropdown } from "../contexts/CartDropdownContext";
 
 const ProductDescription = ({ mainProduct }) => {
   const [quantity, setQuantity] = useState(1);
@@ -10,16 +11,21 @@ const ProductDescription = ({ mainProduct }) => {
     updateProductQuantityInCart,
   } = useCart();
 
+  const { openDropdown } = useCartDropdown();
+
+
+  
   const handleQuantityChange = (newQuantity) => {
     setQuantity(newQuantity);
   };
+
 
   const addToCart = () => {
     console.log(
       `Added ${quantity} ${mainProduct.Name}(s) with ID ${mainProduct.Id} to cart.`,
     );
     addProductToCart(mainProduct.Id, quantity);
-    // setQuantity(1);
+    openDropdown('addtocart');
   };
 
   const removeFromCart = () => {
@@ -29,6 +35,7 @@ const ProductDescription = ({ mainProduct }) => {
   const stock = mainProduct.Stock;
   const quantityInCart = getQuantityOfItemByIdInCart(mainProduct.Id);
   const quantityLeftInStock = stock - quantityInCart;
+
 
   return (
     <>
