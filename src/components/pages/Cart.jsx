@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useCart } from "../../contexts/CartContext";
 import { useProducts } from "../../hooks/useProducts";
 import { ProductsProvider } from "../../contexts/ProductsContext";
+import { NavLink } from "react-router-dom";
 
 const Cart = () => {
   const {
@@ -39,14 +40,16 @@ const Cart = () => {
               return (
                 <div
                   key={index}
-                  className="flex  items-center justify-between border-b py-4"
+                  className="flex items-center justify-between border-b py-4"
                 >
                   <div className="flex gap-4">
-                    <img
-                      src={product.Image}
-                      alt={product.Name}
-                      className=" h-24 w-24 rounded-3xl border object-cover object-top"
-                    />
+                    <NavLink to={`/products/${product.Id}`}>
+                      <img
+                        src={product.Image}
+                        alt={product.Name}
+                        className=" h-24 w-24 rounded-3xl border object-cover object-top"
+                      />
+                    </NavLink>
 
                     <div className="flex flex-col justify-between">
                       <div className="flex flex-col">
