@@ -30,6 +30,13 @@ A quick view of your shopping cart as products are added
 ### About Page:  
 ![About Us Page](src/assets/Aboutus.png)
 
+### Mobile Responsive:  
+<div align="center">
+  <img src="image1.png" width="30%">
+  <img src="image2.png" width="30%">
+  <img src="image3.png" width="30%">
+</div>
+
 
 ### Enjoy soothing background music while browsing
 To Listen Click [HERE](https://pixabay.com/music/meditationspiritual-peaceful-garden-healing-light-piano-for-meditation-zen-landscapes-112199/) ![Music](src/assets/music.png)
@@ -47,7 +54,7 @@ Thank you to all collaborators on this Project
 | **Components & Functionality**            | **Contributors**                       |
 |--------------------------|----------------------------------------|
 | **Wireframe + Branding**   | Haydawn | 
-| **React Router/ React**   | James |            
+| **React / Netlify**   | James |            
 | **Navbar + Music Functionality** | Jack / Sophie| 
 | **Jumbotron + Page Divider** | Haydawn |
 | **Featured Plants Section + Shop Category** | Sophie |
@@ -75,7 +82,7 @@ Thank you to all collaborators on this Project
 
 
 ## Deployed Project 
-[Website Link](https://adam-deb.github.io/project-1/)
+[Website Link]()
 
 
 ## License
