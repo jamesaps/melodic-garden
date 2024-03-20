@@ -25,4 +25,8 @@ const Product = () => {
   );
 };
 
+<<<<<<< HEAD
 export default Product;
+=======
+export default Product;
+>>>>>>> fa515c67b01f4a456b183c8d677e055274cb880e
