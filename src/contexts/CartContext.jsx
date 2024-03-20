@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import { useProducts } from "../hooks/useProducts";
 
 //Create a context to manage cart state
 const CartContext = createContext([]);
@@ -17,6 +18,7 @@ const cartItemsFromLocalStorage = JSON.parse(
 export const CartProvider = ({ children }) => {
   //State to store the cart items
   const [cartItems, setCartItems] = useState(cartItemsFromLocalStorage);
+  const { products } = useProducts();
 
   // Store cart to local storage when cart changes
   useEffect(() => {
@@ -32,8 +34,7 @@ export const CartProvider = ({ children }) => {
       const updatedCartItems = [...cartItems];
       updatedCartItems[existingProductIndex].quantity += quantity;
       setCartItems(updatedCartItems);
-    } 
-    else {
+    } else {
       setCartItems([...cartItems, { productId, quantity }]);
     }
   };
@@ -78,6 +79,18 @@ export const CartProvider = ({ children }) => {
     return 0;
   };
 
+  const totalPrice = cartItems.reduce((total, cartItem) => {
+    const product = products.find((product) => {
+      return product.Id === cartItem.productId;
+    });
+
+    if (product === undefined) {
+      return total;
+    }
+
+    return total + product.Price * cartItem.quantity;
+  }, 0);
+
   return (
     // Providing the cart items and add function as the context value
     <CartContext.Provider
@@ -87,6 +100,7 @@ export const CartProvider = ({ children }) => {
         getNumberOfItemsInCart,
         getQuantityOfItemByIdInCart,
         updateProductQuantityInCart,
+        totalPrice,
       }}
     >
       {children}
