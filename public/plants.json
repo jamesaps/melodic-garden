@@ -10,7 +10,11 @@
     "Price": 25,
     "Lighting": "The light is moderate indirect, it is better to put it in 2 m from a window facing west. With excessive light, the leaves twist, their color fades.",
     "Care": "Qalat leaves, like all members of the family marantaceae, are formed on the night - this is normal. In summer, the plant can be taken out to the garden or to the balcony, but it should be protected from the wind. The plant does not like drafts and gas combustion products. Completely dried leaves should be removed in a timely manner. Wipe the leaves with either a soft dry cloth or a brush, since they are easily damaged. Plants love the moist hot air of the bathroom especially at a time when someone is taking a shower. The plant is well-grown in a group with other plants to increase air humidity.",
-    "Stock": 3
+    "Stock": 3,
+    "Type": "Outdoors",
+    "Height": "Short",
+    "Popularity": 73,
+    "Launched": "2008-03-15"
   },
   {
     "Id": 2,
@@ -23,7 +27,11 @@
     "Price": 45,
     "Lighting": "A bright diffused light, it is best to place the plant in a tub near the south-west or south-east window.",
     "Care": "In the summer it is desirable to take out on the street. Regular rubbing of leaves is required. Carefully, the tips of the leaves are very sharp Washington.",
-    "Stock": 2
+    "Stock": 2,
+    "Type": "Indoors",
+    "Height": "Tall",
+    "Popularity": 100,
+    "Launched": "2023-06-09"
   },
   {
     "Id": 3,
@@ -36,7 +44,11 @@
     "Price": 30,
     "Lighting": "Plants with bright leaves prefer bright diffuse light. The best place is 1-2 m from the south or south-west window. In a shady place, the color will be pale.",
     "Care": "Strongly stretched plant is most expedient to cut, the top can be rooted. It is advisable to regularly wipe the leaves. The brown tips of the leaves should be cut off.Dracaena sander can be grown in water, wherein the dissolved minerals. The plant is quite shady, the shoots can stand in a vase with water in the back of the room.",
-    "Stock": 2
+    "Stock": 2,
+    "Type": "Indoors",
+    "Height": "Tall",
+    "Popularity": 63,
+    "Launched": "2020-09-02"
   },
   {
     "Id": 4,
@@ -49,7 +61,11 @@
     "Price": 17.5,
     "Lighting": "Bright light is required make shade from the hot midday rays. Suitable south-east or south-west window.",
     "Care": "The plant is desirable support, it can be made in the form of a flexible arch. The plant needs airing. After flowering, all long branches can be cut to 2/3.",
-    "Stock": 2
+    "Stock": 2,
+    "Type": "Outdoors",
+    "Height": "Short",
+    "Popularity": 87,
+    "Launched": "2004-09-28"
   },
   {
     "Id": 5,
@@ -62,7 +78,11 @@
     "Price": 15,
     "Lighting": "A sunny place, a few hours of direct sunshine a day. With insufficient light, the rose will not bloom.",
     "Care": "For the summer it is good to take the plant in the garden. Requires regular pruning in spring and after flowering.",
-    "Stock": 2
+    "Stock": 2,
+    "Type": "Indoors",
+    "Height": "Short",
+    "Popularity": 94,
+    "Launched": "2000-12-11"
   },
   {
     "Id": 6,
@@ -75,7 +95,11 @@
     "Price": 45,
     "Lighting": "Non-directional light or penumbra. Prefers northern or eastern windows. He loves the light, but you have to shade from the bright sun. Can be grown under artificial lighting for at least 16 hours a day.",
     "Care": "If the leaves of the plant have massively turned yellow, they should be cut off at the root, and soon new ones will grow. Cyperus grows very well near the aquarium or pool.",
-    "Stock": 2
+    "Stock": 2,
+    "Type": "Outdoors",
+    "Height": "Short",
+    "Popularity": 58,
+    "Launched": "2009-02-13"
   },
   {
     "Id": 7,
@@ -88,7 +112,11 @@
     "Price": 20,
     "Lighting": "Prefers bright diffused light, especially variegated forms. However, they easily adapt to partial shade. In case of insufficient illumination, the stems can stretch and break easily, with excessive light, the old leaves turn yellow, and young ones get a violet color.",
     "Care": "In the spring, it is necessary to carry out rejuvenating pruning at a height of 3-4 knots from the ground. The plant stalks break easily, so you should be careful with the plant.",
-    "Stock": 2
+    "Stock": 2,
+    "Type": "Indoors",
+    "Height": "Short",
+    "Popularity": 78,
+    "Launched": "2012-07-28"
   },
   {
     "Id": 8,
@@ -101,7 +129,11 @@
     "Price": 30,
     "Lighting": "It prefers scattered light and adapts to penumbra, it is possible to grow at a distance of 0.5-2 m from a brightly lit window. However, under the conditions of shading, the color of the leaves becomes less variegated, and the size is smaller.",
     "Care": "Scindapsus poorly tolerates the effects of gas combustion products and does not like drafts. Usually requires support, the moss-covered pole is best suited. The plant can be cut in spring. To form a bushy shape, shoots are cut in spring in half their length.",
-    "Stock": 2
+    "Stock": 2,
+    "Type": "Indoors",
+    "Height": "Short",
+    "Popularity": 85,
+    "Launched": "2010-08-14"
   },
   {
     "Id": 9,
@@ -114,7 +146,11 @@
     "Price": 35,
     "Lighting": "Plants with variegated leaves prefer bright scattered light, only in bright light can abundant flowering. Sansevieriya can easily tolerate direct sun.",
     "Care": "It is advisable to regularly wipe the leaves.",
-    "Stock": 2
+    "Stock": 2,
+    "Type": "Outdoors",
+    "Height": "Short",
+    "Popularity": 60,
+    "Launched": "2001-03-05"
   },
   {
     "Id": 10,
@@ -127,7 +163,11 @@
     "Price": 35,
     "Lighting": "It is best to give this species medium to bright light, preferably bright indirect. If your windows receive harsh direct sun, placing a sheer curtain over it can help diffuse the light.",
     "Care": "Spray with a mister every few days, they like to keep their leaves moist.",
-    "Stock": 2
+    "Stock": 2,
+    "Type": "Indoors",
+    "Height": "Tall",
+    "Popularity": 8,
+    "Launched": "2022-12-17"
   },
   {
     "Id": 11,
@@ -140,6 +180,10 @@
     "Price": 40,
     "Lighting": "This plant is best in full sun or light shade, this succulent is used to exposure and loves the light.",
     "Care": "The leaves on these plants are short-lived and die off on a regular basis. This is natural and the plant will generate more from time-to-time.",
-    "Stock": 2
+    "Stock": 2,
+    "Type": "Indoors",
+    "Height": "Tall",
+    "Popularity": 27,
+    "Launched": "2000-07-29"
   }
 ]
