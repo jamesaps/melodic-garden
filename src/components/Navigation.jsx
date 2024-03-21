@@ -9,9 +9,10 @@ import Audio from "../audio/audio1.mp3";
 
 export default function Navigation() {
   const { getNumberOfItemsInCart } = useCart();
-  
+
   const [showMenu, setShowMenu] = useState(false);
   const dropdownRef = useRef(null);
+  const checkoutIcon = useRef(null);
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
@@ -30,7 +31,12 @@ export default function Navigation() {
     };
   }, [dropdownRef]);
 
-  const { isOpen: dropdownIsOpen, openDropdown, closeDropdown, isMobile } = useCartDropdown();
+  const {
+    isOpen: dropdownIsOpen,
+    openDropdown,
+    closeDropdown,
+    isMobile,
+  } = useCartDropdown();
   const navigate = useNavigate();
 
   const handleCartClick = () => {
@@ -45,13 +51,11 @@ export default function Navigation() {
     }
   };
 
-
   return (
     <nav className="border-lime fixed left-0 right-0 top-0 z-10 mx-auto w-full max-w-6xl rounded-full border bg-white">
-      <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 flex items-center justify-between">
-  
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-2 sm:px-6 lg:px-8">
         <button
-          className="sm:hidden inline-block px-4 py-2 text-black"
+          className="inline-block px-4 py-2 text-black sm:hidden"
           onClick={toggleMenu}
         >
           <svg
@@ -70,31 +74,35 @@ export default function Navigation() {
           </svg>
         </button>
 
-       
-        <NavLink to="/" className="flex h-16 flex-shrink-0 items-center justify-center">
+        <NavLink
+          to="/"
+          className="flex h-16 flex-shrink-0 items-center justify-center"
+        >
           <img className="w-16" src={image} alt="Melodic Garden" />
         </NavLink>
 
-     
         {showMenu && (
-          <div ref={dropdownRef} className="sm:hidden absolute top-0 left-0 w-full bg-white border-t rounded-md border-gray-200">
+          <div
+            ref={dropdownRef}
+            className="absolute left-0 top-0 w-full rounded-md border-t border-gray-200 bg-white sm:hidden"
+          >
             <NavLink
               to="/"
-              className="block py-2 px-4 text-black font-medium hover:bg-green-900 hover:text-white"
+              className="block px-4 py-2 font-medium text-black hover:bg-green-900 hover:text-white"
               onClick={() => setShowMenu(false)}
             >
               Home
             </NavLink>
             <NavLink
               to="/products"
-              className="block py-2 px-4 text-black font-medium hover:bg-green-900 hover:text-white"
+              className="block px-4 py-2 font-medium text-black hover:bg-green-900 hover:text-white"
               onClick={() => setShowMenu(false)}
             >
               Products
             </NavLink>
             <NavLink
               to="/about"
-              className="block py-2 px-4 font-medium text-base text-black hover:bg-green-900 hover:text-white"
+              className="block px-4 py-2 text-base font-medium text-black hover:bg-green-900 hover:text-white"
               onClick={() => setShowMenu(false)}
             >
               About Us
@@ -102,8 +110,7 @@ export default function Navigation() {
           </div>
         )}
 
-  
-        <div className="hidden sm:flex sm:items-center space-x-8">
+        <div className="hidden space-x-8 sm:flex sm:items-center">
           <NavLink
             to="/"
             className="rounded-md px-3 py-2 text-base font-medium text-black hover:bg-green-900 hover:text-white"
@@ -124,15 +131,21 @@ export default function Navigation() {
           </NavLink>
         </div>
 
-   
         {!showMenu && (
-          <div className="flex items-center space-x-2 mr-4">
+          <div className="mr-4 flex items-center space-x-2">
             <AudioPlayer audioSrc={Audio} />
 
             <div className="flex items-center">
-              <div className="relative cursor-pointer" onClick={handleCartClick}>
+              <div
+                className="relative cursor-pointer"
+                onClick={handleCartClick}
+                ref={checkoutIcon}
+              >
                 <div className="to absolute -top-3 left-3">
-                  <p className="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-3 text-xs text-white" style={{ userSelect: 'none' }}>
+                  <p
+                    className="flex h-2 w-2 items-center justify-center rounded-full bg-red-500 p-3 text-xs text-white"
+                    style={{ userSelect: "none" }}
+                  >
                     {getNumberOfItemsInCart()}
                   </p>
                 </div>
@@ -155,7 +168,7 @@ export default function Navigation() {
           </div>
         )}
       </div>
-      {dropdownIsOpen && <CartDropdown />}
+      {dropdownIsOpen && <CartDropdown checkoutIcon={checkoutIcon} />}
     </nav>
-  )
+  );
 }
