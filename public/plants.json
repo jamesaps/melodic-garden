@@ -12,7 +12,9 @@
     "Care": "Qalat leaves, like all members of the family marantaceae, are formed on the night - this is normal. In summer, the plant can be taken out to the garden or to the balcony, but it should be protected from the wind. The plant does not like drafts and gas combustion products. Completely dried leaves should be removed in a timely manner. Wipe the leaves with either a soft dry cloth or a brush, since they are easily damaged. Plants love the moist hot air of the bathroom especially at a time when someone is taking a shower. The plant is well-grown in a group with other plants to increase air humidity.",
     "Stock": 3,
     "Type": "Outdoors",
-    "Height": "Short"
+    "Height": "Short",
+    "Popularity": 73,
+    "Launched": "2008-03-15"
   },
   {
     "Id": 2,
@@ -27,7 +29,9 @@
     "Care": "In the summer it is desirable to take out on the street. Regular rubbing of leaves is required. Carefully, the tips of the leaves are very sharp Washington.",
     "Stock": 2,
     "Type": "Indoors",
-    "Height": "Tall"
+    "Height": "Tall",
+    "Popularity": 100,
+    "Launched": "2023-06-09"
   },
   {
     "Id": 3,
@@ -42,7 +46,9 @@
     "Care": "Strongly stretched plant is most expedient to cut, the top can be rooted. It is advisable to regularly wipe the leaves. The brown tips of the leaves should be cut off.Dracaena sander can be grown in water, wherein the dissolved minerals. The plant is quite shady, the shoots can stand in a vase with water in the back of the room.",
     "Stock": 2,
     "Type": "Indoors",
-    "Height": "Tall"
+    "Height": "Tall",
+    "Popularity": 63,
+    "Launched": "2020-09-02"
   },
   {
     "Id": 4,
@@ -57,7 +63,9 @@
     "Care": "The plant is desirable support, it can be made in the form of a flexible arch. The plant needs airing. After flowering, all long branches can be cut to 2/3.",
     "Stock": 2,
     "Type": "Outdoors",
-    "Height": "Short"
+    "Height": "Short",
+    "Popularity": 87,
+    "Launched": "2004-09-28"
   },
   {
     "Id": 5,
@@ -72,7 +80,9 @@
     "Care": "For the summer it is good to take the plant in the garden. Requires regular pruning in spring and after flowering.",
     "Stock": 2,
     "Type": "Indoors",
-    "Height": "Short"
+    "Height": "Short",
+    "Popularity": 94,
+    "Launched": "2000-12-11"
   },
   {
     "Id": 6,
@@ -87,7 +97,9 @@
     "Care": "If the leaves of the plant have massively turned yellow, they should be cut off at the root, and soon new ones will grow. Cyperus grows very well near the aquarium or pool.",
     "Stock": 2,
     "Type": "Outdoors",
-    "Height": "Short"
+    "Height": "Short",
+    "Popularity": 58,
+    "Launched": "2009-02-13"
   },
   {
     "Id": 7,
@@ -102,7 +114,9 @@
     "Care": "In the spring, it is necessary to carry out rejuvenating pruning at a height of 3-4 knots from the ground. The plant stalks break easily, so you should be careful with the plant.",
     "Stock": 2,
     "Type": "Indoors",
-    "Height": "Short"
+    "Height": "Short",
+    "Popularity": 78,
+    "Launched": "2012-07-28"
   },
   {
     "Id": 8,
@@ -117,7 +131,9 @@
     "Care": "Scindapsus poorly tolerates the effects of gas combustion products and does not like drafts. Usually requires support, the moss-covered pole is best suited. The plant can be cut in spring. To form a bushy shape, shoots are cut in spring in half their length.",
     "Stock": 2,
     "Type": "Indoors",
-    "Height": "Short"
+    "Height": "Short",
+    "Popularity": 85,
+    "Launched": "2010-08-14"
   },
   {
     "Id": 9,
@@ -132,7 +148,9 @@
     "Care": "It is advisable to regularly wipe the leaves.",
     "Stock": 2,
     "Type": "Outdoors",
-    "Height": "Short"
+    "Height": "Short",
+    "Popularity": 60,
+    "Launched": "2001-03-05"
   },
   {
     "Id": 10,
@@ -147,7 +165,9 @@
     "Care": "Spray with a mister every few days, they like to keep their leaves moist.",
     "Stock": 2,
     "Type": "Indoors",
-    "Height": "Tall"
+    "Height": "Tall",
+    "Popularity": 8,
+    "Launched": "2022-12-17"
   },
   {
     "Id": 11,
@@ -162,6 +182,8 @@
     "Care": "The leaves on these plants are short-lived and die off on a regular basis. This is natural and the plant will generate more from time-to-time.",
     "Stock": 2,
     "Type": "Indoors",
-    "Height": "Tall"
+    "Height": "Tall",
+    "Popularity": 27,
+    "Launched": "2000-07-29"
   }
 ]

@@ -12,6 +12,7 @@ import { ShopFilterContext } from "../../contexts/ShopFilterContext";
 import testFilterData from "./../../test-filters.json";
 import MobileShopFilterDialog from "../MobileShopFilterDialog";
 import { useProducts } from "../../hooks/useProducts";
+import dayjs from "dayjs";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -76,9 +77,11 @@ export default function Shop() {
 
       switch (sortOption.value) {
         case "popular":
-          return plantsData;
+          return plantsData.sort((p1, p2) => p1.Popularity - p2.Popularity);
         case "new":
-          return plantsData;
+          return plantsData.sort(
+            (p1, p2) => dayjs(p2.Launched).unix() - dayjs(p1.Launched).unix(),
+          );
         case "price-low":
           return plantsData.sort((p1, p2) => p1.Price - p2.Price);
         case "price-high":
@@ -279,7 +282,7 @@ export default function Shop() {
             <ShopFilter />
 
             {/* Product grid */}
-            <div className="grid gap-4 lg:col-span-3 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-4 md:grid-cols-2 lg:col-span-3 lg:grid-cols-3">
               {filteredProducts.map((product) => (
                 <div className="lg:col-span-1" key={product.Id}>
                   <ProductCard product={product} />
