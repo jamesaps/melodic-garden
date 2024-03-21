@@ -91,6 +91,10 @@ export const CartProvider = ({ children }) => {
     return total + product.Price * cartItem.quantity;
   }, 0);
 
+  const emptyCart = () => {
+    setCartItems([]);
+  };
+
   return (
     // Providing the cart items and add function as the context value
     <CartContext.Provider
@@ -101,6 +105,7 @@ export const CartProvider = ({ children }) => {
         getQuantityOfItemByIdInCart,
         updateProductQuantityInCart,
         totalPrice,
+        emptyCart,
       }}
     >
       {children}
