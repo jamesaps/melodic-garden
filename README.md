@@ -32,9 +32,9 @@ A quick view of your shopping cart as products are added
 
 ### Mobile Responsive:  
 <div align="center">
-  <img src="image1.png" width="30%">
-  <img src="image2.png" width="30%">
-  <img src="image3.png" width="30%">
+  <img src="src/assets/mob1.png" width="30%">
+  <img src="src/assets/mob1.png" width="30%">
+  <img src="src/assets/mob1.png" width="30%">
 </div>
 
 
@@ -55,13 +55,15 @@ Thank you to all collaborators on this Project
 |--------------------------|----------------------------------------|
 | **Wireframe + Branding**   | Haydawn | 
 | **React / Netlify**   | James |            
-| **Navbar + Music Functionality** | Jack / Sophie| 
+| **Navbar + Audio Functionality** | Jack / Sophie| 
 | **Jumbotron + Page Divider** | Haydawn |
 | **Featured Plants Section + Shop Category** | Sophie |
+| **Product Page & Recommendations** | Adam |
+| **Product Filter** | James |
 | **Footer** | James |
 | **Cart Page**   | Haydawn / James / Adam|  
 | **Checkout Functionality** | Adam / James
-| **Readme** | Haydawn|
+
 
 
 ## References
