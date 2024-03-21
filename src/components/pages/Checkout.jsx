@@ -8,6 +8,7 @@ import { NavLink } from "react-router-dom";
 import { useProducts } from "../../hooks/useProducts";
 import { useCart } from "../../contexts/CartContext";
 import CheckoutSuccessModal from "../CheckoutSuccessModal";
+import CheckoutFailureModal from "../CheckoutFailureModal";
 
 export default function Checkout() {
   const [formData, setFormData] = useState({
@@ -48,6 +49,7 @@ export default function Checkout() {
   const [submittingForm, setSubmittingForm] = useState(false);
   const [formErrors, setFormErrors] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
+  const [failureModalOpen, setFailureModalOpen] = useState(false);
 
   const handleFormSubmission = async () => {
     if (submittingForm) {
@@ -154,14 +156,21 @@ export default function Checkout() {
       const response = await fetch(url, apiOptions);
       setSubmittingForm(false);
 
-      const data = await response.json();
+      if (response.ok) {
+        const data = await response.json();
+        setSubmittingForm(false);
+        console.log(data);
 
-      setModalOpen(true);
-      emptyCart();
-      console.log(data);
+        setModalOpen(true);
+        emptyCart();
+      } else {
+        setFailureModalOpen(true);
+        console.log("Error submitting form");
+      }
     } catch (e) {
       setSubmittingForm(false);
       setFormErrors(e);
+      setFailureModalOpen(true);
       console.log("Error submitting form");
     }
   };
@@ -169,6 +178,10 @@ export default function Checkout() {
   return (
     <>
       <CheckoutSuccessModal open={modalOpen} setOpen={setModalOpen} />
+      <CheckoutFailureModal
+        open={failureModalOpen}
+        setOpen={setFailureModalOpen}
+      />
       {cartItems.length === 0 ? (
         <div className="m-16 flex flex-1 items-center justify-center">
           <p className="text-gray-800">Your cart is empty.</p>
