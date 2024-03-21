@@ -77,15 +77,16 @@ const ProductDescription = ({ mainProduct }) => {
               />
               <button
                 onClick={addToCart}
-                className="ml-3 rounded bg-lime-600 px-4 py-2 font-bold text-white hover:bg-lime-700"
+                className={`ml-3 rounded bg-lime-600 px-4 py-2 font-bold text-white ${quantityLeftInStock == 0 ? "cursor-not-allowed opacity-50" : "hover:bg-lime-700"}`}
+                disabled={quantityLeftInStock === 0}
               >
                 Add to Cart
               </button>
             </div>
             {quantityLeftInStock === 0 ? (
-              <span className="mt-3">No more left in stock</span>
+              <span className="mt-3" style={{ color: 'red' }}>No more left in stock</span>
             ) : quantityLeftInStock < 10 ? (
-              <span className="mt-3">
+              <span className="mt-3" style={{ color: 'gray' }}>
                 Only {quantityLeftInStock} left in stock
               </span>
             ) : null}
