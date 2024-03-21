@@ -24,7 +24,7 @@ const Cart = () => {
     );
   } else {
     return (
-      <div className="container mx-auto mb-16 mt-28">
+      <div className="container mx-auto mb-16 mt-28 max-w-7xl">
         <div className="text-end">Price</div>
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-4">
@@ -78,8 +78,7 @@ const Cart = () => {
           </div>
           <div className="flex justify-end">
             <p>
-              Subtotal{" "}
-              {`(${numberOfItemsInCart} item${numberOfItemsInCart !== 1 ? "s" : ""}):`}{" "}
+              {`Subtotal (${numberOfItemsInCart} item${numberOfItemsInCart !== 1 ? "s" : ""}):`}{" "}
               <span className="text-3xl font-bold">
                 £{totalPrice.toFixed(2)}
               </span>
