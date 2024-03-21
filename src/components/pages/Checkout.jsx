@@ -435,11 +435,11 @@ export default function Checkout() {
               return (
                 <div key={index} className="flex items-center justify-between">
                   <div className="flex w-full gap-4">
-                    <NavLink to={`/products/${product.Id}`}>
+                    <NavLink to={`/products/${product.Id}`} className="p-2">
                       <img
                         src={product.Image}
                         alt={product.Name}
-                        className="h-16 max-h-16 w-16 max-w-16 rounded-md object-cover object-top"
+                        className="h-16 max-h-16 w-16 max-w-16 rounded-md object-cover object-top bg-product-card-background "
                       />
                     </NavLink>
 
@@ -466,6 +466,8 @@ export default function Checkout() {
                 </div>
               );
             })}
+
+            <div>Total:</div>
           </div>
         </div>
       </div>
