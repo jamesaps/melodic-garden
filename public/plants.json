@@ -2,7 +2,7 @@
   {
     "Id": 1,
     "Name": "Calathea",
-    "Image": "https://images.pexels.com/photos/6754892/pexels-photo-6754892.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "Image": "/calathea-t.png",
     "Family": "Marantaceae",
     "Origin": "Tropical regions of South America",
     "Size": "Small",
@@ -15,7 +15,7 @@
   {
     "Id": 2,
     "Name": "Areca Palm",
-    "Image": "/test.png",
+    "Image": "/arecapalm-t.png",
     "Family": "Aracaceae",
     "Origin": "USA (Arizona, California), Mexico",
     "Size": "Large",
@@ -28,7 +28,7 @@
   {
     "Id": 3,
     "Name": "Dracaena",
-    "Image": "https://img.freepik.com/free-photo/snake-plant-beige-pot-by-wall_53876-133185.jpg?t=st=1710950846~exp=1710954446~hmac=27ae878ee755cf014557cf306a6006bf54666a50632fbc6731a2fb5997428f34&w=740",
+    "Image": "/dracaena-t.png",
     "Family": "Agavaceae",
     "Origin": "Asia, Australia, Africa",
     "Size": "Medium",
@@ -41,7 +41,7 @@
   {
     "Id": 4,
     "Name": "Jasminum",
-    "Image": "https://img.freepik.com/free-photo/vase-with-beautiful-floral-arrangement_23-2148029168.jpg?t=st=1710951124~exp=1710954724~hmac=7540fda236ff4cdf50b5da36ee7d8e0ca0f3350daf1faf70f27ef6c312aa31f4&w=996",
+    "Image": "/jasminum-t.png",
     "Family": "Oleaceae",
     "Origin": "China",
     "Size": "Small",
@@ -54,7 +54,7 @@
   {
     "Id": 5,
     "Name": "Rose",
-    "Image": "/Rose.jpeg",
+    "Image": "/rose-t.png",
     "Family": "Rosaceae",
     "Origin": "Central Asia",
     "Size": "Small",
@@ -67,7 +67,7 @@
   {
     "Id": 6,
     "Name": "Cyperus",
-    "Image": "/Cyperus.jpeg",
+    "Image": "/cyperus-t.png",
     "Family": "Cyperaceae",
     "Origin": "Africa, Madagascar, the Mediterranean, Central America",
     "Size": "Large",
@@ -80,7 +80,7 @@
   {
     "Id": 7,
     "Name": "Tradescantia",
-    "Image": "https://img.freepik.com/free-photo/calathea-plant-gray-pot_53876-133131.jpg?t=st=1710953794~exp=1710957394~hmac=4912f874d58a92e17b1d31df42432ac5e7bf37a830c39ba92afb93b7b84f2ea9&w=826",
+    "Image": "/tradescantia-t.png",
     "Family": "Commelinaceae",
     "Origin": "Mexico and Brazil",
     "Size": "Small",
@@ -93,7 +93,7 @@
   {
     "Id": 8,
     "Name": "Epipremnum",
-    "Image": "/Epipremnum.jpeg",
+    "Image": "/epipremnum-t.png",
     "Family": "Araceae",
     "Origin": "Tropical regions of Southeast Asia, Solomon Islands, Malay Archipelago, Indonesia",
     "Size": "Medium",
@@ -106,7 +106,7 @@
   {
     "Id": 9,
     "Name": "Snake Plant",
-    "Image": "/Snake.jpeg",
+    "Image": "/snake-t.png",
     "Family": "Agavaceae",
     "Origin": "Kenya, Madagascar, Namibia, Angola",
     "Size": "Medium",
@@ -119,7 +119,7 @@
   {
     "Id": 10,
     "Name": "Rubber Plant",
-    "Image": "/Rubber.jpeg",
+    "Image": "/rubber-t.png",
     "Family": "Mulberry",
     "Origin": "Brazil, Columbia and Peru",
     "Size": "Medium",
@@ -132,7 +132,7 @@
   {
     "Id": 11,
     "Name": "Monstera",
-    "Image": "https://img.freepik.com/free-photo/cereus-cactus-pot_53876-133152.jpg?t=st=1710278539~exp=1710282139~hmac=b5062d61407b78c702b3fa98c96e52bb0d37b7e6a925098bfc2f1eda7278009c&w=740",
+    "Image": "/monstera-t.png",
     "Family": "Spurges",
     "Origin": "Southern Mexico",
     "Size": "Medium",
