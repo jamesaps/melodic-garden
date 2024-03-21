@@ -8,10 +8,13 @@ const ProductDescription = ({ mainProduct }) => {
   const {
     addProductToCart,
     getQuantityOfItemByIdInCart,
-    updateProductQuantityInCart,
   } = useCart();
 
   const { openDropdown, isMobile} = useCartDropdown();
+
+  const stock = mainProduct.Stock;
+  const quantityInCart = getQuantityOfItemByIdInCart(mainProduct.Id);
+  const quantityLeftInStock = stock - quantityInCart;
 
   const handleQuantityChange = (newQuantity) => {
     setQuantity(newQuantity);
@@ -23,18 +26,13 @@ const ProductDescription = ({ mainProduct }) => {
       `Added ${quantity} ${mainProduct.Name}(s) with ID ${mainProduct.Id} to cart.`,
     );
     addProductToCart(mainProduct.Id, quantity);
-    if(!isMobile){
+    if(!isMobile && quantityInCart !== stock){
       openDropdown('addtocart');
     }
     else {
       return;
     }
   };
-
-  const stock = mainProduct.Stock;
-  const quantityInCart = getQuantityOfItemByIdInCart(mainProduct.Id);
-  const quantityLeftInStock = stock - quantityInCart;
-
 
   return (
     <>
