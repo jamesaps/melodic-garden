@@ -43,7 +43,7 @@ export const CartDropdownProvider = ({ children }) => {
         toggleDropdown,
         dropdownRef,
         trigger,
-        isMobile, // Include isMobile in the context value
+        isMobile, 
       }}
     >
       {children}
