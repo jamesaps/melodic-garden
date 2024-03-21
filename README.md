@@ -31,11 +31,13 @@ A quick view of your shopping cart as products are added
 ![About Us Page](src/assets/Aboutus.png)
 
 ### Mobile Responsive:  
-<div align="center">
-  <img src="src/assets/mob1.png" width="30%">
-  <img src="src/assets/mob1.png" width="30%">
-  <img src="src/assets/mob1.png" width="30%">
+<div align="center" style="margin-top: 50px;">
+  <img src="src/assets/mob1.png" width="30%" style="margin-right: 10px;">
+  <img src="src/assets/mob2.png" width="30%" style="margin-right: 10px;">
+  <img src="src/assets/mob1.png" width="30%" style="margin-right: 10px;">
 </div>
+
+
 
 
 ### Enjoy soothing background music while browsing
