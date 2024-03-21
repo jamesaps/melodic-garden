@@ -52,7 +52,7 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="border-lime fixed left-0 right-0 top-0 z-10 mx-auto w-full max-w-6xl rounded-full border bg-white">
+    <nav className="fixed left-0 right-0 top-0 z-10 mx-auto w-full max-w-6xl rounded-3xl shadow-sm bg-white rounded-t-none">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-2 sm:px-6 lg:px-8">
         <button
           className="inline-block px-4 py-2 text-black sm:hidden"

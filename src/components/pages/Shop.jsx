@@ -198,7 +198,7 @@ export default function Shop() {
         setMobileFiltersOpen={setMobileFiltersOpen}
       />
 
-      <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <main className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <h1 className="mt-32 text-center text-xl font-bold text-gray-900">
           SHOP ALL PLANTS
         </h1>
