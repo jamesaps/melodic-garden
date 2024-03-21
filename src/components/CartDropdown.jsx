@@ -46,7 +46,7 @@ const CartDropdown = ({ checkoutIcon }) => {
       return;
     }
 
-    if (isOpen && cartItems.length === 0 && trigger === "addtocart") {
+    if (isOpen && cartItems.length === 0) {
       closeDropdown();
     }
 
