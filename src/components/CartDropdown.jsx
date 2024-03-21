@@ -144,7 +144,9 @@ const CartDropdown = ({ checkoutIcon }) => {
         )}
       </div>
       <div className="border-t border-gray-200 p-4">
-        <p className="text-sm text-gray-500">Total Price: £{totalPrice}</p>
+        <p className="text-sm text-gray-500">
+          Total Price: £{totalPrice.toFixed(2)}
+        </p>
       </div>
       <div className="flex justify-between py-3">
         <Link

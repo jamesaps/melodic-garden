@@ -23,7 +23,7 @@ function ProductCard({ product }) {
     <>
       <NavLink to={`/products/${product.Id}`}>
         <img
-          className="mb-4 h-72 w-full rounded-3xl object-cover object-center lg:object-top bg-product-card-background"
+          className="bg-product-card-background mb-4 h-72 w-full rounded-3xl object-cover object-center lg:object-top"
           src={product.Image}
           alt=""
         />
@@ -31,7 +31,7 @@ function ProductCard({ product }) {
 
       <div className="my-4 flex items-center justify-between">
         <span className="truncate text-xl">{product.Name}</span>
-        <span className="text-3xl font-bold">£{product.Price}</span>
+        <span className="text-3xl font-bold">£{product.Price.toFixed(2)}</span>
       </div>
 
       <ProductCardQuantitySelector

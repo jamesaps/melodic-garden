@@ -43,7 +43,7 @@ export default function Checkout() {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleFormSubmission = () => {
+  const handleFormSubmission = async () => {
     const corsProxyURLPrefix = "https://corsproxy.io/?";
     const mailjetApiURL = "https://api.mailjet.com/v3.1/send";
 
@@ -138,13 +138,14 @@ export default function Checkout() {
 
     const url = `${corsProxyURLPrefix}${encodeURIComponent(mailjetApiURL)}`;
 
-    console.log("fetching");
-    fetch(url, apiOptions)
-      .then((data) => {
-        console.log(data);
-        return data.json();
-      })
-      .then((data) => console.log(data));
+    try {
+      const response = await fetch(url, apiOptions);
+      const data = await response.json();
+
+      console.log(json);
+    } catch (e) {
+      console.log("Error submitting form");
+    }
   };
 
   if (cartItems.length === 0) {
@@ -155,7 +156,11 @@ export default function Checkout() {
     );
   } else {
     return (
-      <div className="container mx-auto mb-16 mt-32 max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto mb-16 max-w-6xl px-4 sm:px-6 lg:px-8">
+        <h1 className="mt-32 text-center text-xl font-bold text-gray-900">
+          CHECKOUT
+        </h1>
+
         <div className="grid grid-cols-1 lg:grid-cols-4">
           <form className="lg:col-span-3" onSubmit={handleFormSubmission}>
             <div className="space-y-12">
@@ -400,12 +405,24 @@ export default function Checkout() {
                       }
                     />
                   </div>
+
+                  <div className="sm:col-span-2">
+                    <button
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleFormSubmission();
+                      }}
+                      className="font-large mt-4 w-full rounded-lg bg-lime-600 px-5 py-3 text-center text-xl font-bold text-white hover:bg-lime-700"
+                    >
+                      Pay now
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           </form>
 
-          <div className="col-span-1 p-4">
+          <div className="col-span-1 flex flex-col p-4">
             {cartItems.map((cartItem, index) => {
               const product = products.find((product) => {
                 return product.Id === cartItem.productId;
@@ -449,13 +466,6 @@ export default function Checkout() {
                 </div>
               );
             })}
-
-            <button
-              onClick={handleFormSubmission}
-              className="font-large mt-4 w-full rounded-lg bg-lime-600 px-5 py-3 text-center text-xl font-bold text-white hover:bg-lime-700"
-            >
-              Pay now
-            </button>
           </div>
         </div>
       </div>

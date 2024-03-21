@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useCart } from "../../contexts/CartContext";
 import { useProducts } from "../../hooks/useProducts";
 import { ProductsProvider } from "../../contexts/ProductsContext";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Cart = () => {
   const {
@@ -24,8 +24,11 @@ const Cart = () => {
     );
   } else {
     return (
-      <div className="container mx-auto mb-16 mt-28 max-w-7xl">
-        <div className="text-end">Price</div>
+      <div className="container mx-auto mb-16 max-w-6xl max-w-6xl px-4 sm:px-6 lg:px-8">
+        <h1 className="mb-6 mt-32 text-center text-xl font-bold text-gray-900">
+          CART
+        </h1>
+
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-4">
             {cartItems.map((cartItem, index) => {
@@ -40,7 +43,7 @@ const Cart = () => {
               return (
                 <div
                   key={index}
-                  className="flex items-center justify-between border-b py-4"
+                  className="flex flex-col items-center justify-between border-b py-4 sm:flex-row"
                 >
                   <div className="flex gap-4">
                     <NavLink to={`/products/${product.Id}`}>
@@ -58,10 +61,23 @@ const Cart = () => {
                       </div>
 
                       <p>Quantity: {cartItem.quantity}</p>
+
+                      <p className="block sm:hidden">
+                        £{product.Price.toFixed(2)}
+                      </p>
+
+                      <p
+                        className="block cursor-pointer text-xs text-pink-600 sm:hidden"
+                        onClick={() => {
+                          updateProductQuantityInCart(product.Id, 0);
+                        }}
+                      >
+                        Remove
+                      </p>
                     </div>
                   </div>
 
-                  <div className="flex flex-col items-end">
+                  <div className="hidden flex-col items-end sm:flex">
                     <p>£{product.Price.toFixed(2)}</p>
                     <p
                       className="cursor-pointer text-xs text-pink-600"
@@ -76,8 +92,14 @@ const Cart = () => {
               );
             })}
           </div>
-          <div className="flex justify-end">
-            <p>
+          <div className="flex flex-col justify-between sm:flex-row">
+            <Link
+              to="/checkout"
+              className="font-large my-4 cursor-pointer rounded-lg bg-lime-600 px-5 py-3 text-center text-xl font-bold text-white hover:bg-lime-700 sm:my-0"
+            >
+              Go to checkout
+            </Link>
+            <p className="">
               {`Subtotal (${numberOfItemsInCart} item${numberOfItemsInCart !== 1 ? "s" : ""}):`}{" "}
               <span className="text-3xl font-bold">
                 £{totalPrice.toFixed(2)}
