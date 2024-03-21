@@ -17,10 +17,12 @@ import Cart from "./components/pages/Cart";
 import { ProductsProvider } from "./contexts/ProductsContext";
 import { CartDropdownProvider } from "./contexts/CartDropdownContext";
 import Checkout from "./components/pages/Checkout";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <ProductsProvider>
         <CartProvider>
           <CartDropdownProvider>

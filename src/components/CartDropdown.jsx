@@ -151,12 +151,14 @@ const CartDropdown = ({ checkoutIcon }) => {
       <div className="flex justify-between py-3">
         <Link
           to="/cart"
+          onClick={closeDropdown}
           className="ml-4 rounded-md bg-gray-200 px-4 py-2 text-gray-800 hover:bg-gray-300"
         >
           Go to Cart
         </Link>
         <Link
-          to="/checkout"
+          to="/checkout" 
+          onClick={closeDropdown}
           className="mr-4 rounded-md bg-lime-600 px-4 py-2 text-white hover:bg-lime-700"
         >
           Checkout

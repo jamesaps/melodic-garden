@@ -7,7 +7,7 @@ export const useCartDropdown = () => useContext(CartDropdownContext);
 export const CartDropdownProvider = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [trigger, setTrigger] = useState(null); 
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768); // Moved isMobile state here
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768); 
   const dropdownRef = useRef(null);
 
   const openDropdown = (trigger = null) => { 
