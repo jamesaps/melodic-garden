@@ -23,7 +23,7 @@ function ProductCard({ product }) {
     <>
       <NavLink to={`/products/${product.Id}`}>
         <img
-          className="bg-product-card-background mb-4 h-72 w-full rounded-3xl object-cover object-center lg:object-top"
+          className="bg-product-card-background mb-4 h-72 w-full rounded-3xl object-contain object-center lg:object-top"
           src={product.Image}
           alt=""
         />

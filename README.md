@@ -33,13 +33,13 @@ A quick view of your shopping cart as products are added
 ### Mobile Responsive:  
 <div align="center" style="margin-top: 50px;">
   <img src="src/assets/mob1.png" width="30%" style="margin-right: 10px;">
+  <img src="src/assets/mob2.png" width="30%" style="margin-right: 10px;">
   <img src="src/assets/mob3.png" width="30%" style="margin-right: 10px;">
-  <img src="src/assets/mob1.png" width="30%" style="margin-right: 10px;">
 </div>
 <div align="center" style="margin-top: 50px;">
-  <img src="src/assets/mob2.png" width="30%" style="margin-right: 10px;">
-  <img src="src/assets/mob2.png" width="30%" style="margin-right: 10px;">
-  <img src="src/assets/mob2.png" width="30%" style="margin-right: 10px;">
+  <img src="src/assets/mob5.png" width="30%" style="margin-right: 10px;">
+  <img src="src/assets/mob4.png" width="30%" style="margin-right: 10px;">
+  <img src="src/assets/mob6.png" width="30%" style="margin-right: 10px;">
 </div>
 
 
@@ -48,9 +48,6 @@ A quick view of your shopping cart as products are added
 ### Enjoy soothing background music while browsing
 To Listen Click [HERE](https://pixabay.com/music/meditationspiritual-peaceful-garden-healing-light-piano-for-meditation-zen-landscapes-112199/) ![Music](src/assets/music.png)
 
-
-## Support
-For support with App Features email: Company@domain.com
 
 
 
@@ -79,20 +76,31 @@ Thank you to all collaborators on this Project
 
 
 ### Packages & APIs Used
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-- []()
-- []()
-- []()
+- [vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) 
+- [vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) 
+- [React-icons]()
+- [DayJS]()
+- [HeadlessUI​]()
+- [Mailjet]()
+- [HousePlants1]()
 
 ### Libraries Used
 - [Tailwind Css](https://tailwindcss.com/)
-- []()
-- []()
+
+### Images​
+
+- [Adobe Stock​](https://www.freepik.com/)
+- [Free Pik​](https://www.freepik.com/)
+- [Canva​](https://www.canva.com/en_gb/)
+
+### ​Audio​
+
+- [Pixabay](https://pixabay.com/music/meditationspiritual-peaceful-garden-healing-light-piano-for-meditation-zen-landscapes-112199/)
+
 
 
 ## Deployed Project 
-[Website Link]()
+[Website Link](https://melodicgarden.netlify.app/)
 
 
 ## License

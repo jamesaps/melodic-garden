@@ -5,12 +5,9 @@ import { useCartDropdown } from "../contexts/CartDropdownContext";
 
 const ProductDescription = ({ mainProduct }) => {
   const [quantity, setQuantity] = useState(1);
-  const {
-    addProductToCart,
-    getQuantityOfItemByIdInCart,
-  } = useCart();
+  const { addProductToCart, getQuantityOfItemByIdInCart } = useCart();
 
-  const { openDropdown, isMobile} = useCartDropdown();
+  const { openDropdown, isMobile } = useCartDropdown();
 
   const stock = mainProduct.Stock;
   const quantityInCart = getQuantityOfItemByIdInCart(mainProduct.Id);
@@ -20,16 +17,14 @@ const ProductDescription = ({ mainProduct }) => {
     setQuantity(newQuantity);
   };
 
-
   const addToCart = () => {
     console.log(
       `Added ${quantity} ${mainProduct.Name}(s) with ID ${mainProduct.Id} to cart.`,
     );
     addProductToCart(mainProduct.Id, quantity);
-    if(!isMobile && quantityInCart !== stock){
-      openDropdown('addtocart');
-    }
-    else {
+    if (!isMobile && quantityInCart !== stock) {
+      openDropdown("addtocart");
+    } else {
       return;
     }
   };
@@ -42,7 +37,7 @@ const ProductDescription = ({ mainProduct }) => {
             <img
               src={mainProduct.Image}
               alt={mainProduct.Name}
-              className="w-full sm:rounded-3xl"
+              className="bg-product-card-background w-full sm:rounded-3xl object-bottom object-contain"
             />
           </div>
           <div className="col-span-1 mx-8 flex flex-col items-center justify-start md:col-span-2 md:items-start lg:col-span-2">
@@ -84,9 +79,11 @@ const ProductDescription = ({ mainProduct }) => {
               </button>
             </div>
             {quantityLeftInStock === 0 ? (
-              <span className="mt-3" style={{ color: 'red' }}>No more left in stock</span>
+              <span className="mt-3" style={{ color: "red" }}>
+                No more left in stock
+              </span>
             ) : quantityLeftInStock < 10 ? (
-              <span className="mt-3" style={{ color: 'gray' }}>
+              <span className="mt-3" style={{ color: "gray" }}>
                 Only {quantityLeftInStock} left in stock
               </span>
             ) : null}

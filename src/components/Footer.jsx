@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="flex justify-center pb-10 md:mx-8 lg:px-0">
       <div className="flex w-full max-w-6xl flex-col items-center justify-between sm:flex-row ">
-        <div className=" flex flex-col items-center sm:items-start">
+        <div className=" order-2 mt-4 flex flex-col items-center sm:order-1 sm:mt-0 sm:items-start">
           <h2 className="mb-2 font-bold">Quick Links</h2>
           <ul className="flex flex-col items-center sm:items-start">
             <li>
@@ -21,7 +21,7 @@ export default function Footer() {
           <p className="mt-2 font-bold">&copy; 2024 Melodic Garden Ltd</p>
         </div>
 
-        <div className="mt-2 flex flex-col items-center sm:mt-0 sm:items-end">
+        <div className="order-1 mt-2 flex flex-col items-center sm:order-2 sm:mt-0 sm:items-end">
           <div className="flex flex-col items-center sm:items-start">
             <h2 className="mb-2 font-bold">Terms</h2>
             <ul className="flex flex-col items-center sm:items-start">
