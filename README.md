@@ -49,9 +49,6 @@ A quick view of your shopping cart as products are added
 To Listen Click [HERE](https://pixabay.com/music/meditationspiritual-peaceful-garden-healing-light-piano-for-meditation-zen-landscapes-112199/) ![Music](src/assets/music.png)
 
 
-## Support
-For support with App Features email: Company@domain.com
-
 
 
 ## Authors and Acknowledgment
